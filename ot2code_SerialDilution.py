@@ -93,7 +93,9 @@ def distributeNoBlowOut(pipette,vol_out,source,dests,disposal_vol):
 
     # Mode 2: 
     else:
-        for dest in dests_all:            
+        for dest in dests_all:    
+            pipette.pick_up_tip()
+
             if vol_out > pipette_max_vol:
                 vol_list = []
                 vol_remaining = vol_out
@@ -113,6 +115,7 @@ def distributeNoBlowOut(pipette,vol_out,source,dests,disposal_vol):
                 new_tip='never',
                 blow_out=True
                 )
+            pipette.drop_tip()
 
 #%%
 #transfer_vol = 2
@@ -135,9 +138,9 @@ dileunt_slot = '2'
 diluent_source = 'A3'
 
 target_vol = 500
-fold_dilution = 2 # Note: value of 2 = 1:1 dilution, 4 = 4-fold dilution, etc.
+fold_dilution = 4 # Note: value of 2 = 1:1 dilution, 4 = 4-fold dilution, etc.
 
-no_dils = 12 # Note: stock is included in this number
+no_dils = 7 # Note: stock is included in this number
 
 #%% Do not re-load this part
 labware_items = {}
@@ -181,18 +184,22 @@ distributeNoBlowOut(pipette,
 for i in range(0,len(serial_source_list)):
     last_well = serial_source_list[i]
     next_well = diluent_dest_list[i]
-
+    pipette.pick_up_tip()
     pipette.transfer(
     	sample_vol,
     	labware_items[dilution_slot].wells(last_well),
     	labware_items[dilution_slot].wells(next_well),
-    	mix_after=(3, mix_vol),
-        new_tip='always',
-        blow_out=True
+        new_tip='never'
         )
     
-for c in robot.commands():
-    print(c)
-
-robot.clear_commands()
-#robot.reset()
+    for x in range(4):
+        pipette.aspirate(mix_vol,labware_items[dilution_slot].wells(last_well))
+        pipette.dispense(mix_vol,labware_items[dilution_slot].wells(last_well))
+    pipette.blow_out(labware_items[dilution_slot].wells(last_well))
+    pipette.drop_tip()
+        
+#for c in robot.commands():
+#    print(c)
+#
+#robot.clear_commands()
+##robot.reset()
