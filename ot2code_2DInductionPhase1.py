@@ -17,28 +17,57 @@ def distributeNoBlowOut(pipette,vol_out,source,dests,disposal_vol):
     
     pipette_max_vol = pipette.max_volume
     
+    if (vol_out *2 + disposal_vol) <= pipette_max_vol:
+    
+    # Mode 1: 
     # Full description: So long as there are wells that have not received dispensed liquid (item still in dests_all), the function will try to calculate how many dispenses can be fit into one aspiration volume (one_trans_aspir_vol), and then perform the sub-distribution step. To keep track of the wells to be dispensed, the function pops a :Well: from dests_all and then add it to the list of one_trans_dests. The function stops tracking when there is no more :Well: in the dests_all list
     
     # The function changes tip for each sub-distribution step
     
-    while dests_all:
-        pipette.pick_up_tip()
-    
-        one_trans_aspir_vol = disposal_vol
-        one_trans_dests = []
+        while dests_all:
+            pipette.pick_up_tip()
         
-        # Calculate the maximum distributions that one aspiration can take
-        while one_trans_aspir_vol + vol_out < pipette_max_vol:
-            one_trans_dests.append(dests_all.pop(0))
-            one_trans_aspir_vol = one_trans_aspir_vol + vol_out
-            if not dests_all: break
+            one_trans_aspir_vol = disposal_vol
+            one_trans_dests = []
             
-        # Performs the actual distribution sub-step
-        pipette.aspirate(one_trans_aspir_vol,source)
-        for dest in one_trans_dests:
-            pipette.dispense(vol_out,dest)
-            
-        pipette.drop_tip()
+            # Calculate the maximum distributions that one aspiration can take
+            while one_trans_aspir_vol + vol_out < pipette_max_vol:
+                one_trans_dests.append(dests_all.pop(0))
+                one_trans_aspir_vol = one_trans_aspir_vol + vol_out
+                if not dests_all: break
+                
+            # Performs the actual distribution sub-step
+            pipette.aspirate(one_trans_aspir_vol,source)
+            for dest in one_trans_dests:
+                pipette.dispense(vol_out,dest)
+                
+            pipette.drop_tip()
+
+    # Mode 2: 
+    else:
+        for dest in dests_all:    
+            pipette.pick_up_tip()
+
+            if vol_out > pipette_max_vol:
+                vol_list = []
+                vol_remaining = vol_out
+                while vol_remaining > pipette_max_vol:
+                    vol_list.append(pipette_max_vol)
+                    vol_remaining -= pipette_max_vol
+                vol_list.append(vol_remaining)
+                
+            else:
+                vol_list = [vol_out]
+                
+            for vol in vol_list:
+                pipette.transfer(
+            	vol,
+            	source,
+            	dest,
+                new_tip='never',
+                blow_out=True
+                )
+            pipette.drop_tip()
 
 #%% 
 
