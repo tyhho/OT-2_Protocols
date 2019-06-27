@@ -226,6 +226,7 @@ for source_well, dest_col in inducer_x_map.items():
 #p300s.drop_tip()
 #
 
+robot.pause()
 #%% Stage 3: Mix content and add to plates
 
 for col_index in range(12):
