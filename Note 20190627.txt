@@ -1,0 +1,8 @@
+P300 Test successful:
+
+1. Pipette can hover over
+2. Need to revise code to accomodate pipetting into single well than well series
+3. volume is accurate: 375.8 compared to 376.9 of P1000, but different ranges
+
+
+Need to check: air gap function and hover over functions

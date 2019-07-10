@@ -57,7 +57,7 @@ def horiz_well_generator(first_well,length,rack_format='opentrons-tuberack-2ml-e
         counter -= 1
     return well_list
 
-def distributeNoBlowOut(pipette,vol_out,source,dests,disposal_vol):
+def distributeNoBlowOut(pipette,vol_out,source,dests,disposal_vol=0,hover_over=-1):
     '''Distribute function with disposal volume but without blow out'''
     
     # Converts the list of destination wells from :WellSeries: into a list to permit .pop() function
@@ -87,7 +87,10 @@ def distributeNoBlowOut(pipette,vol_out,source,dests,disposal_vol):
             # Performs the actual distribution sub-step
             pipette.aspirate(one_trans_aspir_vol,source)
             for dest in one_trans_dests:
-                pipette.dispense(vol_out,dest)
+                if hover_over >=0:
+                    pipette.dispense(vol_out,dest.top(hover_over))
+                else:
+                    pipette.dispense(vol_out,dest)
                 
             pipette.drop_tip()
 
@@ -108,13 +111,22 @@ def distributeNoBlowOut(pipette,vol_out,source,dests,disposal_vol):
                 vol_list = [vol_out]
                 
             for vol in vol_list:
-                pipette.transfer(
-            	vol,
-            	source,
-            	dest,
-                new_tip='never',
-                blow_out=True
-                )
+                if hover_over >=0:
+                    pipette.transfer(
+                    	vol,
+                    	source,
+                    	dest.top(hover_over),
+                        new_tip='never',
+                        blow_out=True
+                        )
+                else:
+                    pipette.transfer(
+                    	vol,
+                    	source,
+                    	dest,
+                        new_tip='never',
+                        blow_out=True
+                        )
             pipette.drop_tip()
 
 #%%

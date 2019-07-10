@@ -1,32 +1,36 @@
 # -*- coding: utf-8 -*-
 """
-Created on Wed Jun 26 23:15:27 2019
+Created on Thu Jun 27 23:32:24 2019
 
-@author: Trevor Ho
-
+@author: s1635543
 """
 
 from opentrons import labware, instruments, robot
 
 #%% 
 
-def distributeNoBlowOut(pipette,vol_out,source,dests,disposal_vol,hover_over=-1):
+def distributeNoBlowOut(pipette,vol_out,source,dests,disposal_vol=0,airgap=0,hover_over=-21):
     '''Distribute function with disposal volume but without blow out'''
     
+    if airgap != 0 and disposal_vol !=0:
+        raise ValueError('Air gap and disposal volume should not be used at the same time')
+    
+    if airgap !=0 and hover_over == 0:
+        raise ValueError('Air gap use should be accompanied with hover_over')
+
     # Converts the list of destination wells from :WellSeries: into a list to permit .pop() function
     dests_all = list(dests.items.values())
     
     pipette_max_vol = pipette.max_volume
     
-    if (vol_out *2 + disposal_vol) <= pipette_max_vol:
+    if airgap <= 0 and (vol_out *2 + disposal_vol) <= pipette_max_vol:
     
     # Mode 1: 
     # Full description: So long as there are wells that have not received dispensed liquid (item still in dests_all), the function will try to calculate how many dispenses can be fit into one aspiration volume (one_trans_aspir_vol), and then perform the sub-distribution step. To keep track of the wells to be dispensed, the function pops a :Well: from dests_all and then add it to the list of one_trans_dests. The function stops tracking when there is no more :Well: in the dests_all list
     
     # The function changes tip for each sub-distribution step
-    
+        pipette.pick_up_tip()
         while dests_all:
-            pipette.pick_up_tip()
         
             one_trans_aspir_vol = disposal_vol
             one_trans_dests = []
@@ -45,9 +49,40 @@ def distributeNoBlowOut(pipette,vol_out,source,dests,disposal_vol,hover_over=-1)
                 else:
                     pipette.dispense(vol_out,dest)
                 
-            pipette.drop_tip()
+        pipette.drop_tip()
 
-    # Mode 2: 
+    # Mode 2: Air gap mode
+    elif airgap > 0 and (vol_out * 2 + airgap) <= pipette_max_vol:
+        
+        pipette.pick_up_tip()
+        while dests_all:
+            
+            one_trans_aspir_vol = 0
+            one_trans_dests = []
+            
+            # Calculate the maximum distributions that one aspiration can take
+            while one_trans_aspir_vol + vol_out + airgap < pipette_max_vol:
+                one_trans_dests.append(dests_all.pop(0))
+                one_trans_aspir_vol += vol_out
+                if not dests_all: break
+                one_trans_aspir_vol += airgap
+                
+            # Performs the actual distribution sub-step
+            
+            for dest in one_trans_dests:
+                if dest != one_trans_dests[-1]:
+                    pipette.aspirate(vol_out,source).air_gap(airgap)
+                else:
+                    pipette.aspirate(vol_out,source)
+            
+            for dest in one_trans_dests:
+                if dest == one_trans_dests[0] or dest == one_trans_dests[-1]:
+                    pipette.dispense((vol_out + (airgap/2)),dest.top(hover_over))
+                else:
+                    pipette.dispense((vol_out + airgap),dest.top(hover_over))
+        pipette.drop_tip()
+    
+    # Mode 3:
     else:
         for dest in dests_all:    
             pipette.pick_up_tip()
@@ -145,8 +180,8 @@ inducer_y_map = {
         'A5':'E',
         'A6':'F',
         'B1':'G',
-        'B2':'H'
-        }
+        'B2':'H'}
+        
 
 inducer_x_map = {'C1':'12',
                  'C2':'11',
@@ -179,7 +214,7 @@ labware_items = {}
 for slot, labware_item in slots_map.items():
     labware_items.update({slot:labware.load(labware_item, slot)})
 
-p300s = instruments.P300_Single(
+p10s = instruments.P10_Single(
     mount='left',
     tip_racks=tip_racks
     )
@@ -201,24 +236,24 @@ p50m = instruments.P50_Multi(
 #%%
 # Stage 1: Distribute the inducer for y axis
 iy_total = calculateDispenseVol(inducer_y_vol,num_assay_plates)
+
 for source_well, dest_well in inducer_y_map.items():
-    distributeNoBlowOut(p300s,
-                        iy_total,
-                        labware_items[inducer_rack].wells(source_well),
-                        labware_items[iap].rows(dest_well),
-                        disposal_vol=3,
-                        hover_over=2)
-    
+    p10s.pick_up_tip()
+    for i in range(12):
+        p10s.aspirate(iy_total,labware_items[inducer_rack].wells(source_well))
+        p10s.dispense(iy_total,labware_items[iap].rows(dest_well).wells(i).top(-2))
+        p10s.blow_out()
+    p10s.drop_tip()
 #%%
 # Stage 2: Distribute the inducer for x axis
-ix_total = calculateDispenseVol(inducer_x_vol,num_assay_plates)
-for source_well, dest_col in inducer_x_map.items():
-    distributeNoBlowOut(p300s,
-                        ix_total,
-                        labware_items[inducer_rack].wells(source_well),
-                        labware_items[iap].cols(dest_col),
-                        disposal_vol=3,
-                        hover_over=2)
+#ix_total = calculateDispenseVol(inducer_x_vol,num_assay_plates)
+#for source_well, dest_col in inducer_x_map.items():
+#    distributeNoBlowOut(p300s,
+#                        ix_total,
+#                        labware_items[inducer_rack].wells(source_well),
+#                        labware_items[iap].cols(dest_col),
+#                        airgap=8,
+#                        hover_over=-2)
 
 #%%
 #p300s.pick_up_tip()
@@ -229,18 +264,18 @@ for source_well, dest_col in inducer_x_map.items():
 robot.pause()
 #%% Stage 3: Mix content and add to plates
 
-for col_index in range(12):
-    dests = [labware_items[assay_plate].cols(col_index) for assay_plate in assay_plates]
-    
-    mix_vol = (ix_total + iy_total) * 0.75
-    
-    distributeMixedInducer(p50m,
-                           mix_vol,
-                           4,
-                           3,
-                           8,
-                           labware_items[iap].cols(col_index),
-                           dests)
+#for col_index in range(12):
+#    dests = [labware_items[assay_plate].cols(col_index) for assay_plate in assay_plates]
+#    
+#    mix_vol = (ix_total + iy_total) * 0.75
+#    
+#    distributeMixedInducer(p50m,
+#                           mix_vol,
+#                           4,
+#                           3,
+#                           8,
+#                           labware_items[iap].cols(col_index),
+#                           dests)
 
 #%%
     
