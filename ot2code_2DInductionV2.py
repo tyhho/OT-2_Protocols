@@ -195,10 +195,10 @@ inducer_x_map = {'C1':'12',
                  'D6':'1'}
 
 
-tip_slots = ['7']
-tip_racks = [labware.load('tiprack-200ul', slot) for slot in tip_slots]
-tip_slots = ['10','11']
-tip_racks2 = [labware.load('tiprack-10ul', slot) for slot in tip_slots]
+tip_slots1 = ['7']
+tip_racks1 = [labware.load('tiprack-300ul-custom', slot) for slot in tip_slots1]
+tip_slots2 = ['10','11']
+tip_racks2 = [labware.load('tiprack-10ul-custom', slot) for slot in tip_slots2]
 
 
 dead_vol = 6
@@ -215,7 +215,7 @@ for slot, labware_item in slots_map.items():
 
 p300s = instruments.P300_Single(
     mount='left',
-    tip_racks=tip_racks
+    tip_racks=tip_racks1
     )
 
 p10m = instruments.P10_Multi(
