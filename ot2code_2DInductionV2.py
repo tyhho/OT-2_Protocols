@@ -196,9 +196,9 @@ inducer_x_map = {'C1':'12',
 
 
 tip_slots1 = ['7']
-tip_racks1 = [labware.load('tiprack-300ul-custom', slot) for slot in tip_slots1]
+tip_racks1 = [labware.load('tiprack-200ul', slot) for slot in tip_slots1]
 tip_slots2 = ['10','11']
-tip_racks2 = [labware.load('tiprack-10ul-custom', slot) for slot in tip_slots2]
+tip_racks2 = [labware.load('tiprack-10ul', slot) for slot in tip_slots2]
 
 
 dead_vol = 6
