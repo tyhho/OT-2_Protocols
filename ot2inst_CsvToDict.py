@@ -9,10 +9,19 @@ a text file, which will contain a dictionary that can be copy and pasted into
 an Opentrons API file
 
 """
-
+import os
 import pandas as pd
 
-csvData = pd.read_csv('BM004_Screen5_RearrangingDict.csv')
+# TODO: Specify folder location
+rootDir = r'W:\Data storage & Projects\PhD Project_Trevor Ho\3_Intein-assisted Bisection Mapping'
+folderDir = r'BM005\Screen2_Gain 1000'
+
+# TODO: Specify the csv filemane
+csv_fn = 'BM005_Screen2_1000_RearrangingDict.csv'
+
+csv_dir = os.path.join(rootDir,folderDir,csv_fn)
+
+csvData = pd.read_csv(csv_dir)
 
 finalLine = ''
 for index, row in csvData.iterrows():
@@ -22,6 +31,8 @@ for index, row in csvData.iterrows():
     
 finalLine = finalLine[:-2]
 
-f = open("BM004_Screen4_RearrangingDict.txt", "w+")
+output_fn = csv_fn.split('.')[0] + '.txt'
+outputDir = os.path.join(rootDir,folderDir,output_fn)
+f = open(outputDir, "w+")
 f.write(finalLine)
 f.close()
