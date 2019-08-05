@@ -21,17 +21,15 @@ culture_vol = 2
 slots_map = {
         '1':'96-flat',
         '2':'96-flat',
-        '3':'96-flat',
-        '5':'96-flat',
-        '6':'96-flat'
+        '3':'96-flat'
         }
 
 labware_items = {}
 for slot, labware_item in slots_map.items():
     labware_items.update({slot:labware.load(labware_item, slot)})
 
-tip_slots = ['10','11']
-tip_racks = [labware.load('tiprack-10ul-custom', slot) for slot in tip_slots]
+tip_slots = ['4']
+tip_racks = [labware.load('tiprack-10ul', slot) for slot in tip_slots]
 
 p10m = instruments.P10_Multi(
     mount='right',
@@ -40,19 +38,19 @@ p10m = instruments.P10_Multi(
 
 #%%
 
-for col_index in range(len(labware_items['1'].cols())):
+for col_index in range(6):
     distributeNoBlowOutLite(p10m,
                             (culture_vol*2+2),
                             culture_vol,
                             labware_items['1'].cols(col_index),
-                            [labware_items['2'].cols(col_index),labware_items['3'].cols(col_index)]
+                            [labware_items['2'].cols(col_index),labware_items['2'].cols(col_index+6)]
                             )
-for col_index in range(len(labware_items['1'].cols())):
+for col_index in range(6):
     distributeNoBlowOutLite(p10m,
                             (culture_vol*2+2),
                             culture_vol,
                             labware_items['1'].cols(col_index),
-                            [labware_items['5'].cols(col_index),labware_items['6'].cols(col_index)]
+                            [labware_items['3'].cols(col_index),labware_items['3'].cols(col_index+6)]
                             )
 for c in robot.commands():
     print(c)
