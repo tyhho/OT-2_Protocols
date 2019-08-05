@@ -8,13 +8,13 @@ Created on Fri Jun 28 19:12:06 2019
 from opentrons import labware, instruments, robot
 
 
-from opentrons.data_storage import database
-if 'tiprack-10ul-custom' in labware.list():
-    database.delete_container('tiprack-10ul-custom')
-if 'tiprack-200ul-custom' in labware.list():
-    database.delete_container('tiprack-200ul-custom')
-if 'tiprack-300ul-custom' in labware.list():
-    database.delete_container('tiprack-300ul-custom')
+#from opentrons.data_storage import database
+#if 'tiprack-10ul-custom' in labware.list():
+#    database.delete_container('tiprack-10ul-custom')
+#if 'tiprack-200ul-custom' in labware.list():
+#    database.delete_container('tiprack-200ul-custom')
+#if 'tiprack-300ul-custom' in labware.list():
+#    database.delete_container('tiprack-300ul-custom')
 
 #%% Create new tip rack for 10 uL custom
 
@@ -83,7 +83,7 @@ p300s = instruments.P300_Single(
     tip_racks=tip_racks1
     )
 
-p10m = instruments.P10_Multi(
+p10s = instruments.P10_Single(
     mount='right',
     tip_racks=tip_racks2
     )
@@ -96,7 +96,7 @@ for i in range(10):
             	labware_items['1'].wells('A2'),
                 new_tip = 'always'
                 )
-    p10m.transfer(
+    p10s.transfer(
             	10,
             	labware_items['1'].cols('1'),
             	labware_items['1'].cols('2'),
