@@ -4,8 +4,8 @@ from opentrons import labware, instruments, robot
 #%%
 
 slots_map = {
-        '1':'96-deep-well',
-        '2':'96-deep-well',
+        '1':'96-flat',
+        '2':'96-flat',
         '3':'96-flat'
         }
 
@@ -13,11 +13,11 @@ labware_items = {}
 for slot, labware_item in slots_map.items():
     labware_items.update({slot:labware.load(labware_item, slot)})
 
-tip_slots = ['6']
+tip_slots = ['4']
 tip_racks = [labware.load('tiprack-10ul-custom', slot) for slot in tip_slots]
 
 p10single = instruments.P10_Single(
-    mount='right',
+    mount='left',
     tip_racks=tip_racks
     )
 
@@ -82,7 +82,7 @@ for source, dest in csv_dict.items():
     
     p10single.transfer(
 	transfer_vol,
-	labware_items[source_plate].wells(source_well).top(-30),
+	labware_items[source_plate].wells(source_well),
 	labware_items[dest_plate].wells(dest_well),
     blow_out = True,
 	new_tip='always')
