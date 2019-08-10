@@ -19,11 +19,11 @@ def distributeNoBlowOutLite(pipette,vol_in,vol_out,source,dests):
 culture_vol = 2
 
 slots_map = {
-        '1':'96-flat',
-        '2':'96-flat',
-        '3':'96-flat',
-        '5':'96-flat',
-        '6':'96-flat'
+        '1':'corning_96_wellplate_360ul_flat',
+        '2':'corning_96_wellplate_360ul_flat',
+        '3':'corning_96_wellplate_360ul_flat',
+        '5':'corning_96_wellplate_360ul_flat',
+        '6':'corning_96_wellplate_360ul_flat'
         }
 
 labware_items = {}
@@ -31,7 +31,7 @@ for slot, labware_item in slots_map.items():
     labware_items.update({slot:labware.load(labware_item, slot)})
 
 tip_slots = ['4','7']
-tip_racks = [labware.load('tiprack-10ul-custom', slot) for slot in tip_slots]
+tip_racks = [labware.load('opentrons_96_tiprack_10ul', slot) for slot in tip_slots]
 
 p10m = instruments.P10_Multi(
     mount='right',
