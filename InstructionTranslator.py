@@ -40,8 +40,13 @@ def addMachineLine(existing_inst_line,dest_slot,dest_well,source_df,item_name,it
     source_slot = source_record['slot'].item()
     source_well = source_record['well'].item()
     
+    if item_vol:
+        item_vol_line = item_vol + '$'
+    else:
+        item_vol_line = ''
+    
     # Create a new line of machine readable instruction
-    new_inst_line = '\'' + item_vol + '$' + source_slot + '_' + source_well + '->' \
+    new_inst_line = '\'' + item_vol_line + source_slot + '_' + source_well + '->' \
     + dest_slot + '_' + dest_well + '\',\n'
     
     # Add line to original line
@@ -49,8 +54,8 @@ def addMachineLine(existing_inst_line,dest_slot,dest_well,source_df,item_name,it
     return updated_inst_lines
 
 # TODO: Specify folder location
-instDir = 'ot2inst_sequencing_preparation.xlsx'
-outputDir = "ot2inst_sequencing_preparation.txt"
+instDir = 'ot2inst_transfer_BM005 bacterial PCR.xlsx'
+outputDir = "ot2inst_transfer_BM005 bacterial PCR.txt"
 
 inst_xls= pd.ExcelFile(instDir)
 dict_of_inst = {sheet:inst_xls.parse(sheet) for sheet in inst_xls.sheet_names}
@@ -120,7 +125,10 @@ for dest_slot_info in dest_info.itertuples():
             for item_info, item_name in request_items.items():
                 item_info = item_info.strip()
                 item_name = item_name.strip()
-                item_vol = item_info.split('_')[1]
+                if item_info.find('_')>0:
+                    item_vol = item_info.split('_')[1]
+                else:
+                    item_vol = ''
                 finalLine = addMachineLine(finalLine,dest_slot,dest_well,source_df,item_name,item_vol)
         
         elif dest_slot_info.format == 'df_variable_volume':
