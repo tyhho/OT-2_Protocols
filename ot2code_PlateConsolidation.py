@@ -5,7 +5,7 @@ from opentrons import labware, instruments, robot
 
 slots_map = {
         '1':'corning_96_wellplate_360ul_flat',
-        '2':'corning_96_wellplate_360ul_flat'
+        '2':'usascientific_96_wellplate_2.4ml_deep'
 
         }
 
