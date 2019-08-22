@@ -54,8 +54,8 @@ def addMachineLine(existing_inst_line,dest_slot,dest_well,source_df,item_name,it
     return updated_inst_lines
 
 # TODO: Specify folder location
-instDir = 'ot2inst_transfer_BM005 bacterial PCR.xlsx'
-outputDir = "ot2inst_transfer_BM005 bacterial PCR.txt"
+instDir = 'ot2inst_transfer_BM005 ss consolidation.xlsx'
+outputDir = "ot2inst_transfer_BM005 ss consolidation.txt"
 
 inst_xls= pd.ExcelFile(instDir)
 dict_of_inst = {sheet:inst_xls.parse(sheet) for sheet in inst_xls.sheet_names}
