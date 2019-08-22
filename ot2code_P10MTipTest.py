@@ -32,7 +32,8 @@ for slot, labware_item in slots_map.items():
     labware_items.update({slot:labware.load(labware_item, slot)})
 
 tip_slots = ['4','7']
-tip_racks = [labware.load('opentrons_96_tiprack_10ul', slot) for slot in tip_slots]
+#tip_racks = [labware.load('opentrons_96_tiprack_10ul', slot) for slot in tip_slots]
+tip_racks = [labware.load('tiprack-10ul-custom', slot) for slot in tip_slots]
 
 p10m = instruments.P10_Multi(
     mount='right',
@@ -43,10 +44,10 @@ p10m = instruments.P10_Multi(
 
 for col_index in range(len(labware_items['1'].cols())):
     distributeNoBlowOutLite(p10m,
-                            (culture_vol*2+2),
-                            culture_vol,
+                            10,
+                            8,
                             labware_items['1'].cols(col_index),
-                            [labware_items['2'].cols(col_index),labware_items['3'].cols(col_index)]
+                            [labware_items['2'].cols(col_index)]
                             )
 #for col_index in range(len(labware_items['1'].cols())):
 #    distributeNoBlowOutLite(p10m,
