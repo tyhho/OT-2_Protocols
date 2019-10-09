@@ -24,7 +24,7 @@ You start with:
         20 mL of water in well A1
         
 Your robot is equipped with:
-    A P300 single channel pipette
+    A P300 single channel pipette (Right Mount)
         
 """
 

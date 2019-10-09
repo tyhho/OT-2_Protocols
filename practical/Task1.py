@@ -17,7 +17,7 @@ You start with:
     An empty 96-well flat bottom plate in Slot '3'
     
 Your robot is equipped with:
-    A P300 single channel pipette
+    A P300 single channel pipette (Right mount)
         
 """
 
