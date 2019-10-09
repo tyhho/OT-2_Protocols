@@ -6,27 +6,30 @@ Created on Tue Oct  8 22:41:27 2019
 
 Task description: 
     
-    The goal is to generate a checkered pattern of two colors on a 96-well PCR plate.
+    Generate a checkered pattern of two colors on a 96-well PCR plate.
     For the final plate, each well should have 100 µL of 1X dye of eithr red or blue color.
         
 You start with:
-    A 1.5 mL tube rack in Slot '1':
-        1.5 mL of 10X red dye in well A1
-        1.5 mL of 10X blue dye in well A2
-    An empty 96-well V-bottom PCR plate in Slot '2'
-    A 96-well V-bottom PCR plate in Slot '3' (Final plate with checkered pattern!):
-        All wells already have 90 µL of water inside
+    Slot 1: 1.5 mL tube rack
+        Well A1: 1.5 mL of 10X red dye
+        Well A2: 1.5 mL of 10X blue dye
+    Slot 2: 96-well V-bottom PCR plate
+    Slot 3: 96-well V-bottom PCR plate (Final plate with checkered pattern!):
+        Wells A1 - H12: prefilled with 90 µL of water
 
 Your robot is equipped with:
-    A P300 single channel pipette (Right mount)
-    A P10 8-channel pipette (Left mount)
+    Right mount: P300 single channel pipette
+    Left mount: P10 8-channel pipette
 
 """
 
 # Import libraries for OT-2
 from opentrons import labware, instruments,robot
 
-#%%
+# Reset for debugging
+robot.clear_commands()
+robot.reset()
+
 # Put plates and racks onto the deck
 slots_map = {
         '1':'opentrons_24_tuberack_eppendorf_1.5ml_safelock_snapcap',
@@ -47,7 +50,7 @@ for slot in tip_slots_300:
 tip_slots_10 = ['5']
 tip_racks_10 = []
 for slot in tip_slots_10:
-        tip_racks_10.append(labware.load('opentrons_96_tiprack_300ul', slot))
+        tip_racks_10.append(labware.load('opentrons_96_tiprack_10ul', slot))
 
 # Configure the pipettes
 p300s = instruments.P300_Single(
@@ -57,7 +60,7 @@ p300s = instruments.P300_Single(
 
 p10m = instruments.P10_Multi(
     mount='left',
-    tip_racks=tip_racks_300
+    tip_racks=tip_racks_10
     )
 
 # Set up the pipetting instruction
@@ -95,7 +98,7 @@ for source_col, dest_cols_list in final_pattern_info.items():
             new_tip = 'always',
             blow_out = True)
 
-# Version 2: the same can be achieved by fewer codes if you use the "slice" feature 
+# Version 2: the same can be achieved by fewer codes if you use the "slice" function 
 #for start_col in [0,1]:
 #    p10m.transfer(
 #            10,

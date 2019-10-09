@@ -6,23 +6,27 @@ Created on Tue Oct  8 20:42:09 2019
 
 Task description: 
     
-    The goal is to generate a pattern of "EDI" on a 96-well flat bottom plate by pipetting dyes from source to destination wells.
+    Generate a pattern of "EDI" on a 96-well flat bottom plate by pipetting dyes from source to destination wells.
     Each letter will have a different color, i.e. you have to keep pipetting colored liquid from one source to different destination wells.
     
 You start with:
-    A 50 mL tube rack in Slot '2':
-        20 mL of yellow dye in well A1, for constructing the letter "E"
-        20 mL of blue dye in well A2, for constructing the letter "D"
-        20 mL of red dye in well A3, for constructing the letter "I"
-    An empty 96-well flat bottom plate in Slot '3'
+    Slot 2: 50 mL tube rack
+        Well A1: 20 mL of yellow dye, for constructing the letter "E"
+        Well A2: 20 mL of blue dye, for constructing the letter "D"
+        Well A3: 20 mL of red dye, for constructing the letter "I"
+    Slot 3: Empty 96-well flat bottom plate
     
 Your robot is equipped with:
-    A P300 single channel pipette (Right mount)
+    Right mount: P300 single channel pipette
         
 """
 
 # Import libraries for OT-2
 from opentrons import labware, instruments,robot
+
+# Reset for debugging
+robot.clear_commands()
+robot.reset()
 
 # Put plates and racks onto the deck
 slots_map = {

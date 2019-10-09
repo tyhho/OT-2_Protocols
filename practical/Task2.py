@@ -6,7 +6,7 @@ Created on Tue Oct  8 21:12:39 2019
 
 Task description: 
     
-    The goal is to perform serial dilution of a dye, initially at 4096X, into a graident of:
+    Perform serial dilution of a dye, initially at 4096X, into a graident of:
         2048X, 1024X, ... , 4X, 2X, 1X
     using water as the diluent.
     
@@ -17,24 +17,28 @@ Task description:
     to ensure a homogenous solution is achieved before you move on
     
 You start with:
-    A 1.5 mL tube rack in Slot '2':
-        1 mL of 4096X dye in well A1
-        Empty 1.5 mL tubes are in wells A4 to D6 (these tubes should hold the serially diluted dyes)
-    A 50 mL tube rack in Slot '3':
-        20 mL of water in well A1
+    Slot 2: 50 mL tube rack
+        Well A1: 20 mL of water
+    Slot 3: 1.5 mL tube rack
+        Well A1: 1 mL of 4096X dye
+        Well A4 - D6: Empty 1.5 mL tubes (these tubes should hold the serially diluted dyes)
         
 Your robot is equipped with:
-    A P300 single channel pipette (Right Mount)
+    Right mount: P300 single channel pipette
         
 """
 
 # Import libraries for OT-2
 from opentrons import labware, instruments,robot
 
+# Reset for debugging
+robot.clear_commands()
+robot.reset()
+
 # Put plates and racks onto the deck
 slots_map = {
-        '2':'opentrons_24_tuberack_eppendorf_1.5ml_safelock_snapcap',
-        '3':'opentrons_6_tuberack_falcon_50ml_conical',
+        '2':'opentrons_6_tuberack_falcon_50ml_conical',
+        '3':'opentrons_24_tuberack_eppendorf_1.5ml_safelock_snapcap',
         }
 
 deck_labware = {}
@@ -57,8 +61,8 @@ p300s = instruments.P300_Single(
 
 # Phase 1: Distribute the diluent into the empty tubes
 p300s.distribute(120,
-                 deck_labware['3'].wells('A1'),
-                 deck_labware['2'].cols('4', length=3)
+                 deck_labware['2'].wells('A1'),
+                 deck_labware['3'].cols('4', length=3)
                  )
 
 # Phase 2: Perform the serial dilution
@@ -69,8 +73,8 @@ p300s.pick_up_tip()
 for well_num in range(12,23):
     p300s.transfer(
             120,
-            deck_labware['2'].wells(well_num),
-            deck_labware['2'].wells(well_num+1),
+            deck_labware['3'].wells(well_num),
+            deck_labware['3'].wells(well_num+1),
             new_tip = 'never',
             mix_after=(3, 200)
             )
