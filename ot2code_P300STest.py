@@ -118,7 +118,7 @@ def calculateDispenseVol(vol,num_assay_plates):
 
 tip_slots = ['1']
 
-tip_racks = [labware.load('tiprack-200ul', slot) for slot in tip_slots]
+tip_racks = [labware.load('opentrons_96_tiprack_300ul', slot) for slot in tip_slots]
 
 
 slots_map = {
@@ -134,13 +134,13 @@ for slot, labware_item in slots_map.items():
 #dest_plate = labware.load('96-flat', slot='4')
 
 p300s = instruments.P300_Single(
-    mount='left',
+    mount='right',
     tip_racks=tip_racks
     )
 
 
-p10s = instruments.P10_Single(
-    mount='right',
+p10m = instruments.P10_Multi(
+    mount='left',
     tip_racks=tip_racks
     )
 #
@@ -154,7 +154,7 @@ p10s = instruments.P10_Single(
 #                    )
 
 
-p10s.transfer(6.7,
+p300s.transfer(6.7,
                labware_items['2'].wells('A6'),
                labware_items['2'].wells('A1'),
                blow_out = True,
