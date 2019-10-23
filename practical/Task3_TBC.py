@@ -78,38 +78,31 @@ master_pattern_info = {
         'A2':['B1','D1','F1','H1','A2','C2','E2','G2']
         }
 
-for source_well, dest_wells_list in master_pattern_info.items():
-    p300s.distribute(67,
-                     deck_labware['1'].wells(source_well),
-                     deck_labware['2'].wells(dest_wells_list)
-                     )
+# TODO: Using the master_pattern_info dictionary, construct a distribute() function that pipettes
+# 67 µL of the correct dye into each well of the first two columns of the intermediate plate
+
+
+
+
+
 
 # Phase 2: Transfer the patterned dye from the intermediate plate in slot 2
 # into every other column on the final plate in slot 3
 
-
-# Version 1:
 final_pattern_info = {
         '1':['1','3','5','7','9','11'],
         '2':['2','4','6','8','10','12']
         }
 
-for source_col, dest_cols_list in final_pattern_info.items():
-    p10m.transfer(
-            10,
-            deck_labware['2'].cols(source_col),
-            deck_labware['3'].cols(dest_cols_list),
-            new_tip = 'always',
-            blow_out = True)
+# TODO: Insert a for loop and a transfer() function so that the P10 8-channel pipette
+#  distributes the 10 µL of the master pattern into the final plate
+# Call the blow_out argument in your transfer() function by the end of each transfer step
+# You can choose whether or not to reuse the tips in this proces
 
-# Version 2: the same can be achieved by fewer codes if you use the "slice" function 
-#for start_col in [0,1]:
-#    p10m.transfer(
-#            10,
-#            deck_labware['2'].cols(start_col),
-#            deck_labware['3'].cols[start_col:12:2],
-#            new_tip = 'always',
-#            blow_out = True)
+
+
+
+
 
 #%% DO NOT EDIT ANYTHING BELOW
 # Print out the commands step by step

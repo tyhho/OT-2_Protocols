@@ -10,7 +10,7 @@ Task description:
         2048X, 1024X, ... , 4X, 2X, 1X
     using water as the diluent.
     See Figure 2 for the expected final pattern.
-    
+
     You should end up with a total of 12 tubes, each with 120 µL of diluted dye
     (except the last tube, which should have 240 µL of diluted dye).
     
@@ -61,45 +61,33 @@ p300s = instruments.P300_Single(
 # Set up the pipetting instruction
 
 # Phase 1: Distribute the diluent into the empty tubes
+
 p300s.distribute(120,
                  deck_labware['2'].wells('A1'),
-                 deck_labware['3'].cols('4', length=3)
+                 # TODO: Insert here the argument of destination wells (A1, B1, C1, ... , B3, C3, D3 (total of 12)
                  )
 
 # Phase 2: Perform the serial dilution
 
 # Do not change the tip throughout the dilution process
-p300s.pick_up_tip()
 
-for well_num in range(12,23):
+# TODO: Use the same tip for all transfer and mixing processes
+# Insert the missing functions
+
+
+
+for well_num in 'X' :# TODO: Replace 'X' by an argument such that the for loop goes over the correct wells
     p300s.transfer(
             120,
             deck_labware['3'].wells(well_num),
             deck_labware['3'].wells(well_num+1),
             new_tip = 'never',
-            mix_after=(3, 200)
+            # TODO: Insert an argument here. After each pipetting step, the robot should mix the sample 3 times using a volume of 200 µL.
             )
-    p300s.blow_out()
-    
-p300s.drop_tip()
+    p300s.blow_out()    
 
-## Option 2: The mix_after command has been known to caues all subsequent pipetting steps to slow down
-#       Not sure if that has been fixed yet, but if not, the following scripts will replace the dilution processes above
-#
-#p300s.pick_up_tip()
-#
-#for well_num in range(12,22):
-#    p300s.transfer(
-#            120,
-#            deck_labware['2'].wells(well_num),
-#            deck_labware['2'].wells(well_num+1),
-#            new_tip = 'never',
-#            )
-#    for _ in range(3):
-#        p300s.aspirate(200,deck_labware['2'].wells(well_num+1))
-#        p300s.dispense(200,deck_labware['2'].wells(well_num+1))
-#    p300s.blow_out()    
-#p300s.drop_tip()
+
+
 
 #%% DO NOT EDIT ANYTHING BELOW
 # Print out the commands step by step

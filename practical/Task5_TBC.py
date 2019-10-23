@@ -188,7 +188,7 @@ inter_dict_of_mix_vol = {}
 
 for well, init_sample_conc in dye_conc.items():
     # init_sample_conc = initial sample concentration    
-    inter_vol_water_to_add = (init_sample_conc - inter_conc_factor) * inter_sample_vol_from_source / inter_conc_factor
+    inter_vol_water_to_add = # TODO: Complete ths equation to find out the volume of water needed to dilute one particular sample
     mix_vol = math.ceil((inter_sample_vol_from_source + inter_vol_water_to_add) * 0.7) # mixing volume for intermediate step, before being diluted to final plate
     inter_dict_of_vol_water_to_add.update({well:inter_vol_water_to_add})
     inter_dict_of_mix_vol.update({well: mix_vol})
@@ -204,16 +204,14 @@ for vol in inter_dict_of_vol_water_to_add.values():
     
 # Phase 1: Standardize concentration
     # Step 1: Transfer water into the intermediate plate. Volumes to be determined by initial sample concentration
-    
-p300s.pick_up_tip()
-for well, water_to_add_vol in inter_dict_of_vol_water_to_add.items():
-    p300s.transfer(water_to_add_vol,
-                 deck_labware['6'].wells('A1'),
-                 deck_labware['2'].wells(well),
-                 blow_out=True,
-                 new_tip = 'never'
-                 )
-p300s.drop_tip()
+        
+    # TODO: Insert a for loop and a transfer() function to distribute the right amount of water for each well into the intermediate plate
+    # Call the blow_out argument/function whenever possible/appropriate.
+    # Use the same tip for transfers
+
+
+
+
 
 
     # Step 2: Dilute samples of random concentration from source plate to intermediate plate
@@ -236,30 +234,28 @@ p300s.drop_tip()
 
 # Phase 2: Standardize volume
     # Step 1: Distribute water into the final plate
-p300s.distribute(final_vol_water_to_add,
-                 deck_labware['6'].wells('A2'),
-                 deck_labware['3'].wells('A1', length=96),
-                 blow_out=True
-                 )
+        
+    # TODO: Complete this section
+    # Volume of water to add should be specified using the "final_vol_water_to_add" variable
+    # Call the blow_out argument/function whenever possible/appropriate.
 
-    # Step 2: Dilute samples of standardized concentration from intermediate plate to final plate
-    # by adding 10 µL of sample to 90 µL of water
 
-p10m.transfer(
-        final_sample_vol_from_int,
-        deck_labware['2'].cols('1',length=12),
-        deck_labware['3'].cols('1',length=12),
-        new_tip = 'always',
-        blow_out = True)
 
-#Alternatively,
-#for i in range(0,12):
-#    p10m.transfer(
-#            final_sample_vol_from_int,
-#            deck_labware['2'].cols(i),
-#            deck_labware['3'].cols(i),
-#            new_tip = 'always',
-#            blow_out = True)
+
+
+
+    # Step 2: Dilute samples of standardized concentration from the intermediate plate to the final plate
+    # by adding 10 µL of sample to 90 µL of water, column by column
+
+    # TODO: Complete this section
+    # Call the blow_out argument/function whenever possible/appropriate.
+    # Change tip for every transfer step
+    # This can be done using a for loop with the transfer() function, or just a single transfer() function without using any for loops
+
+
+
+
+
 
 #%% DO NOT EDIT ANYTHING BELOW
 # Print out the commands step by step

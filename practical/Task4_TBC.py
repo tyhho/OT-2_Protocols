@@ -9,7 +9,7 @@ Task description:
     Using 0.1 M HCl, perform titration of a NaOH sample pre-mixed with the pH indicator bromophenol blue.
     Create a series of tiration such that you observe the transition of bromophenol blue from blue to green and then yellow.
     See Figure 5 for the expected outcome.
-
+    
     First, dilute the 0.1 M HCl to concentrations of 0.1 M, 0.09 M, 0.08 M, ..., 0.02 M, 0.01 M of 300 µL volume
     Then, distribute NaOH + pH indicator to different tubes, each receiving 200 µL.
     Finally, add 200 µL of diluted HCl, of different concentrations, to the distributed NaOH sample. 
@@ -62,7 +62,7 @@ p300s = instruments.P300_Single(
 # Phase 1: Dilute HCl to different concentratios
 
     # Step 1: Add water
-for i in range(0,10):
+for i in 'X': # TODO: Replace 'X' by a range() function with the correct arguments to complete this for loop
     water_vol = i * 30
     p300s.transfer(
             water_vol,
@@ -73,50 +73,40 @@ for i in range(0,10):
             new_tip = 'always'            
             )
     
-# Alternatively,    
-#p300s.distribute([0,30,60,90,120,150,180,210,240,270],
-#                 deck_labware['2'].wells('A1'),
-#                 deck_labware['3'].wells('A1', length=10),
-#                 blow_out=True
-#                 )
-   
     # Step 2: Dilute the HCl into water
+    
+    # TODO: Insert a for loop and a transfer() function to add different amounts of HCl into different tubes
     # Must change tip every time to achieve accurate HCl concentration
+    # Use the same mix_after and blow_out argument as the "Add water" step above
 
-for i in range(0,10):
-    acid_vol = 300 - i * 30
-    p300s.transfer(
-            acid_vol,
-            deck_labware['2'].wells('A3'),
-            deck_labware['3'].wells(i),
-            mix_after=(3, 150),
-            blow_out=True,
-            new_tip = 'always'            
-            )    
 
-# Alternatively,
-#p300s.transfer(
-#        [300,270,240,210,180,150,120,90,60,30],
-#        deck_labware['2'].wells('A3'),
-#        deck_labware['3'].wells('A1', length=10),
-#        mix_after=(3, 150),
-#        blow_out=True,
-#        new_tip = 'always'
-#        )
+
+
+
+
+
+
+
 
 # Phase 2: Distribute the NaOH sample for mixing
-p300s.distribute(200,
-                 deck_labware['2'].wells('A2'),
-                 deck_labware['3'].wells('A4', length=10),
-                 blow_out=True
-                 )
+    
+# TODO: Insert a function to distribute 200 µL of NaOH mixed with pH indicator into wells A4 to B6 in slot '3'
+    # This can be done using a for loop with the transfer() function, or just one distribute() function without using any for loops
+    # Call the blow_out argument/function whenever possible/appropriate.
+
+
+
+
+
+
+
 
 # Phase 3: Add the diluted HCl to the NaOH sample and mix
 
 p300s.transfer(
         200,
-        deck_labware['3'].wells('A1', length=10),
-        deck_labware['3'].wells('A4', length=10),
+        deck_labware['3'].wells(), # TODO: Complete the argument for .wells() of source wells without using a for loop
+        deck_labware['3'].wells(), # TODO: Complete the argument for .wells() of destination wells without using a for loop
         mix_after=(3, 150),
         blow_out=True,
         new_tip = 'always'

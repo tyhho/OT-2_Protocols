@@ -153,10 +153,11 @@ p10m = instruments.P10_Multi(
 #                    hover_over = 1
 #                    )
 
-
-p300s.transfer(6.7,
-               labware_items['2'].wells('A6'),
-               labware_items['2'].wells('A1'),
-               blow_out = True,
-               new_tip = 'always'
-              )
+for _ in range(2):
+    p300s.transfer(6.7,
+                   labware_items['2'].wells('A6'),
+                   labware_items['2'].wells('A1'),
+                   mix_after = (3, 150),
+                   blow_out = True,
+                   new_tip = 'always'
+                  )

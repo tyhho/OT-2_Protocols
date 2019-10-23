@@ -8,7 +8,8 @@ Task description:
     
     Generate a pattern of "EDI" on a 96-well flat bottom plate by pipetting dyes from source to destination wells.
     Each letter will have a different color, i.e. you have to keep pipetting colored liquid from one source to different destination wells.
-    
+    See Figure 1 for the expected final pattern.
+
 You start with:
     Slot 2: 50 mL tube rack
         Well A1: 20 mL of yellow dye, for constructing the letter "E"
@@ -84,8 +85,7 @@ for source_well, dest_wells_list in pattern_info.items():
     # When pipetting for one color is done, instruct the pipette to drop the used tip
     # TODO: Insert the function that tells the P300 single channel pipette to drop the used tip
 
-
-## DO NOT EDIT ANYTHING BELOW
+#%% DO NOT EDIT ANYTHING BELOW
 # Print out the commands step by step
 for c in robot.commands():
     print(c)
