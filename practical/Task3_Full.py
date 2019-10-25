@@ -34,8 +34,8 @@ robot.reset()
 # Put plates and racks onto the deck
 slots_map = {
         '1':'opentrons_24_tuberack_eppendorf_1.5ml_safelock_snapcap',
-        '2':'nest_96_wellplate_100ul_pcr_full_skirt',
-        '3':'nest_96_wellplate_100ul_pcr_full_skirt'
+        '2':'biorad_96_wellplate_200ul_pcr',
+        '3':'biorad_96_wellplate_200ul_pcr'
         }
 
 deck_labware = {}
