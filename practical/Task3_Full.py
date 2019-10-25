@@ -1,4 +1,4 @@
-# -*- coding: utf-8 -*-
+﻿# -*- coding: utf-8 -*-
 """
 Created on Tue Oct  8 22:41:27 2019
 
@@ -27,9 +27,6 @@ Your robot is equipped with:
 # Import libraries for OT-2
 from opentrons import labware, instruments,robot
 
-# Reset for debugging
-robot.clear_commands()
-robot.reset()
 
 # Put plates and racks onto the deck
 slots_map = {
@@ -115,10 +112,3 @@ for source_col, dest_cols_list in final_pattern_info.items():
 # Print out the commands step by step
 for c in robot.commands():
     print(c)
-
-# Clear the commands inside the robot
-    # Otherwise the instructions will pile up when the script is executed again
-robot.clear_commands()
-    
-# Reset the robot
-robot.reset()

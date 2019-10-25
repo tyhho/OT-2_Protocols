@@ -1,4 +1,4 @@
-# -*- coding: utf-8 -*-
+﻿# -*- coding: utf-8 -*-
 """
 Created on Tue Oct  8 21:12:39 2019
 
@@ -31,10 +31,6 @@ Your robot is equipped with:
 
 # Import libraries for OT-2
 from opentrons import labware, instruments,robot
-
-# Reset for debugging
-robot.clear_commands()
-robot.reset()
 
 # Put plates and racks onto the deck
 slots_map = {
@@ -74,7 +70,7 @@ p300s.distribute(120,
 # TODO: Use the same tip for all transfer and mixing processes
 # Insert the missing functions
 
-
+# Insert the function that performs the first step of dilution from A1 to A4
 
 for well_num in 'X' :# TODO: Replace 'X' by an argument such that the for loop goes over the correct wells
     p300s.transfer(
@@ -86,17 +82,7 @@ for well_num in 'X' :# TODO: Replace 'X' by an argument such that the for loop g
             )
     p300s.blow_out()    
 
-
-
-
 #%% DO NOT EDIT ANYTHING BELOW
 # Print out the commands step by step
 for c in robot.commands():
     print(c)
-
-# Clear the commands inside the robot
-    # Otherwise the instructions will pile up when the script is executed again
-robot.clear_commands()
-    
-# Reset the robot
-robot.reset()

@@ -11,10 +11,6 @@ Test script for PCR plate
 # Import libraries for OT-2
 from opentrons import labware, instruments,robot
 
-# Reset for debugging
-robot.clear_commands()
-robot.reset()
-
 # Put plates and racks onto the deck
 slots_map = {
         '2':'nest_96_wellplate_100ul_pcr_full_skirt',
@@ -57,10 +53,3 @@ p10m.drop_tip()
 # Print out the commands step by step
 for c in robot.commands():
     print(c)
-
-# Clear the commands inside the robot
-    # Otherwise the instructions will pile up when the script is executed again
-robot.clear_commands()
-    
-# Reset the robot
-robot.reset()

@@ -27,10 +27,6 @@ Your robot is equipped with:
 # Import libraries for OT-2
 from opentrons import labware, instruments,robot
 
-# Reset for debugging
-robot.clear_commands()
-robot.reset()
-
 # Put plates and racks onto the deck
 slots_map = {
         '1':'opentrons_24_tuberack_eppendorf_1.5ml_safelock_snapcap',
@@ -108,10 +104,3 @@ final_pattern_info = {
 # Print out the commands step by step
 for c in robot.commands():
     print(c)
-
-# Clear the commands inside the robot
-    # Otherwise the instructions will pile up when the script is executed again
-robot.clear_commands()
-    
-# Reset the robot
-robot.reset()

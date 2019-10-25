@@ -25,10 +25,6 @@ Your robot is equipped with:
 # Import libraries for OT-2
 from opentrons import labware, instruments,robot
 
-# Reset for debugging
-robot.clear_commands()
-robot.reset()
-
 # Put plates and racks onto the deck
 slots_map = {
         '2':'opentrons_6_tuberack_falcon_50ml_conical',
@@ -41,9 +37,7 @@ for slot, labware_item in slots_map.items():
 
 # Put tip boxes onto the deck
 tip_slots = ['1']
-tip_racks=[]
-for slot in tip_slots:
-        tip_racks.append(labware.load('opentrons_96_tiprack_300ul', slot))
+tip_racks = [labware.load('opentrons_96_tiprack_300ul', slot) for slot in tip_slots]
 
 # Configure the pipette
 p300s = instruments.P300_Single(
@@ -87,12 +81,5 @@ for source_well, dest_wells_list in pattern_info.items():
 
 #%% DO NOT EDIT ANYTHING BELOW
 # Print out the commands step by step
-for c in robot.commands():
-    print(c)
-
-# Clear the commands inside the robot
-    # Otherwise the instructions will pile up when the script is executed again
-robot.clear_commands()
-    
-# Reset the robot
-robot.reset()
+#for c in robot.commands():
+#    print(c)

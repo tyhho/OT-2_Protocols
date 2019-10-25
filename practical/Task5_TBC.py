@@ -31,10 +31,6 @@ Your robot is equipped with:
 from opentrons import labware, instruments,robot
 import math
 
-# Reset for debugging
-robot.clear_commands()
-robot.reset()
-
 # Put plates and racks onto the deck
 slots_map = {
         '1':'biorad_96_wellplate_200ul_pcr',
@@ -261,10 +257,3 @@ p300s.drop_tip()
 # Print out the commands step by step
 for c in robot.commands():
     print(c)
-
-# Clear the commands inside the robot
-    # Otherwise the instructions will pile up when the script is executed again
-robot.clear_commands()
-    
-# Reset the robot
-robot.reset()

@@ -25,10 +25,6 @@ Your robot is equipped with:
 # Import libraries for OT-2
 from opentrons import labware, instruments,robot
 
-# Reset for debugging
-robot.clear_commands()
-robot.reset()
-
 # Put plates and racks onto the deck
 slots_map = {
         '2':'opentrons_6_tuberack_falcon_50ml_conical',
@@ -89,10 +85,3 @@ for source_well, dest_wells_list in pattern_info.items():
 # Print out the commands step by step
 for c in robot.commands():
     print(c)
-
-# Clear the commands inside the robot
-    # Otherwise the instructions will pile up when the script is executed again
-robot.clear_commands()
-    
-# Reset the robot
-robot.reset()

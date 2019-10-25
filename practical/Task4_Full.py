@@ -6,11 +6,11 @@ Created on Wed Oct  9 16:08:36 2019
 
 Task description: 
     
-    Using 0.1 M HCl, perform titration of a NaOH sample pre-mixed with the pH indicator bromophenol blue.
+    Using 1 mM HCl, perform titration of a NaOH sample pre-mixed with the pH indicator bromophenol blue.
     Create a series of tiration such that you observe the transition of bromophenol blue from blue to green and then yellow.
     See Figure 5 for the expected outcome.
 
-    First, dilute the 0.1 M HCl to concentrations of 0.1 M, 0.09 M, 0.08 M, ..., 0.02 M, 0.01 M of 300 µL volume
+    First, dilute the 1 mM HCl to concentrations of 1 mM, 0.9 mM, 0.8 mM, ..., 0.2 mM, 0.1 mM of 300 µL volume
     Then, distribute NaOH + pH indicator to different tubes, each receiving 200 µL.
     Finally, add 200 µL of diluted HCl, of different concentrations, to the distributed NaOH sample. 
 
@@ -18,7 +18,7 @@ You start with:
     Slot 2: 50 mL tube rack
         Well A1: 20 mL of water
         Well A2: 10 mL of sample (unknown pH) mixed with pH indicator
-        Well A3: 10 mL of 0.1 M HCl
+        Well A3: 10 mL of 1 mM HCl
     Slot 3: 1.5 mL tube rack
         Wells A1 to B3: Dilution series of HCl
         Wells A4 to B6: For mixing diluted HCl series with sample
@@ -30,10 +30,6 @@ Your robot is equipped with:
 
 # Import libraries for OT-2
 from opentrons import labware, instruments,robot
-
-# Reset for debugging
-robot.clear_commands()
-robot.reset()
 
 # Put plates and racks onto the deck
 slots_map = {
@@ -126,10 +122,3 @@ p300s.transfer(
 # Print out the commands step by step
 for c in robot.commands():
     print(c)
-
-# Clear the commands inside the robot
-    # Otherwise the instructions will pile up when the script is executed again
-robot.clear_commands()
-    
-# Reset the robot
-robot.reset()
