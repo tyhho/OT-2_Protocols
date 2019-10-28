@@ -183,8 +183,9 @@ inter_dict_of_mix_vol = {}
 # Calculate the volume of water to be added to each well of the intermediate plate
 
 for well, init_sample_conc in dye_conc.items():
-    # init_sample_conc = initial sample concentration    
-    inter_vol_water_to_add = # TODO: Complete ths equation to find out the volume of water needed to dilute one particular sample
+    # init_sample_conc = initial sample concentration
+    # TODO: Complete the equation below to find out the volume of water needed to dilute one particular sample
+    inter_vol_water_to_add = 
     mix_vol = math.ceil((inter_sample_vol_from_source + inter_vol_water_to_add) * 0.7) # mixing volume for intermediate step, before being diluted to final plate
     inter_dict_of_vol_water_to_add.update({well:inter_vol_water_to_add})
     inter_dict_of_mix_vol.update({well: mix_vol})
@@ -200,15 +201,16 @@ for vol in inter_dict_of_vol_water_to_add.values():
     
 # Phase 1: Standardize concentration
     # Step 1: Transfer water into the intermediate plate. Volumes to be determined by initial sample concentration
-        
-    # TODO: Insert a for loop and a transfer() function to distribute the right amount of water for each well into the intermediate plate
+
+# Use the same tip for transfers
+p300s.pick_up_tip()
+for well, water_to_add_vol in inter_dict_of_vol_water_to_add.items():
+    
+    # TODO: Insert a transfer() function to distribute the right amount of water for each well into the intermediate plate
+    # Drop the liquid 10 mm from the top
     # Call the blow_out argument/function whenever possible/appropriate.
-    # Use the same tip for transfers
 
-
-
-
-
+p300s.drop_tip()
 
     # Step 2: Dilute samples of random concentration from source plate to intermediate plate
 p10m.transfer(
@@ -225,7 +227,7 @@ for well, mix_vol in inter_dict_of_mix_vol.items():
     for _ in range(2):
         p300s.aspirate(mix_vol,deck_labware['2'].wells(well))
         p300s.dispense(mix_vol,deck_labware['2'].wells(well))
-    p300s.blow_out()
+        p300s.blow_out()
 p300s.drop_tip()
 
 # Phase 2: Standardize volume
@@ -233,8 +235,7 @@ p300s.drop_tip()
         
     # TODO: Complete this section
     # Volume of water to add should be specified using the "final_vol_water_to_add" variable
-    # Call the blow_out argument/function whenever possible/appropriate.
-
+    # Use water from Well A2 in Slot 6
 
 
 

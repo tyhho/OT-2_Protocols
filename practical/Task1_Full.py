@@ -37,7 +37,9 @@ for slot, labware_item in slots_map.items():
 
 # Put tip boxes onto the deck
 tip_slots = ['1']
-tip_racks = [labware.load('opentrons_96_tiprack_300ul', slot) for slot in tip_slots]
+tip_racks=[]
+for slot in tip_slots:
+        tip_racks.append(labware.load('opentrons_96_tiprack_300ul', slot))
 
 # Configure the pipette
 p300s = instruments.P300_Single(
@@ -53,8 +55,8 @@ p300s = instruments.P300_Single(
 
 pattern_info = {
         'A1':['B1','B2','B3','C1','D1','D2','D3','E1','F1','F2','F3'],
-        'A2':['B5','B6','B7','C5','C8','D5','D8','E5','E8','F5','F6','F7'],
-        'A3':['B10','B11','B12','C11','D11','E11','F10','F11','F12']
+        'A2':['B5','B6','B7','C5','C8','D5','D8','E5','E8','F5','F6','F7'], # TODO: Please provide a list of the wells that should receive the blue dye.
+        'A3':['B10','B11','B12','C11','D11','E11','F10','F11','F12']    # TODO: Please provide a list of the wells that should receive the red dye.
         }
 
 # Define the volume to be transferred
@@ -65,6 +67,8 @@ transfer_volume = 200
 for source_well, dest_wells_list in pattern_info.items():
     
     # For each color, begin by instructing the pipette to pick up a tip
+    # TODO: Insert the function that tells the P300 single channel pipette to pick up a tip
+
     p300s.pick_up_tip()
     
     for dest_well in dest_wells_list:
@@ -77,6 +81,7 @@ for source_well, dest_wells_list in pattern_info.items():
                 )
     
     # When pipetting for one color is done, instruct the pipette to drop the used tip
+    # TODO: Insert the function that tells the P300 single channel pipette to drop the used tip
     p300s.drop_tip()
 
 #%% DO NOT EDIT ANYTHING BELOW

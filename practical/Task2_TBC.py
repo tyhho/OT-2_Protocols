@@ -35,7 +35,7 @@ from opentrons import labware, instruments,robot
 # Put plates and racks onto the deck
 slots_map = {
         '2':'opentrons_6_tuberack_falcon_50ml_conical',
-        '3':'opentrons_24_tuberack_eppendorf_1.5ml_safelock_snapcap',
+        '3':'opentrons_24_tuberack_eppendorf_1.5ml_safelock_snapcap'
         }
 
 deck_labware = {}
@@ -57,30 +57,46 @@ p300s = instruments.P300_Single(
 # Set up the pipetting instruction
 
 # Phase 1: Distribute the diluent into the empty tubes
-
 p300s.distribute(120,
                  deck_labware['2'].wells('A1'),
                  # TODO: Insert here the argument of destination wells (A1, B1, C1, ... , B3, C3, D3 (total of 12)
+
                  )
 
 # Phase 2: Perform the serial dilution
 
-# Do not change the tip throughout the dilution process
-
 # TODO: Use the same tip for all transfer and mixing processes
-# Insert the missing functions
+# Insert the missing functions for picking up and dropping tip
 
-# Insert the function that performs the first step of dilution from A1 to A4
-
-for well_num in 'X' :# TODO: Replace 'X' by an argument such that the for loop goes over the correct wells
-    p300s.transfer(
+p300s.transfer(
             120,
-            deck_labware['3'].wells(well_num),
-            deck_labware['3'].wells(well_num+1),
-            new_tip = 'never',
-            # TODO: Insert an argument here. After each pipetting step, the robot should mix the sample 3 times using a volume of 200 µL.
+            deck_labware['3'].wells('A1'),
+            deck_labware['3'].wells('A4'),
+            new_tip = 'never'
             )
-    p300s.blow_out()    
+
+# For-loop for mixing
+for _ in range(3):
+        p300s.aspirate(200,deck_labware['3'].wells('A4'))
+        p300s.dispense(200,deck_labware['3'].wells('A4'))
+        p300s.move_to(deck_labware['3'].wells('A4').top(-20))
+        p300s.blow_out()
+
+for well_num in range(12,23):
+
+    # TODO: Copy and modify the transfer function from above to complete this for-loop for serial dilution
+    # Beware of the new_tip argument
+
+
+
+
+    
+    # TODO: Copy and modify the for-loop for mixing above such that
+    # the robot performs a mixing on each well right after transfer
+    
+
+
+
 
 #%% DO NOT EDIT ANYTHING BELOW
 # Print out the commands step by step
