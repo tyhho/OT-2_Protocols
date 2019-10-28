@@ -6,7 +6,7 @@ Created on Tue Oct  8 21:12:39 2019
 
 Task description: 
     
-    Perform serial dilution of a dye, initially at 4096X, into a graident of:
+    Perform serial dilution of a dye, initially at 4096X, into a gradient of:
         2048X, 1024X, ... , 4X, 2X, 1X
     using water as the diluent.
     See Figure 2 for the expected final pattern.

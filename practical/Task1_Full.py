@@ -23,7 +23,7 @@ Your robot is equipped with:
 """
 
 # Import libraries for OT-2
-from opentrons import labware, instruments,robot
+from opentrons import labware, instruments, robot
 
 # Put plates and racks onto the deck
 slots_map = {
