@@ -11,11 +11,10 @@ import pandas as pd
 # General function to convert any 96 / 24-well plate layout to a simple df
     # Key = metadata field
     # Value = metadata dataframes
-empty_df = pd.DataFrame(columns = [])
 
 def rearrange_layout(df,row_index_list):
     '''Rearrange an intuitive 96-well layout into a DataFrame format'''
-    new_slot_df = empty_df
+    new_slot_df = pd.DataFrame()
     for char in row_index_list:
         new_slot_row = df.transpose()[char].to_frame('content')
         
@@ -41,7 +40,7 @@ def addMachineLine(existing_inst_line,dest_slot,dest_well,source_df,item_name,it
     source_well = source_record['well'].item()
     
     if item_vol:
-        item_vol_line = item_vol + '$'
+        item_vol_line = str(item_vol) + '$'
     else:
         item_vol_line = ''
     
@@ -53,9 +52,11 @@ def addMachineLine(existing_inst_line,dest_slot,dest_well,source_df,item_name,it
     updated_inst_lines = existing_inst_line + new_inst_line
     return updated_inst_lines
 
+
+#%%
 # TODO: Specify folder location
-instDir = 'ot2inst_transfer_BM005 ss consolidation.xlsx'
-outputDir = "ot2inst_transfer_BM005 ss consolidation.txt"
+instDir = 'ot2inst_GGA_level1_ver2.xlsx'
+outputDir = "ot2inst_GGA_level1_ver2.txt"
 
 inst_xls= pd.ExcelFile(instDir)
 dict_of_inst = {sheet:inst_xls.parse(sheet) for sheet in inst_xls.sheet_names}
@@ -83,11 +84,12 @@ for slot in slots_df.itertuples():
     slot_content_df = dict_of_inst.get(slot_name_str)
     # only perform rearrangement if the slot role was source    
     if slot.format == 'intuitive':
+        slot_content_df.set_index('row', inplace=True)
         slot_content_df = rearrange_layout(slot_content_df,slot_row_index_list)
     slots_dict.update({slot_name_str:slot_content_df})
 
 # Compile all slots for sources into a single df
-source_df = empty_df
+source_df = pd.DataFrame(columns = [])
 source_slots_list = slots_df[slots_df['role']=='source'].index.astype(str).values.tolist()
 for source_slot in source_slots_list:
     a_source_df = slots_dict.get(source_slot)
@@ -102,6 +104,8 @@ del slot_name_str, slot_labware_type, slot_row_index_list
 del slot, slots_df, slot_content_df, source_slots_list
 
 finalLine = ''
+
+#%%
 
 # Loop through every destination slot and decide case by case the pipetting instructions
 for dest_slot_info in dest_info.itertuples():
@@ -136,7 +140,18 @@ for dest_slot_info in dest_info.itertuples():
                 item_name = item_name.strip()
                 item_vol = item_vol.strip()
                 finalLine = addMachineLine(finalLine,dest_slot,dest_well,source_df,item_name,item_vol)
-
+                
+        elif dest_slot_info.format == 'df_variable_content+volume':
+            request_items = list(request_items.values())
+            if len(request_items) % 2 != 0:
+                raise ValueError('Not all contents have a volume, or vice versa')
+            else:
+                remaining_items = request_items
+                while len(remaining_items) > 0:
+                    item_name = remaining_items.pop(0)
+                    item_vol = remaining_items.pop(0)
+                    finalLine = addMachineLine(finalLine,dest_slot,dest_well,source_df,item_name,item_vol)
+                
 #%% Export instructions as a text file for copying into
 # FIXME: Turn this part into a script writer
         
