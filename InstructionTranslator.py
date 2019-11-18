@@ -2,28 +2,116 @@
 """
 Created on Wed May  8 22:10:09 2019
 
-@author: s1635543
-"""
+@author: Trevor Ho
 
+This instruction translator takes an Excel file (.xlsx) that specifies what the
+source plates/racks look like and what the destination wells need to contain.
+For each sample/elements that needs to go into a destination well, the script
+searches where that sample/elements is among the source plates/racks, and then construct
+a machine-parsable line for that sample. All machine-parsable lines are then concataneted
+into a .txt file, in which the contents should be directly copy-pasted into the [] of a
+list "inst_list" in an accompanying ot2code script.
+
+Input:
+    See the example Excel file.
+    The Excel file must have a sheet named "slot_setup", which provides the starting
+    point for this script to locate where the source and destination slots are.
+    "_", "$", and "->" are forbidden characters in any of the inputs.
+    
+    The "slot_setup" is a table with the header:
+        |slot|labware|role|format|global_volume|
+    
+    slot: int [1-12]. Must be unique. Do not enter strings.
+    
+    labware: str. Must be one of the following options:
+        96-well plate
+        1.5 mL tube rack
+        15_50 mL tube rack (note that this can be tricky, see the Opentrons labware for well locations)
+        15 mL tube rack
+        50 mL tube rack
+    Strictly speaking, labware can be omitted as long as "format" != "intuitive",
+    but it is always a good practice to put it down. Note that this labware is NOT the 
+    labware specification to be used in the accompanying ot2code.
+    
+    role: Either "source" or "destination". No other input accepted.
+    
+    format: str. Must be one of the following options:
+        intuitive
+            User-friendly. Good for source with single sample. BAD for destination with
+            multiple samples or elements to be consolidated.
+            If used for destination, "global_volume" in "slot_setup" sheet must be provided,
+            field value should be:
+               + sample1 + sample2 + sample3
+            Currently, different sample with different volumes not supported for destination,
+            and it is strongly discouraged.
+        
+        df_variable_sample
+            Most helpful when all destination wells must receive different samples but
+            of the same volume.
+            Table must follow the format below:
+                |well  |sample1Category_sample1Vol1|sample2Category_sample2Vol2|
+                |wellID|sample1                    |sample2                    |
+            Example:
+                |well|primer1_5|primer2_5|
+                |A1  |primer001|primer002|
+            The sampleCategory (in the e.g., primer1) is not important and can be anything,
+            but it must be separated from the volume by a "_".
+                
+        df_variable_volume
+            Most helpful when all destination wells must receive same sets of samples but
+            variable volumes.    
+            Table must follow the format below:
+                |well  |sample1|sample2|
+                |wellID|vol1   |vol2   |
+            Example:
+                |well|primer001|primer002|
+                |A1  |5        |10       |
+        
+        df_variable_sample+volume
+            Recommended solution when both the sample and the volume vary among destination wells.
+            Table must follow the format below:
+                |well  |sample1|vol1|sample2|vol2|sample3|vol3|  <-- note that the header is merely a placeholder
+                |wellID|sample1|vol1|sample2|vol2|sample3|vol3|  <-- actual sample name and volume to input
+            Example:
+                |well|sample1|vol1|sample2  |vol2|sample3  |vol3|sample4  |vol4|
+                |A1  |buffer |10  |primer001|5   |primer002|5   |dNTP     |1   |
+            The script reads the items as sample1->vol1->sample2->vol2, therefore, the
+            order of the columns MUST NOT be changed in the excel file.
+    
+    global_volume: int. Must be provided if role="destination" and format="intuitive"
+    
+Output:
+    Each machine-parsable line (str) looks like the following:
+        vol$sourceSlot_sourceWell->destSlot_destWell
+    
+    "$" is the delimiter between the volume and the actual transfer movement
+    "_" is the delimiter between the slot and the well
+    "->" is the delimiter between the source and the destination.
+    
+    Sometimes, a global volume is specified by the user in the ot2code. In that case,
+    the line simplifies to:
+        sourceSlot_sourceWell->destSlot_destWell
+    However, this would require users to customize the accompanying ot2code.
+
+Limitations: Currently, it is impossible to have the same plate / rack for being
+both the source and the destination. Most input checks are missing.
+
+"""
 
 import pandas as pd
 
-# General function to convert any 96 / 24-well plate layout to a simple df
-    # Key = metadata field
-    # Value = metadata dataframes
-
 def rearrange_layout(df,row_index_list):
-    '''Rearrange an intuitive 96-well layout into a DataFrame format'''
+    '''Rearrange an intuitive 96-well / 24-well / 6-well layout into a DataFrame format'''
+    
     new_slot_df = pd.DataFrame()
     for char in row_index_list:
-        new_slot_row = df.transpose()[char].to_frame('content')
+        new_slot_row = df.transpose()[char].to_frame('sample')
         
         # Retrieve information of well and set it as index
         indexList = new_slot_row.index.tolist()
         for columnIndex in range(len(indexList)):
             indexList[columnIndex] = char + str(indexList[columnIndex])
         new_slot_row['well']=indexList
-#        new_slot_row.set_index('well', inplace=True)
         
         # Append to major dataframe of the single metadata
         new_slot_df = new_slot_df.append(new_slot_row,sort=False)
@@ -32,13 +120,17 @@ def rearrange_layout(df,row_index_list):
     return new_slot_df
 
 def addMachineLine(existing_inst_line,dest_slot,dest_well,source_df,item_name,item_vol):
-    '''Find where the item is, create machine readable instruction line and add to existing line'''
-    # Find where the source material was
+    '''Performs the actual mapping of source to destination, then create machine 
+    readable instruction line and add to an existing line
+    '''
+    # Find where the source sample was
     # FIXME: missing alerts / solutions for multiple or distributed source wells
-    source_record = source_df[source_df['content']==item_name]
+    source_record = source_df[source_df['sample']==item_name]
     source_slot = source_record['slot'].item()
     source_well = source_record['well'].item()
     
+    # The item_vol variable is an optional argument for this function.
+    # The if-clause below handles such situation by directly omitting it.
     if item_vol:
         item_vol_line = str(item_vol) + '$'
     else:
@@ -48,13 +140,13 @@ def addMachineLine(existing_inst_line,dest_slot,dest_well,source_df,item_name,it
     new_inst_line = '\'' + item_vol_line + source_slot + '_' + source_well + '->' \
     + dest_slot + '_' + dest_well + '\',\n'
     
-    # Add line to original line
+    # Add the new line to the exisiting line
     updated_inst_lines = existing_inst_line + new_inst_line
     return updated_inst_lines
 
-
 #%%
-# TODO: Specify folder location
+# TODO: Specify input and output files location
+# Currently, the input files must be under the same directory as that of InstructionTranslator.py
 instDir = 'ot2inst_GGA_level1_ver2.xlsx'
 outputDir = "ot2inst_GGA_level1_ver2.txt"
 
@@ -65,8 +157,9 @@ dict_of_inst = {sheet:inst_xls.parse(sheet) for sheet in inst_xls.sheet_names}
 slots_df = dict_of_inst.get('slot_setup')
 slots_df.set_index('slot', inplace = True)
 
-# Base on labware layout, rearrange all slots into basic df for handling
+# FIXME: Validation of correct inputs from Excel file
 
+# Base on the labware layout, rearrange all slots into basic df for future processing
 labware_layout = {
         '96-well plate':['A','B','C','D','E','F','G','H'],
         '1.5 mL tube rack': ['A','B','C','D'],
@@ -118,14 +211,14 @@ for dest_slot_info in dest_info.itertuples():
         del request_items['Index'], request_items['well']
         
         if dest_slot_info.format == 'intuitive':
-            item_list = request_items['content'].split('+')
+            item_list = request_items['sample'].split('+')
             item_list = list(filter(None,item_list))
             item_vol = str(int(dest_slot_info.global_volume))
             for item in item_list:
                 item_name = item.strip()
                 finalLine = addMachineLine(finalLine,dest_slot,dest_well,source_df,item_name,item_vol)
             
-        elif dest_slot_info.format == 'df_variable_content':
+        elif dest_slot_info.format == 'df_variable_sample':
             for item_info, item_name in request_items.items():
                 item_info = item_info.strip()
                 item_name = item_name.strip()
@@ -141,10 +234,10 @@ for dest_slot_info in dest_info.itertuples():
                 item_vol = item_vol.strip()
                 finalLine = addMachineLine(finalLine,dest_slot,dest_well,source_df,item_name,item_vol)
                 
-        elif dest_slot_info.format == 'df_variable_content+volume':
+        elif dest_slot_info.format == 'df_variable_sample+volume':
             request_items = list(request_items.values())
             if len(request_items) % 2 != 0:
-                raise ValueError('Not all contents have a volume, or vice versa')
+                raise ValueError('Not all samples are paired with a volume, or vice versa')
             else:
                 remaining_items = request_items
                 while len(remaining_items) > 0:
@@ -152,11 +245,8 @@ for dest_slot_info in dest_info.itertuples():
                     item_vol = remaining_items.pop(0)
                     finalLine = addMachineLine(finalLine,dest_slot,dest_well,source_df,item_name,item_vol)
                 
-#%% Export instructions as a text file for copying into
-# FIXME: Turn this part into a script writer
-        
+#%% Export instructions as a text file for copying into the accompanying ot2code        
 finalLine = finalLine[:-2]
-
 f = open(outputDir, "w+")
 f.write(finalLine)
 f.close()
