@@ -25,7 +25,7 @@ for slot, labware_item in slots_map.items():
 tip_slots_10 = ['1']
 tip_racks_10 = []
 for slot in tip_slots_10:
-        tip_racks_10.append(labware.load('opentrons_96_tiprack_10ul', slot))
+        tip_racks_10.append(labware.load('geb_96_tiprack_10ul', slot))
 
 # Configure the pipettes
 
