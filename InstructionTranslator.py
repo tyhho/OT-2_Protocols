@@ -147,10 +147,10 @@ def addMachineLine(existing_inst_line,dest_slot,dest_well,source_df,item_name,it
 #%%
 # TODO: Specify input and output files location
 # Currently, the input files must be under the same directory as that of InstructionTranslator.py
-instDir = 'ot2inst_GGA_level1_ver2.xlsx'
-outputDir = "ot2inst_GGA_level1_ver2.txt"
+instFile = 'ot2inst_GGA_level1_ver2.xlsx'
+outputFile = "ot2inst_GGA_level1_ver2.txt"
 
-inst_xls= pd.ExcelFile(instDir)
+inst_xls= pd.ExcelFile(instFile)
 dict_of_inst = {sheet:inst_xls.parse(sheet) for sheet in inst_xls.sheet_names}
 
 # Search for "slot_setup" file that defines layout of labware
@@ -247,6 +247,6 @@ for dest_slot_info in dest_info.itertuples():
                 
 #%% Export instructions as a text file for copying into the accompanying ot2code        
 finalLine = finalLine[:-2]
-f = open(outputDir, "w+")
+f = open(outputFile, "w+")
 f.write(finalLine)
 f.close()
