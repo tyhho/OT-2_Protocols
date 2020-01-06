@@ -67,7 +67,7 @@ Input:
                 |well|primer001|primer002|
                 |A1  |5        |10       |
         
-        df_variable_sample+volume
+        df_variable_sample_n_volume
             Recommended solution when both the sample and the volume vary among destination wells.
             Table must follow the format below:
                 |well  |sample1|vol1|sample2|vol2|sample3|vol3|  <-- note that the header is merely a placeholder
@@ -147,8 +147,8 @@ def addMachineLine(existing_inst_line,dest_slot,dest_well,source_df,item_name,it
 #%%
 # TODO: Specify input and output files location
 # Currently, the input files must be under the same directory as that of InstructionTranslator.py
-instFile = 'ot2inst_GGA_level1_ver2.xlsx'
-outputFile = "ot2inst_GGA_level1_ver2.txt"
+instFile = 'ot2inst_transfer_glycerolstock.xlsx'
+outputFile = "ot2inst_transfer_glycerolstock.txt"
 
 inst_xls= pd.ExcelFile(instFile)
 dict_of_inst = {sheet:inst_xls.parse(sheet) for sheet in inst_xls.sheet_names}
@@ -220,8 +220,8 @@ for dest_slot_info in dest_info.itertuples():
             
         elif dest_slot_info.format == 'df_variable_sample':
             for item_info, item_name in request_items.items():
-                item_info = item_info.strip()
-                item_name = item_name.strip()
+                item_info = str(item_info).strip()
+                item_name = str(item_name).strip()
                 if item_info.find('_')>0:
                     item_vol = item_info.split('_')[1]
                 else:
@@ -234,7 +234,7 @@ for dest_slot_info in dest_info.itertuples():
                 item_vol = item_vol.strip()
                 finalLine = addMachineLine(finalLine,dest_slot,dest_well,source_df,item_name,item_vol)
                 
-        elif dest_slot_info.format == 'df_variable_sample+volume':
+        elif dest_slot_info.format == 'df_variable_sample_n_volume':
             request_items = list(request_items.values())
             if len(request_items) % 2 != 0:
                 raise ValueError('Not all samples are paired with a volume, or vice versa')
