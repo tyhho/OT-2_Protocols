@@ -5,7 +5,9 @@ Created on Mon Jan  6 19:20:11 2020
 @author: s1635543
 """
 
-from opentrons import protocol_api
+from opentrons import protocol_api, robot
+
+#%%
 
 # metadata
 metadata = {
@@ -112,3 +114,5 @@ def run(protocol: protocol_api.ProtocolContext):
          	labware_items[dest_slot].wells(dest_well),
             blow_out = True,
          	new_tip='always')
+        
+run(protocol_api)
