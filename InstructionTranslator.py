@@ -147,8 +147,8 @@ def addMachineLine(existing_inst_line,dest_slot,dest_well,source_df,item_name,it
 #%%
 # TODO: Specify input and output files location
 # Currently, the input files must be under the same directory as that of InstructionTranslator.py
-instFile = 'ot2inst_transfer_glycerolstock.xlsx'
-outputFile = "ot2inst_transfer_glycerolstock.txt"
+instFile = 'ot2inst_sequencing_preparation.xlsx'
+outputFile = "ot2inst_sequencing_preparation.txt"
 
 inst_xls= pd.ExcelFile(instFile)
 dict_of_inst = {sheet:inst_xls.parse(sheet) for sheet in inst_xls.sheet_names}

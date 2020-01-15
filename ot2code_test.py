@@ -29,6 +29,6 @@ def run(protocol: protocol_api.ProtocolContext):
 
     # commands
     left_pipette.pick_up_tip()
-    left_pipette.aspirate(100, plate['A1'])
-    left_pipette.dispense(100, plate['B2'])
+    left_pipette.aspirate(100, plate.wells_by_name()['A1'])
+    left_pipette.dispense(100, plate.wells_by_name()['B2'])
     left_pipette.drop_tip()
