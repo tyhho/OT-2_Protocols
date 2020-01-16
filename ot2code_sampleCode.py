@@ -20,19 +20,8 @@ metadata = {
 def run(protocol: protocol_api.ProtocolContext):
 
     # labware
-    
-    slots_map = {
-            '1':'corning_96_wellplate_360ul_flat',
-            '2':'corning_96_wellplate_360ul_flat'
-            }
-
-    labware_items = {}
-    for slot, labware_item in slots_map.items():
-        labware_items.update({slot:protocol.load_labware(labware_item, slot)})
-        
-    # plate = protocol.load_labware('corning_96_wellplate_360ul_flat', '2')
-
-    tiprack = protocol.load_labware('opentrons_96_tiprack_300ul', '3')
+    plate = protocol.load_labware('corning_96_wellplate_360ul_flat', '2')
+    tiprack = protocol.load_labware('opentrons_96_tiprack_300ul', '1')
 
     # pipettes
     left_pipette = protocol.load_instrument(
@@ -40,6 +29,6 @@ def run(protocol: protocol_api.ProtocolContext):
 
     # commands
     left_pipette.pick_up_tip()
-    left_pipette.aspirate(100, labware_items['1'].wells_by_name()['A1'])
-    left_pipette.dispense(100, labware_items['1'].wells_by_name()['B2'])
+    left_pipette.aspirate(100, plate.wells_by_name()['A1'])
+    left_pipette.dispense(100, plate.wells_by_name()['B2'])
     left_pipette.drop_tip()

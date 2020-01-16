@@ -5,7 +5,7 @@ Created on Mon Jan  6 19:20:11 2020
 @author: s1635543
 """
 
-from opentrons import protocol_api, robot
+from opentrons import protocol_api
 
 #%%
 
@@ -22,18 +22,11 @@ metadata = {
 
 def run(protocol: protocol_api.ProtocolContext):
             
-    # Configure labwares
     slots_map = {
             '1':'corning_96_wellplate_360ul_flat',
-            '2':'corning_96_wellplate_360ul_flat',
-            # '3':'corning_96_wellplate_360ul_flat',
-            # '4':'corning_96_wellplate_360ul_flat',
-            # '5':'corning_96_wellplate_360ul_flat',
-            # '6':'corning_96_wellplate_360ul_flat',
-            # '7':'corning_96_wellplate_360ul_flat',
-            # '8':'corning_96_wellplate_360ul_flat'
+            '2':'corning_96_wellplate_360ul_flat'
             }
-    
+
     # Configure tip racks and pipette
     
     pipette_name = 'p300_single'
@@ -115,4 +108,9 @@ def run(protocol: protocol_api.ProtocolContext):
             blow_out = True,
          	new_tip='always')
         
-run(protocol_api)
+        # pipette.pick_up_tip()
+        # pipette.aspirate(transfer_vol, labware_items[source_slot].wells_by_name()[source_well])
+        # pipette.dispense(transfer_vol, labware_items[source_slot].wells_by_name()[dest_well])
+        # pipette.blow_out()
+        # pipette.drop_tip()
+        
