@@ -85,19 +85,12 @@ for source, dest in inst_list.items():
     source_slot, source_well = source.split('_')
     dest_slot, dest_well = dest.split('_')
     
-#    p10s.pick_up_tip(location=tip_racks[0].wells(dest_well))
-#    p10s.aspirate(4,labware_items[source_slot].wells(source_well) )
-#    p10s.dispense(4,labware_items[dest_slot].wells(dest_well) )
-#    p10s.blow_out()
-#    p10s.drop_tip()
-    
     pipette.transfer(
     	transfer_vol,
     	labware_items[source_slot].wells(source_well),
     	labware_items[dest_slot].wells(dest_well),
         blow_out = True,
     	new_tip='always')
-    #robot.pause()
     
 #%%
 for c in robot.commands():

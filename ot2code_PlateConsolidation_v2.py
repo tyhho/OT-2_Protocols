@@ -2,7 +2,7 @@
 """
 Created on Mon Jan  6 19:20:11 2020
 
-@author: s1635543
+@author: Trevor Ho
 """
 
 from opentrons import protocol_api
@@ -18,25 +18,22 @@ metadata = {
     'apiLevel': '2.0'
 }
     
-#%% Do not modify anything down here
 
-def run(protocol: protocol_api.ProtocolContext):
-            
-    slots_map = {
-            '1':'corning_96_wellplate_360ul_flat',
-            '2':'corning_96_wellplate_360ul_flat'
-            }
+slots_map = {
+        '1':'corning_96_wellplate_360ul_flat',
+        '2':'corning_96_wellplate_360ul_flat'
+        }
 
-    # Configure tip racks and pipette
-    
-    pipette_name = 'p300_single'
-    mount = 'right'
-    tiprack_slots = ['4']
-    tiprack_name = 'opentrons_96_tiprack_300ul' # other options: 'tiprack-10ul' / 'opentrons_96_tiprack_10ul' / 'opentrons_96_tiprack_300ul'
-    
-    transfer_vol = 150
-    
-    inst_list = {
+# Configure tip racks and pipette
+
+pipette_name = 'p300_single'
+mount = 'right'
+tiprack_slots = ['4']
+tiprack_name = 'opentrons_96_tiprack_300ul' # other options: 'tiprack-10ul' / 'opentrons_96_tiprack_10ul' / 'opentrons_96_tiprack_300ul'
+
+transfer_vol = 150
+
+inst_list = {
     '1_D9':'2_A1',
     '1_A9':'2_B1',
     '1_C9':'2_C1',
@@ -83,7 +80,10 @@ def run(protocol: protocol_api.ProtocolContext):
     '1_F5':'2_D6',
     '1_F4':'2_E6'
                 }
+#%% Do not modify anything down here
 
+def run(protocol: protocol_api.ProtocolContext):
+            
     labware_items = {}
     for slot, labware_item in slots_map.items():
         labware_items.update({slot:protocol.load_labware(labware_item, slot)})
@@ -101,16 +101,23 @@ def run(protocol: protocol_api.ProtocolContext):
         source_slot, source_well = source.split('_')
         dest_slot, dest_well = dest.split('_')
         
-        pipette.transfer(
-         	transfer_vol,
-         	labware_items[source_slot].wells(source_well),
-         	labware_items[dest_slot].wells(dest_well),
-            blow_out = True,
-         	new_tip='always')
+        # pipette.transfer(
+        #  	transfer_vol,
+        #  	labware_items[source_slot].wells(source_well),
+        #  	labware_items[dest_slot].wells(dest_well),
+        #     blow_out = True,
+        #  	new_tip='always')
         
-        # pipette.pick_up_tip()
-        # pipette.aspirate(transfer_vol, labware_items[source_slot].wells_by_name()[source_well])
-        # pipette.dispense(transfer_vol, labware_items[source_slot].wells_by_name()[dest_well])
-        # pipette.blow_out()
-        # pipette.drop_tip()
-        
+        pipette.pick_up_tip()
+        pipette.aspirate(transfer_vol, labware_items[source_slot].wells_by_name()[source_well])
+        pipette.dispense(transfer_vol, labware_items[source_slot].wells_by_name()[dest_well])
+        pipette.blow_out()
+        pipette.drop_tip()
+
+# The extra part: programmatically get a simulation ProtocolContext, so we can run this
+# as a normal Python script and have everything in the run function get executed.
+#
+# This part should be removed or commented out before uploading to a real OT-2.
+from opentrons.simulate import get_protocol_api
+protocol = get_protocol_api(version=metadata["apiLevel"])
+run(protocol)

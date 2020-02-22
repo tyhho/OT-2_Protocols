@@ -13,8 +13,6 @@ def distributeNoBlowOutLite(pipette,vol_in,vol_out,source,dests):
     pipette.aspirate(vol_in,source)
     for dest in dests:
         pipette.dispense(vol_out,dest)
-    pipette.dispense(vol_out,source)
-    pipette.blow_out()
     pipette.drop_tip()
 
 #%%
@@ -24,7 +22,6 @@ slots_map = {
         '1':'corning_96_wellplate_360ul_flat',
         '2':'corning_96_wellplate_360ul_flat',
         '3':'corning_96_wellplate_360ul_flat',
-        '4':'corning_96_wellplate_360ul_flat',
         '5':'corning_96_wellplate_360ul_flat',
         '6':'corning_96_wellplate_360ul_flat'
         }
@@ -33,7 +30,7 @@ labware_items = {}
 for slot, labware_item in slots_map.items():
     labware_items.update({slot:labware.load(labware_item, slot)})
 
-tip_slots = ['7','8']
+tip_slots = ['7','8','10','11']
 tip_racks = [labware.load('geb_96_tiprack_10ul', slot) for slot in tip_slots]
 
 p10m = instruments.P10_Multi(
@@ -43,23 +40,14 @@ p10m = instruments.P10_Multi(
 
 #%%
 
-for col_index in range(12):
-    distributeNoBlowOutLite(p10m,
-                            (culture_vol*2+2),
-                            culture_vol,
-                            labware_items['1'].cols(col_index),
-                            [labware_items['2'].cols(col_index),labware_items['3'].cols(col_index)]
-                            )
-
-
-for col_index in range(12):
-    distributeNoBlowOutLite(p10m,
-                            (culture_vol*2+2),
-                            culture_vol,
-                            labware_items['4'].cols(col_index),
-                            [labware_items['5'].cols(col_index),labware_items['6'].cols(col_index)]
-                            )
-
-
+for dest_slot in ['2','3','5','6']:
+    for col_index in range(len(labware_items['1'].cols())):
+        p10m.transfer(2,
+                      labware_items['1'].cols(col_index),
+                      labware_items[dest_slot].cols(col_index),
+                      blow_out=True,
+                      new_tip='always'
+                      )
+   
 for c in robot.commands():
     print(c)
