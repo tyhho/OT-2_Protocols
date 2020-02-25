@@ -13,6 +13,8 @@ def distributeNoBlowOutLite(pipette,vol_in,vol_out,source,dests):
     pipette.aspirate(vol_in,source)
     for dest in dests:
         pipette.dispense(vol_out,dest)
+    pipette.dispense(pipette.current_volume,labware_items['9'].cols(col_index))
+    pipette.blow_out()                                               
     pipette.drop_tip()
 
 #%%
@@ -23,22 +25,24 @@ slots_map = {
         '2':'corning_96_wellplate_360ul_flat',
         '3':'corning_96_wellplate_360ul_flat',
         '5':'corning_96_wellplate_360ul_flat',
-        '6':'corning_96_wellplate_360ul_flat'
+        '6':'corning_96_wellplate_360ul_flat',
+        '9':'corning_96_wellplate_360ul_flat'
         }
 
 labware_items = {}
 for slot, labware_item in slots_map.items():
     labware_items.update({slot:labware.load(labware_item, slot)})
 
-tip_slots = ['4','7']
-tip_racks = [labware.load('opentrons_96_tiprack_10ul', slot) for slot in tip_slots]
+tip_slots = ['7','8']
+tip_racks = [labware.load('geb_96_tiprack_10ul', slot) for slot in tip_slots]
 
 p10m = instruments.P10_Multi(
-    mount='right',
+    mount='left',
     tip_racks=tip_racks
     )
 
 #%%
+
 
 for col_index in range(len(labware_items['1'].cols())):
     distributeNoBlowOutLite(p10m,
