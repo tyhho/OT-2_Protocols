@@ -13,7 +13,7 @@ def distributeNoBlowOutLite(pipette,vol_in,vol_out,source,dests):
     pipette.aspirate(vol_in,source)
     for dest in dests:
         pipette.dispense(vol_out,dest)
-    pipette.dispense(vol_out,source)
+    pipette.dispense(pipette.current_volume,labware_items['9'].cols(col_index))
     pipette.blow_out()
     pipette.drop_tip()
 
@@ -26,7 +26,8 @@ slots_map = {
         '3':'corning_96_wellplate_360ul_flat',
         '4':'corning_96_wellplate_360ul_flat',
         '5':'corning_96_wellplate_360ul_flat',
-        '6':'corning_96_wellplate_360ul_flat'
+        '6':'corning_96_wellplate_360ul_flat',
+        '9':'corning_96_wellplate_360ul_flat'
         }
 
 labware_items = {}
