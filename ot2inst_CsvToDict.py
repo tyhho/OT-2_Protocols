@@ -14,10 +14,10 @@ import pandas as pd
 
 # TODO: Specify folder location
 rootDir = r'W:\Data storage & Projects\PhD Project_Trevor Ho\3_Intein-assisted Bisection Mapping'
-folderDir = r'FC029\Consolidation for Run 4'
+folderDir = r'BM010\Screen3'
 
 # TODO: Specify the csv filemane
-csv_fn = 'FC029_Consolidation.csv'
+csv_fn = 'BM010_Screen123_Consolidation.csv'
 
 csv_dir = os.path.join(rootDir,folderDir,csv_fn)
 

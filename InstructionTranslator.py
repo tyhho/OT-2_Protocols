@@ -126,8 +126,8 @@ def addMachineLine(existing_inst_line,dest_slot,dest_well,source_df,item_name,it
     # Find where the source sample was
     # FIXME: missing alerts / solutions for multiple or distributed source wells
     source_record = source_df[source_df['sample']==item_name]
-    source_slot = source_record['slot'].item()
-    source_well = source_record['well'].item()
+    source_slot = source_record['slot'].values.item()
+    source_well = source_record['well'].values.item()
     
     # The item_vol variable is an optional argument for this function.
     # The if-clause below handles such situation by directly omitting it.
@@ -147,8 +147,8 @@ def addMachineLine(existing_inst_line,dest_slot,dest_well,source_df,item_name,it
 #%%
 # TODO: Specify input and output files location
 # Currently, the input files must be under the same directory as that of InstructionTranslator.py
-instFile = 'ot2inst_sequencing_preparation.xlsx'
-outputFile = "ot2inst_sequencing_preparation.txt"
+instFile = 'ot2inst_jamies24to96.xlsx'
+outputFile = "ot2inst_jamies24to96.txt"
 
 inst_xls= pd.ExcelFile(instFile)
 dict_of_inst = {sheet:inst_xls.parse(sheet) for sheet in inst_xls.sheet_names}
@@ -162,6 +162,8 @@ slots_df.set_index('slot', inplace = True)
 # Base on the labware layout, rearrange all slots into basic df for future processing
 labware_layout = {
         '96-well plate':['A','B','C','D','E','F','G','H'],
+        '24-well plate': ['A','B','C','D'],
+        '1-well plate': ['A'],
         '1.5 mL tube rack': ['A','B','C','D'],
         '15_50 mL tube rack':['A','B','C'],
         '15 mL tube rack':['A','B','C'],
