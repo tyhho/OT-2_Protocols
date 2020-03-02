@@ -4,7 +4,7 @@ Created on Mon Oct 14 16:23:50 2019
 
 @author: Trevor Ho
 
-Test script for PCR plate
+Test script for testing if TipRackExterior works with P50M reliably
 """
 
 
@@ -13,7 +13,7 @@ from opentrons import labware, instruments,robot
 
 # Put plates and racks onto the deck
 slots_map = {
-        '2':'nest_96_wellplate_100ul_pcr_full_skirt',
+        '2':'corning_96_wellplate_360ul_flat',
         }
 
 deck_labware = {}
@@ -22,16 +22,16 @@ for slot, labware_item in slots_map.items():
 
 # Put tip boxes onto the deck
 
-tip_slots_10 = ['1']
-tip_racks_10 = []
-for slot in tip_slots_10:
-        tip_racks_10.append(labware.load('geb_96_tiprack_10ul', slot))
+tip_slots = ['1']
+tip_racks = []
+for slot in tip_slots:
+        tip_racks.append(labware.load('tiprack-200ul', slot))
 
 # Configure the pipettes
 
-p10m = instruments.P10_Multi(
-    mount='left',
-    tip_racks=tip_racks_10
+p50m = instruments.P50_Multi(
+    mount='right',
+    tip_racks=tip_racks
     )
 
 # Set up the pipetting instruction
@@ -39,16 +39,17 @@ p10m = instruments.P10_Multi(
 #%%    
 ## Execution of instructions
 
-p10m.pick_up_tip()
-for i in range(11):
-    p10m.transfer(
-        10,
-        deck_labware['2'].cols(i),
-        deck_labware['2'].cols(i+1),
-        new_tip = 'never',
-        blow_out = False)
-
-p10m.drop_tip()
+for i in range(12):
+    p50m.pick_up_tip()
+    p50m.aspirate(
+        50,
+        deck_labware['2'].cols(i)
+        )  
+    p50m.dispense(50,
+                  deck_labware['2'].cols(i)
+                  )
+    p50m.blow_out()
+    p50m.drop_tip()
     
 # Print out the commands step by step
 for c in robot.commands():

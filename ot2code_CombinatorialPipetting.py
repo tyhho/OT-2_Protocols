@@ -13,49 +13,38 @@ from opentrons import labware, instruments, robot
  
 
 slots_map = {
-        #'1':'96-flat',
-        '1':'opentrons-tuberack-2ml-eppendorf',
-        '2':'opentrons-tuberack-2ml-eppendorf',
-        '3':'opentrons-tuberack-2ml-eppendorf',
-        '4':'opentrons-tuberack-2ml-eppendorf'
+        '1':'96-flat',
+        '2':'opentrons-tuberack-1.5ml-eppendorf',
         }
 
 tip_slots = ['5']
 tip_racks = [labware.load('tiprack-200ul', slot) for slot in tip_slots]
 
 inst_list = [
-'5$1_A1->2_A1',
-'5$1_A2->2_A2',
-'5$1_A3->2_A3',
-'5$1_A4->2_A4',
-'5$1_A5->2_A5',
-'5$1_A6->2_A6',
-'5$1_B1->2_B1',
-'5$1_B2->2_B2',
-'5$1_B3->2_B3',
-'5$1_B4->2_B4',
-'5$1_B5->2_B5',
-'5$1_B6->2_B6',
-'5$1_C1->2_C1',
-'5$1_C2->2_C2',
-'5$1_C3->2_C3',
-'5$1_C4->2_C4',
-'5$3_A1->4_A1',
-'5$3_A2->4_A2',
-'5$3_A3->4_A3',
-'5$3_A4->4_A4',
-'5$3_A5->4_A5',
-'5$3_A6->4_A6',
-'5$3_B1->4_B1',
-'5$3_B2->4_B2',
-'5$3_B3->4_B3',
-'5$3_B4->4_B4',
-'5$3_B5->4_B5',
-'5$3_B6->4_B6',
-'5$3_C1->4_C1',
-'5$3_C2->4_C2',
-'5$3_C3->4_C3',
-'5$3_C4->4_C4'
+'2$2_A1->1_E3',
+'2$2_A1->1_E4',
+'2$2_A2->1_E5',
+'2$2_A2->1_E6',
+'2$2_A3->1_E7',
+'2$2_A3->1_E8',
+'2$2_A4->1_E9',
+'2$2_A4->1_E10',
+'2$2_A1->1_F3',
+'2$2_A1->1_F4',
+'2$2_A2->1_F5',
+'2$2_A2->1_F6',
+'2$2_A3->1_F7',
+'2$2_A3->1_F8',
+'2$2_A4->1_F9',
+'2$2_A4->1_F10',
+'2$2_A1->1_G3',
+'2$2_A1->1_G4',
+'2$2_A2->1_G5',
+'2$2_A2->1_G6',
+'2$2_A3->1_G7',
+'2$2_A3->1_G8',
+'2$2_A4->1_G9',
+'2$2_A4->1_G10'
             ]
 
 #%% Do not modify anything down here
@@ -65,7 +54,7 @@ for slot, labware_item in slots_map.items():
     labware_items.update({slot:labware.load(labware_item, slot)})
 
 p10single = instruments.P10_Single(
-    mount='left',
+    mount='right',
     tip_racks=tip_racks
     )
 

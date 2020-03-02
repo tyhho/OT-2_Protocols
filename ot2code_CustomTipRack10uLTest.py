@@ -1,12 +1,9 @@
 # -*- coding: utf-8 -*-
 """
-Created on Mon Oct 14 16:23:50 2019
+Created on Sun Mar  1 23:03:25 2020
 
 @author: Trevor Ho
-
-Test script for PCR plate
 """
-
 
 # Import libraries for OT-2
 from opentrons import labware, instruments,robot
