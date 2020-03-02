@@ -131,7 +131,7 @@ for num in numbers :
 		
 #Executing the 2 functions 
 distribution(p300s, deck_labware['2'].wells('A1'), wells_n_amounts, deck_labware['3'])
-dilution(p300s, deck_labware['3'].wells('A1'), wells_n_amounts, deck_labware['3'])
+#dilution(p300s, deck_labware['3'].wells('A1'), wells_n_amounts, deck_labware['3'])
 	
 	
 	
