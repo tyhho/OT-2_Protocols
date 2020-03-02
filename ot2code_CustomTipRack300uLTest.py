@@ -1,12 +1,23 @@
 # -*- coding: utf-8 -*-
 """
-Created on Sun Mar  1 23:03:25 2020
+Created on Mon Mar  2 00:54:16 2020
 
 @author: Trevor Ho
 """
-
 # Import libraries for OT-2
 from opentrons import labware, instruments,robot
+
+tip_rack_name = 'tiprack-300ul-custom'
+if tip_rack_name not in labware.list():
+    custom_plate = labware.create(
+        tip_rack_name,                    # name of you labware
+        grid=(12, 8),                    # specify amount of (columns, rows)
+        spacing=(9, 9),               # distances (mm) between each (column, row)
+        diameter=3,                     # diameter (mm) of each well on the plate
+        depth=10,                       # depth (mm) of each well on the plate
+        volume=10
+#        ,        offset=(14.3, 10.5, 65)
+        )
 
 # Put plates and racks onto the deck
 slots_map = {
@@ -26,7 +37,7 @@ for slot in tip_slots:
 
 # Configure the pipettes
 
-pipette = instruments.P10_Single(
+pipette = instruments.P300_Single(
     mount='right',
     tip_racks=tip_racks
     )
@@ -35,7 +46,7 @@ pipette = instruments.P10_Single(
  
 #%%    
 ## Execution of instructions
-vol = 10
+vol = 300
 
 for tip_well in ['A1','A7','A12','D1','D7','D12','H1','H7','H12']:
     pipette.pick_up_tip(location = tip_racks[0].wells(tip_well))
