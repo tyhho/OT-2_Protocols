@@ -151,23 +151,26 @@ def run(protocol: protocol_api.ProtocolContext):
         source_slot, source_well = source.split('_')
         dest_slot, dest_well = dest.split('_')
         
-        # pipette.transfer(
-        #  	transfer_vol,
-        #  	labware_items[source_slot].wells(source_well),
-        #  	labware_items[dest_slot].wells(dest_well),
-        #     blow_out = True,
-        #  	new_tip='always')
+        pipette.transfer(
+         	transfer_vol,
+         	labware_items[source_slot].wells(source_well),
+         	labware_items[dest_slot].wells(dest_well),
+            blow_out = True,
+         	new_tip='always')
         
-        pipette.pick_up_tip()
-        pipette.aspirate(transfer_vol, labware_items[source_slot].wells_by_name()[source_well])
-        pipette.dispense(transfer_vol, labware_items[dest_slot].wells_by_name()[dest_well])
-        pipette.blow_out()
-        pipette.drop_tip()
+        # pipette.pick_up_tip()
+        # pipette.aspirate(transfer_vol, labware_items[source_slot].wells_by_name()[source_well])
+        # pipette.dispense(transfer_vol, labware_items[dest_slot].wells_by_name()[dest_well])
+        # pipette.blow_out()
+        # pipette.drop_tip()
+        
+    print(*protocol.commands(), sep = '\n')
 
 # The extra part: programmatically get a simulation ProtocolContext, so we can run this
 # as a normal Python script and have everything in the run function get executed.
 #
 # This part should be removed or commented out before uploading to a real OT-2.
-#from opentrons.simulate import get_protocol_api
-#protocol = get_protocol_api(version=metadata["apiLevel"])
-#run(protocol)
+
+from opentrons.simulate import get_protocol_api
+protocol = get_protocol_api(version=metadata['apiLevel'])
+run(protocol)

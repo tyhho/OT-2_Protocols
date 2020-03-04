@@ -40,9 +40,9 @@ vol = 50
 
 for well in ['A1','A2','A3','A4','A5','A6','A7','A8','A9','A10','A11','A12']:
     pipette.pick_up_tip()
-    pipette.aspirate(vol, dlw['2'].wells(well))
-    pipette.move_to(dlw['2'].wells(well).top(10))
-    pipette.dispense(vol,dlw['2'].wells(well))
+    pipette.aspirate(vol, dlw['1'].wells(well))
+    pipette.move_to(dlw['1'].wells(well).top(10))
+    pipette.dispense(vol,dlw['1'].wells(well))
     pipette.blow_out()
     pipette.drop_tip()
 
