@@ -5,6 +5,8 @@ Created on Mon Mar  2 00:45:56 2020
 @author: Trevor Ho
 """
 
+# FIXME: check
+
 
 # Import libraries for OT-2
 from opentrons import labware, instruments,robot

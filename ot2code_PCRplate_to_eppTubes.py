@@ -19,12 +19,12 @@ slots_map = {
         }
 
 inst_list = [
-    # '$1_A1->2_A1',
-    # '$1_B1->2_A2',
-    # '$1_C1->2_A3',
-    # '$1_D1->2_A4',
-    # '$1_E1->2_A5',
-    # '$1_F1->2_A6',
+    '$1_A1->2_A1',
+    '$1_B1->2_A2',
+    '$1_C1->2_A3',
+    '$1_D1->2_A4',
+    '$1_E1->2_A5',
+    '$1_F1->2_A6',
     '$1_G1->2_B1',
     '$1_H1->2_B2',
     '$1_A2->2_B3',
@@ -108,14 +108,13 @@ inst_list = [
     '$1_G11->6_C3',
     '$1_H11->6_C4',
     '$1_A12->6_C5',
-    
-    # '$1_B12->6_C6',
-    # '$1_C12->6_D1',
-    # '$1_D12->6_D2',
-    # '$1_E12->6_D3',
-    # '$1_F12->6_D4',
-    # '$1_G12->6_D5',
-    # '$1_H12->6_D6'
+    '$1_B12->6_C6',
+    '$1_C12->6_D1',
+    '$1_D12->6_D2',
+    '$1_E12->6_D3',
+    '$1_F12->6_D4',
+    '$1_G12->6_D5',
+    '$1_H12->6_D6'
     ]
 
 
@@ -145,7 +144,7 @@ for inst in inst_list:
                    location=labware_items[source_slot].wells(source_well)
                    )
     p300S.dispense(
-            location=labware_items[dest_slot].wells(dest_well).top(-5)
+            location=labware_items[dest_slot].wells(dest_well).top(-10)
             )
     p300S.delay(seconds=2)
     p300S.blow_out()
