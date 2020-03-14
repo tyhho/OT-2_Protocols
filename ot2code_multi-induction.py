@@ -50,7 +50,7 @@ def run(protocol: protocol_api.ProtocolContext):
     pipette_name = 'p10_multi'
     mount = 'left'
     tiprack_slots = ['10','11']
-    tiprack_name = 'opentrons_96_tiprack_10ul' # other options: 'opentrons_96_tiprack_10ul' / 'opentrons_96_tiprack_300ul'
+    tiprack_name = 'geb_96_tiprack_10ul' # other options: 'opentrons_96_tiprack_10ul' / 'opentrons_96_tiprack_300ul'
     
     
     deck = {}
