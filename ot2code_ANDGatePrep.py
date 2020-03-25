@@ -80,8 +80,8 @@ def run(protocol: protocol_api.ProtocolContext):
     #%%
     
     # Produce range of wells for a single grid
-    single_grid_well_list = list(range(0,4)) + list(range(8,12)) + list(range(16,20)) + list(range(24,28))
-    medium_source_list = list(range(0,16))
+    single_grid_well_list = [3] + list(range(8,12)) + list(range(16,20)) + list(range(24,28))
+    medium_source_list = list(range(3,16))
     medium_mapper = dict(zip(medium_source_list,single_grid_well_list))
     
     
@@ -131,7 +131,7 @@ def run(protocol: protocol_api.ProtocolContext):
     
     wells_medium = []
     
-    for well_index in [67, 75]:
+    for well_index in [68, 76]:
         for dest_plate_slot in ['2','3']:
             wells_medium += [deck[dest_plate_slot].wells()[well_index]]
             
@@ -141,7 +141,7 @@ def run(protocol: protocol_api.ProtocolContext):
     
     wells_medium = []
     
-    for well_index in [83, 91]:
+    for well_index in [84, 92]:
         for dest_plate_slot in ['2','3']:
             wells_medium += [deck[dest_plate_slot].wells()[well_index]]
             
