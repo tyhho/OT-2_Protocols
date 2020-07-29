@@ -79,7 +79,17 @@ Input:
             order of the columns MUST NOT be changed in the excel file.
     
     global_volume: int. Must be provided if role="destination" and format="intuitive"
+
+Note:
+    In all destination sheets, it is possible to insert a column with a header that starts with '#'.
+    The column will be treated as a comment column and will not be parsed.
     
+    Example:
+        |well|#PCR product|sample1|vol1|sample2  |vol2|sample3  |vol3|sample4  |vol4|
+        |A1  |sample 1    |buffer |10  |primer001|5   |primer002|5   |dNTP     |1   |
+        
+        the column '#PCR product will be ignored during parsing'
+
 Output:
     Each machine-parsable line (str) looks like the following:
         vol$sourceSlot_sourceWell->destSlot_destWell
@@ -147,8 +157,8 @@ def addMachineLine(existing_inst_line,dest_slot,dest_well,source_df,item_name,it
 #%%
 # TODO: Specify input and output files location
 # Currently, the input files must be under the same directory as that of InstructionTranslator.py
-instFile = 'ot2inst_jamies24to96.xlsx'
-outputFile = "ot2inst_jamies24to96.txt"
+instFile = 'ot2inst_PrimerDilution_20200727.xlsx'
+outputFile = "ot2inst_PrimerDilution_20200727.txt"
 
 inst_xls= pd.ExcelFile(instFile)
 dict_of_inst = {sheet:inst_xls.parse(sheet) for sheet in inst_xls.sheet_names}
@@ -191,6 +201,7 @@ for source_slot in source_slots_list:
     a_source_df['slot'] = source_slot
     source_df = source_df.append(a_source_df, ignore_index=True)
 
+
 # Retrieve df containining destination slots and formats
 dest_info = slots_df[slots_df['role']=='destination']
 
@@ -201,11 +212,14 @@ del slot, slots_df, slot_content_df, source_slots_list
 finalLine = ''
 
 #%%
-
 # Loop through every destination slot and decide case by case the pipetting instructions
 for dest_slot_info in dest_info.itertuples():
     dest_slot = str(dest_slot_info.Index)
     dest_slot_df = slots_dict.get(dest_slot)
+    
+    column_list = list(dest_slot_df.columns)
+    comment_free_column_list = [column_name for column_name in column_list if column_name[0] != '#']
+    dest_slot_df = dest_slot_df[comment_free_column_list]
     
     for request_line in dest_slot_df.itertuples():
         dest_well = request_line.well
@@ -233,7 +247,7 @@ for dest_slot_info in dest_info.itertuples():
         elif dest_slot_info.format == 'df_variable_volume':
             for item_name, item_vol in request_items.items():
                 item_name = item_name.strip()
-                item_vol = item_vol.strip()
+                # item_vol = item_vol.strip()
                 finalLine = addMachineLine(finalLine,dest_slot,dest_well,source_df,item_name,item_vol)
                 
         elif dest_slot_info.format == 'df_variable_sample_n_volume':
