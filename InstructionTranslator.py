@@ -154,11 +154,18 @@ def addMachineLine(existing_inst_line,dest_slot,dest_well,source_df,item_name,it
     updated_inst_lines = existing_inst_line + new_inst_line
     return updated_inst_lines
 
+def remove_comments(df):
+    '''Remove all columns in a df that starts with a "#", no automatic trim'''
+    column_list = list(df.columns)
+    comment_free_column_list = [column_name for column_name in column_list if column_name[0] != '#']
+    df = df[comment_free_column_list]
+    return df
+
 #%%
 # TODO: Specify input and output files location
 # Currently, the input files must be under the same directory as that of InstructionTranslator.py
-instFile = 'ot2inst_PrimerDilution_20200727.xlsx'
-outputFile = "ot2inst_PrimerDilution_20200727.txt"
+instFile = 'ot2inst_batchPCR_20200729.xlsx'
+outputFile = "ot2inst_batchPCR_20200729.txt"
 
 inst_xls= pd.ExcelFile(instFile)
 dict_of_inst = {sheet:inst_xls.parse(sheet) for sheet in inst_xls.sheet_names}
@@ -217,9 +224,7 @@ for dest_slot_info in dest_info.itertuples():
     dest_slot = str(dest_slot_info.Index)
     dest_slot_df = slots_dict.get(dest_slot)
     
-    column_list = list(dest_slot_df.columns)
-    comment_free_column_list = [column_name for column_name in column_list if column_name[0] != '#']
-    dest_slot_df = dest_slot_df[comment_free_column_list]
+    dest_slot_df = remove_comments(dest_slot_df)
     
     for request_line in dest_slot_df.itertuples():
         dest_well = request_line.well
