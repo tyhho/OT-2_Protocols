@@ -49,7 +49,7 @@ def run(protocol: protocol_api.ProtocolContext):
     slots_map = {
             '1':'corning_96_wellplate_360ul_flat',
             '4':'starlabpcrplateonws_96_wellplate_350ul', # no change tip
-            '5':'starlabpcrplateonws_96_wellplate_350ul', # change tip
+            # '5':'starlabpcrplateonws_96_wellplate_350ul', # change tip
             # '7':'gbocellstaronewellagarplate_96_wellplate_10ul',
             }
     
@@ -60,7 +60,7 @@ def run(protocol: protocol_api.ProtocolContext):
     # r_tiprack_name = 'opentrons_96_tiprack_300ul'
     
     l_pipette_name = 'p10_multi'
-    l_tiprack_slots = ['2', '3']
+    l_tiprack_slots = ['2']
     l_tiprack_name = 'geb_96_tiprack_10ul'
     
     labware_items = {}
@@ -81,52 +81,52 @@ def run(protocol: protocol_api.ProtocolContext):
     #%% mode 1: plate 4: no change tip (1 min 19 secs per plate)
     
     # first dilution
-    # l_pipette.pick_up_tip()
-    # transfer_n_mix(protocol,
-    #                l_pipette,
-    #                 2, # transfer volume
-    #                 labware_items['1'].wells()[0], # source
-    #                 labware_items['4'].wells()[0], # dest
-    #                 10, # mix volume
-    #                 False
-    #                 )
-    
-    # # subsequent dilution
-    
-    # for i in range(11):
-    #     transfer_n_mix(protocol,
-    #                     l_pipette,
-    #                     2, # transfer volume
-    #                     labware_items['4'].wells()[i * 8], # source
-    #                     labware_items['4'].wells()[(i + 1) * 8], # dest
-    #                     10, # mix volume
-    #                     False
-    #                     )
-    # l_pipette.drop_tip()
-    
-    #%% mode 2: plate 5: change tip (8 min 19 secs)
-    
-    # first dilution
+    l_pipette.pick_up_tip()
     transfer_n_mix(protocol,
-                   l_pipette,
-                2, # transfer volume
-                labware_items['1'].wells()[0], # source
-                labware_items['4'].wells()[0], # dest
-                10, # mix volume
-                True
-                )
+                    l_pipette,
+                    2, # transfer volume
+                    labware_items['1'].wells()[40], # source
+                    labware_items['4'].wells()[0], # dest
+                    10, # mix volume
+                    False
+                    )
     
     # subsequent dilution
     
     for i in range(11):
         transfer_n_mix(protocol,
-                       l_pipette,
+                        l_pipette,
                         2, # transfer volume
                         labware_items['4'].wells()[i * 8], # source
-                        labware_items['4 '].wells()[(i + 1) * 8], # dest
+                        labware_items['4'].wells()[(i + 1) * 8], # dest
                         10, # mix volume
-                        True
+                        False
                         )
+    l_pipette.drop_tip()
+    
+    #%% mode 2: plate 5: change tip (8 min 19 secs)
+    
+    # # first dilution
+    # transfer_n_mix(protocol,
+    #                l_pipette,
+    #             2, # transfer volume
+    #             labware_items['1'].wells()[0], # source
+    #             labware_items['4'].wells()[0], # dest
+    #             10, # mix volume
+    #             True
+    #             )
+    
+    # # subsequent dilution
+    
+    # for i in range(11):
+    #     transfer_n_mix(protocol,
+    #                    l_pipette,
+    #                     2, # transfer volume
+    #                     labware_items['4'].wells()[i * 8], # source
+    #                     labware_items['4 '].wells()[(i + 1) * 8], # dest
+    #                     10, # mix volume
+    #                     True
+    #                     )
     
 #%%    
         

@@ -4,7 +4,7 @@ Created on Wed May  8 22:10:09 2019
 
 @author: Trevor Ho
 
-This instruction translator takes an Excel file (.xlsx) that specifies what the
+This instruction writer takes an Excel file (.xlsx) that specifies what the
 source plates/racks look like and what the destination wells need to contain.
 For each sample/elements that needs to go into a destination well, the script
 searches where that sample/elements is among the source plates/racks, and then construct
@@ -135,7 +135,7 @@ def addMachineLine(existing_inst_line,dest_slot,dest_well,source_df,item_name,it
     '''
     # Find where the source sample was
     # FIXME: missing alerts / solutions for multiple or distributed source wells
-    source_record = source_df[source_df['sample']==item_name]
+    source_record = source_df.query('sample==@item_name')
     source_slot = source_record['slot'].values.item()
     source_well = source_record['well'].values.item()
     
@@ -163,9 +163,9 @@ def remove_comments(df):
 
 #%%
 # TODO: Specify input and output files location
-# Currently, the input files must be under the same directory as that of InstructionTranslator.py
-instFile = 'ot2inst_batchPCR_20200729.xlsx'
-outputFile = "ot2inst_batchPCR_20200729.txt"
+# Currently, the input files must be under the same directory as that of InstructionWriter.py
+instFile = 'ot2inst_BM012_L029_sequencing_diluteDNA.xlsx'
+outputFile = "ot2inst_BM012_L029_sequencing_diluteDNA.txt"
 
 inst_xls= pd.ExcelFile(instFile)
 dict_of_inst = {sheet:inst_xls.parse(sheet) for sheet in inst_xls.sheet_names}
