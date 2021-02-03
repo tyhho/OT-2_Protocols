@@ -1,0 +1,405 @@
+Picking up tip from E1 of Tip One 96 DIY Tip Rack 300 킠 on 4
+Aspirating 170.0 uL from E1 of Starlab(PCR Plate On WS) 96 Well Plate 350 킠 on 1 at 150.0 uL/sec
+Dispensing 170.0 uL into A1 of Opentrons 24 Tube Rack with Generic 2 mL Screwcap on 5 at 300.0 uL/sec
+Aspirating 100.0 uL from A1 of Opentrons 24 Tube Rack with Generic 2 mL Screwcap on 5 at 150.0 uL/sec
+Dispensing 100.0 uL into A1 of Opentrons 24 Tube Rack with Generic 2 mL Screwcap on 5 at 300.0 uL/sec
+Aspirating 100.0 uL from A1 of Opentrons 24 Tube Rack with Generic 2 mL Screwcap on 5 at 150.0 uL/sec
+Dispensing 100.0 uL into A1 of Opentrons 24 Tube Rack with Generic 2 mL Screwcap on 5 at 300.0 uL/sec
+Blowing out at A1 of Opentrons 24 Tube Rack with Generic 2 mL Screwcap on 5
+Dropping tip into A1 of Opentrons Fixed Trash on 12
+Picking up tip from E2 of Tip One 96 DIY Tip Rack 300 킠 on 4
+Aspirating 170.0 uL from E2 of Starlab(PCR Plate On WS) 96 Well Plate 350 킠 on 1 at 150.0 uL/sec
+Dispensing 170.0 uL into A2 of Opentrons 24 Tube Rack with Generic 2 mL Screwcap on 5 at 300.0 uL/sec
+Aspirating 100.0 uL from A2 of Opentrons 24 Tube Rack with Generic 2 mL Screwcap on 5 at 150.0 uL/sec
+Dispensing 100.0 uL into A2 of Opentrons 24 Tube Rack with Generic 2 mL Screwcap on 5 at 300.0 uL/sec
+Aspirating 100.0 uL from A2 of Opentrons 24 Tube Rack with Generic 2 mL Screwcap on 5 at 150.0 uL/sec
+Dispensing 100.0 uL into A2 of Opentrons 24 Tube Rack with Generic 2 mL Screwcap on 5 at 300.0 uL/sec
+Blowing out at A2 of Opentrons 24 Tube Rack with Generic 2 mL Screwcap on 5
+Dropping tip into A1 of Opentrons Fixed Trash on 12
+Picking up tip from E3 of Tip One 96 DIY Tip Rack 300 킠 on 4
+Aspirating 170.0 uL from E3 of Starlab(PCR Plate On WS) 96 Well Plate 350 킠 on 1 at 150.0 uL/sec
+Dispensing 170.0 uL into A3 of Opentrons 24 Tube Rack with Generic 2 mL Screwcap on 5 at 300.0 uL/sec
+Aspirating 100.0 uL from A3 of Opentrons 24 Tube Rack with Generic 2 mL Screwcap on 5 at 150.0 uL/sec
+Dispensing 100.0 uL into A3 of Opentrons 24 Tube Rack with Generic 2 mL Screwcap on 5 at 300.0 uL/sec
+Aspirating 100.0 uL from A3 of Opentrons 24 Tube Rack with Generic 2 mL Screwcap on 5 at 150.0 uL/sec
+Dispensing 100.0 uL into A3 of Opentrons 24 Tube Rack with Generic 2 mL Screwcap on 5 at 300.0 uL/sec
+Blowing out at A3 of Opentrons 24 Tube Rack with Generic 2 mL Screwcap on 5
+Dropping tip into A1 of Opentrons Fixed Trash on 12
+Picking up tip from E4 of Tip One 96 DIY Tip Rack 300 킠 on 4
+Aspirating 170.0 uL from E4 of Starlab(PCR Plate On WS) 96 Well Plate 350 킠 on 1 at 150.0 uL/sec
+Dispensing 170.0 uL into A4 of Opentrons 24 Tube Rack with Generic 2 mL Screwcap on 5 at 300.0 uL/sec
+Aspirating 100.0 uL from A4 of Opentrons 24 Tube Rack with Generic 2 mL Screwcap on 5 at 150.0 uL/sec
+Dispensing 100.0 uL into A4 of Opentrons 24 Tube Rack with Generic 2 mL Screwcap on 5 at 300.0 uL/sec
+Aspirating 100.0 uL from A4 of Opentrons 24 Tube Rack with Generic 2 mL Screwcap on 5 at 150.0 uL/sec
+Dispensing 100.0 uL into A4 of Opentrons 24 Tube Rack with Generic 2 mL Screwcap on 5 at 300.0 uL/sec
+Blowing out at A4 of Opentrons 24 Tube Rack with Generic 2 mL Screwcap on 5
+Dropping tip into A1 of Opentrons Fixed Trash on 12
+Picking up tip from E5 of Tip One 96 DIY Tip Rack 300 킠 on 4
+Aspirating 170.0 uL from E5 of Starlab(PCR Plate On WS) 96 Well Plate 350 킠 on 1 at 150.0 uL/sec
+Dispensing 170.0 uL into A5 of Opentrons 24 Tube Rack with Generic 2 mL Screwcap on 5 at 300.0 uL/sec
+Aspirating 100.0 uL from A5 of Opentrons 24 Tube Rack with Generic 2 mL Screwcap on 5 at 150.0 uL/sec
+Dispensing 100.0 uL into A5 of Opentrons 24 Tube Rack with Generic 2 mL Screwcap on 5 at 300.0 uL/sec
+Aspirating 100.0 uL from A5 of Opentrons 24 Tube Rack with Generic 2 mL Screwcap on 5 at 150.0 uL/sec
+Dispensing 100.0 uL into A5 of Opentrons 24 Tube Rack with Generic 2 mL Screwcap on 5 at 300.0 uL/sec
+Blowing out at A5 of Opentrons 24 Tube Rack with Generic 2 mL Screwcap on 5
+Dropping tip into A1 of Opentrons Fixed Trash on 12
+Picking up tip from E6 of Tip One 96 DIY Tip Rack 300 킠 on 4
+Aspirating 170.0 uL from E6 of Starlab(PCR Plate On WS) 96 Well Plate 350 킠 on 1 at 150.0 uL/sec
+Dispensing 170.0 uL into A6 of Opentrons 24 Tube Rack with Generic 2 mL Screwcap on 5 at 300.0 uL/sec
+Aspirating 100.0 uL from A6 of Opentrons 24 Tube Rack with Generic 2 mL Screwcap on 5 at 150.0 uL/sec
+Dispensing 100.0 uL into A6 of Opentrons 24 Tube Rack with Generic 2 mL Screwcap on 5 at 300.0 uL/sec
+Aspirating 100.0 uL from A6 of Opentrons 24 Tube Rack with Generic 2 mL Screwcap on 5 at 150.0 uL/sec
+Dispensing 100.0 uL into A6 of Opentrons 24 Tube Rack with Generic 2 mL Screwcap on 5 at 300.0 uL/sec
+Blowing out at A6 of Opentrons 24 Tube Rack with Generic 2 mL Screwcap on 5
+Dropping tip into A1 of Opentrons Fixed Trash on 12
+Picking up tip from E7 of Tip One 96 DIY Tip Rack 300 킠 on 4
+Aspirating 170.0 uL from E7 of Starlab(PCR Plate On WS) 96 Well Plate 350 킠 on 1 at 150.0 uL/sec
+Dispensing 170.0 uL into B1 of Opentrons 24 Tube Rack with Generic 2 mL Screwcap on 5 at 300.0 uL/sec
+Aspirating 100.0 uL from B1 of Opentrons 24 Tube Rack with Generic 2 mL Screwcap on 5 at 150.0 uL/sec
+Dispensing 100.0 uL into B1 of Opentrons 24 Tube Rack with Generic 2 mL Screwcap on 5 at 300.0 uL/sec
+Aspirating 100.0 uL from B1 of Opentrons 24 Tube Rack with Generic 2 mL Screwcap on 5 at 150.0 uL/sec
+Dispensing 100.0 uL into B1 of Opentrons 24 Tube Rack with Generic 2 mL Screwcap on 5 at 300.0 uL/sec
+Blowing out at B1 of Opentrons 24 Tube Rack with Generic 2 mL Screwcap on 5
+Dropping tip into A1 of Opentrons Fixed Trash on 12
+Picking up tip from E8 of Tip One 96 DIY Tip Rack 300 킠 on 4
+Aspirating 170.0 uL from E8 of Starlab(PCR Plate On WS) 96 Well Plate 350 킠 on 1 at 150.0 uL/sec
+Dispensing 170.0 uL into B2 of Opentrons 24 Tube Rack with Generic 2 mL Screwcap on 5 at 300.0 uL/sec
+Aspirating 100.0 uL from B2 of Opentrons 24 Tube Rack with Generic 2 mL Screwcap on 5 at 150.0 uL/sec
+Dispensing 100.0 uL into B2 of Opentrons 24 Tube Rack with Generic 2 mL Screwcap on 5 at 300.0 uL/sec
+Aspirating 100.0 uL from B2 of Opentrons 24 Tube Rack with Generic 2 mL Screwcap on 5 at 150.0 uL/sec
+Dispensing 100.0 uL into B2 of Opentrons 24 Tube Rack with Generic 2 mL Screwcap on 5 at 300.0 uL/sec
+Blowing out at B2 of Opentrons 24 Tube Rack with Generic 2 mL Screwcap on 5
+Dropping tip into A1 of Opentrons Fixed Trash on 12
+Picking up tip from E9 of Tip One 96 DIY Tip Rack 300 킠 on 4
+Aspirating 170.0 uL from E9 of Starlab(PCR Plate On WS) 96 Well Plate 350 킠 on 1 at 150.0 uL/sec
+Dispensing 170.0 uL into B3 of Opentrons 24 Tube Rack with Generic 2 mL Screwcap on 5 at 300.0 uL/sec
+Aspirating 100.0 uL from B3 of Opentrons 24 Tube Rack with Generic 2 mL Screwcap on 5 at 150.0 uL/sec
+Dispensing 100.0 uL into B3 of Opentrons 24 Tube Rack with Generic 2 mL Screwcap on 5 at 300.0 uL/sec
+Aspirating 100.0 uL from B3 of Opentrons 24 Tube Rack with Generic 2 mL Screwcap on 5 at 150.0 uL/sec
+Dispensing 100.0 uL into B3 of Opentrons 24 Tube Rack with Generic 2 mL Screwcap on 5 at 300.0 uL/sec
+Blowing out at B3 of Opentrons 24 Tube Rack with Generic 2 mL Screwcap on 5
+Dropping tip into A1 of Opentrons Fixed Trash on 12
+Picking up tip from E10 of Tip One 96 DIY Tip Rack 300 킠 on 4
+Aspirating 170.0 uL from E10 of Starlab(PCR Plate On WS) 96 Well Plate 350 킠 on 1 at 150.0 uL/sec
+Dispensing 170.0 uL into B4 of Opentrons 24 Tube Rack with Generic 2 mL Screwcap on 5 at 300.0 uL/sec
+Aspirating 100.0 uL from B4 of Opentrons 24 Tube Rack with Generic 2 mL Screwcap on 5 at 150.0 uL/sec
+Dispensing 100.0 uL into B4 of Opentrons 24 Tube Rack with Generic 2 mL Screwcap on 5 at 300.0 uL/sec
+Aspirating 100.0 uL from B4 of Opentrons 24 Tube Rack with Generic 2 mL Screwcap on 5 at 150.0 uL/sec
+Dispensing 100.0 uL into B4 of Opentrons 24 Tube Rack with Generic 2 mL Screwcap on 5 at 300.0 uL/sec
+Blowing out at B4 of Opentrons 24 Tube Rack with Generic 2 mL Screwcap on 5
+Dropping tip into A1 of Opentrons Fixed Trash on 12
+Picking up tip from E11 of Tip One 96 DIY Tip Rack 300 킠 on 4
+Aspirating 170.0 uL from E11 of Starlab(PCR Plate On WS) 96 Well Plate 350 킠 on 1 at 150.0 uL/sec
+Dispensing 170.0 uL into B5 of Opentrons 24 Tube Rack with Generic 2 mL Screwcap on 5 at 300.0 uL/sec
+Aspirating 100.0 uL from B5 of Opentrons 24 Tube Rack with Generic 2 mL Screwcap on 5 at 150.0 uL/sec
+Dispensing 100.0 uL into B5 of Opentrons 24 Tube Rack with Generic 2 mL Screwcap on 5 at 300.0 uL/sec
+Aspirating 100.0 uL from B5 of Opentrons 24 Tube Rack with Generic 2 mL Screwcap on 5 at 150.0 uL/sec
+Dispensing 100.0 uL into B5 of Opentrons 24 Tube Rack with Generic 2 mL Screwcap on 5 at 300.0 uL/sec
+Blowing out at B5 of Opentrons 24 Tube Rack with Generic 2 mL Screwcap on 5
+Dropping tip into A1 of Opentrons Fixed Trash on 12
+Picking up tip from E12 of Tip One 96 DIY Tip Rack 300 킠 on 4
+Aspirating 170.0 uL from E12 of Starlab(PCR Plate On WS) 96 Well Plate 350 킠 on 1 at 150.0 uL/sec
+Dispensing 170.0 uL into B6 of Opentrons 24 Tube Rack with Generic 2 mL Screwcap on 5 at 300.0 uL/sec
+Aspirating 100.0 uL from B6 of Opentrons 24 Tube Rack with Generic 2 mL Screwcap on 5 at 150.0 uL/sec
+Dispensing 100.0 uL into B6 of Opentrons 24 Tube Rack with Generic 2 mL Screwcap on 5 at 300.0 uL/sec
+Aspirating 100.0 uL from B6 of Opentrons 24 Tube Rack with Generic 2 mL Screwcap on 5 at 150.0 uL/sec
+Dispensing 100.0 uL into B6 of Opentrons 24 Tube Rack with Generic 2 mL Screwcap on 5 at 300.0 uL/sec
+Blowing out at B6 of Opentrons 24 Tube Rack with Generic 2 mL Screwcap on 5
+Dropping tip into A1 of Opentrons Fixed Trash on 12
+Picking up tip from F1 of Tip One 96 DIY Tip Rack 300 킠 on 4
+Aspirating 170.0 uL from F1 of Starlab(PCR Plate On WS) 96 Well Plate 350 킠 on 1 at 150.0 uL/sec
+Dispensing 170.0 uL into C1 of Opentrons 24 Tube Rack with Generic 2 mL Screwcap on 5 at 300.0 uL/sec
+Aspirating 100.0 uL from C1 of Opentrons 24 Tube Rack with Generic 2 mL Screwcap on 5 at 150.0 uL/sec
+Dispensing 100.0 uL into C1 of Opentrons 24 Tube Rack with Generic 2 mL Screwcap on 5 at 300.0 uL/sec
+Aspirating 100.0 uL from C1 of Opentrons 24 Tube Rack with Generic 2 mL Screwcap on 5 at 150.0 uL/sec
+Dispensing 100.0 uL into C1 of Opentrons 24 Tube Rack with Generic 2 mL Screwcap on 5 at 300.0 uL/sec
+Blowing out at C1 of Opentrons 24 Tube Rack with Generic 2 mL Screwcap on 5
+Dropping tip into A1 of Opentrons Fixed Trash on 12
+Picking up tip from F2 of Tip One 96 DIY Tip Rack 300 킠 on 4
+Aspirating 170.0 uL from F2 of Starlab(PCR Plate On WS) 96 Well Plate 350 킠 on 1 at 150.0 uL/sec
+Dispensing 170.0 uL into C2 of Opentrons 24 Tube Rack with Generic 2 mL Screwcap on 5 at 300.0 uL/sec
+Aspirating 100.0 uL from C2 of Opentrons 24 Tube Rack with Generic 2 mL Screwcap on 5 at 150.0 uL/sec
+Dispensing 100.0 uL into C2 of Opentrons 24 Tube Rack with Generic 2 mL Screwcap on 5 at 300.0 uL/sec
+Aspirating 100.0 uL from C2 of Opentrons 24 Tube Rack with Generic 2 mL Screwcap on 5 at 150.0 uL/sec
+Dispensing 100.0 uL into C2 of Opentrons 24 Tube Rack with Generic 2 mL Screwcap on 5 at 300.0 uL/sec
+Blowing out at C2 of Opentrons 24 Tube Rack with Generic 2 mL Screwcap on 5
+Dropping tip into A1 of Opentrons Fixed Trash on 12
+Picking up tip from F3 of Tip One 96 DIY Tip Rack 300 킠 on 4
+Aspirating 170.0 uL from F3 of Starlab(PCR Plate On WS) 96 Well Plate 350 킠 on 1 at 150.0 uL/sec
+Dispensing 170.0 uL into C3 of Opentrons 24 Tube Rack with Generic 2 mL Screwcap on 5 at 300.0 uL/sec
+Aspirating 100.0 uL from C3 of Opentrons 24 Tube Rack with Generic 2 mL Screwcap on 5 at 150.0 uL/sec
+Dispensing 100.0 uL into C3 of Opentrons 24 Tube Rack with Generic 2 mL Screwcap on 5 at 300.0 uL/sec
+Aspirating 100.0 uL from C3 of Opentrons 24 Tube Rack with Generic 2 mL Screwcap on 5 at 150.0 uL/sec
+Dispensing 100.0 uL into C3 of Opentrons 24 Tube Rack with Generic 2 mL Screwcap on 5 at 300.0 uL/sec
+Blowing out at C3 of Opentrons 24 Tube Rack with Generic 2 mL Screwcap on 5
+Dropping tip into A1 of Opentrons Fixed Trash on 12
+Picking up tip from F4 of Tip One 96 DIY Tip Rack 300 킠 on 4
+Aspirating 170.0 uL from F4 of Starlab(PCR Plate On WS) 96 Well Plate 350 킠 on 1 at 150.0 uL/sec
+Dispensing 170.0 uL into C4 of Opentrons 24 Tube Rack with Generic 2 mL Screwcap on 5 at 300.0 uL/sec
+Aspirating 100.0 uL from C4 of Opentrons 24 Tube Rack with Generic 2 mL Screwcap on 5 at 150.0 uL/sec
+Dispensing 100.0 uL into C4 of Opentrons 24 Tube Rack with Generic 2 mL Screwcap on 5 at 300.0 uL/sec
+Aspirating 100.0 uL from C4 of Opentrons 24 Tube Rack with Generic 2 mL Screwcap on 5 at 150.0 uL/sec
+Dispensing 100.0 uL into C4 of Opentrons 24 Tube Rack with Generic 2 mL Screwcap on 5 at 300.0 uL/sec
+Blowing out at C4 of Opentrons 24 Tube Rack with Generic 2 mL Screwcap on 5
+Dropping tip into A1 of Opentrons Fixed Trash on 12
+Picking up tip from F5 of Tip One 96 DIY Tip Rack 300 킠 on 4
+Aspirating 170.0 uL from F5 of Starlab(PCR Plate On WS) 96 Well Plate 350 킠 on 1 at 150.0 uL/sec
+Dispensing 170.0 uL into C5 of Opentrons 24 Tube Rack with Generic 2 mL Screwcap on 5 at 300.0 uL/sec
+Aspirating 100.0 uL from C5 of Opentrons 24 Tube Rack with Generic 2 mL Screwcap on 5 at 150.0 uL/sec
+Dispensing 100.0 uL into C5 of Opentrons 24 Tube Rack with Generic 2 mL Screwcap on 5 at 300.0 uL/sec
+Aspirating 100.0 uL from C5 of Opentrons 24 Tube Rack with Generic 2 mL Screwcap on 5 at 150.0 uL/sec
+Dispensing 100.0 uL into C5 of Opentrons 24 Tube Rack with Generic 2 mL Screwcap on 5 at 300.0 uL/sec
+Blowing out at C5 of Opentrons 24 Tube Rack with Generic 2 mL Screwcap on 5
+Dropping tip into A1 of Opentrons Fixed Trash on 12
+Picking up tip from F6 of Tip One 96 DIY Tip Rack 300 킠 on 4
+Aspirating 170.0 uL from F6 of Starlab(PCR Plate On WS) 96 Well Plate 350 킠 on 1 at 150.0 uL/sec
+Dispensing 170.0 uL into C6 of Opentrons 24 Tube Rack with Generic 2 mL Screwcap on 5 at 300.0 uL/sec
+Aspirating 100.0 uL from C6 of Opentrons 24 Tube Rack with Generic 2 mL Screwcap on 5 at 150.0 uL/sec
+Dispensing 100.0 uL into C6 of Opentrons 24 Tube Rack with Generic 2 mL Screwcap on 5 at 300.0 uL/sec
+Aspirating 100.0 uL from C6 of Opentrons 24 Tube Rack with Generic 2 mL Screwcap on 5 at 150.0 uL/sec
+Dispensing 100.0 uL into C6 of Opentrons 24 Tube Rack with Generic 2 mL Screwcap on 5 at 300.0 uL/sec
+Blowing out at C6 of Opentrons 24 Tube Rack with Generic 2 mL Screwcap on 5
+Dropping tip into A1 of Opentrons Fixed Trash on 12
+Picking up tip from F7 of Tip One 96 DIY Tip Rack 300 킠 on 4
+Aspirating 170.0 uL from F7 of Starlab(PCR Plate On WS) 96 Well Plate 350 킠 on 1 at 150.0 uL/sec
+Dispensing 170.0 uL into D1 of Opentrons 24 Tube Rack with Generic 2 mL Screwcap on 5 at 300.0 uL/sec
+Aspirating 100.0 uL from D1 of Opentrons 24 Tube Rack with Generic 2 mL Screwcap on 5 at 150.0 uL/sec
+Dispensing 100.0 uL into D1 of Opentrons 24 Tube Rack with Generic 2 mL Screwcap on 5 at 300.0 uL/sec
+Aspirating 100.0 uL from D1 of Opentrons 24 Tube Rack with Generic 2 mL Screwcap on 5 at 150.0 uL/sec
+Dispensing 100.0 uL into D1 of Opentrons 24 Tube Rack with Generic 2 mL Screwcap on 5 at 300.0 uL/sec
+Blowing out at D1 of Opentrons 24 Tube Rack with Generic 2 mL Screwcap on 5
+Dropping tip into A1 of Opentrons Fixed Trash on 12
+Picking up tip from F8 of Tip One 96 DIY Tip Rack 300 킠 on 4
+Aspirating 170.0 uL from F8 of Starlab(PCR Plate On WS) 96 Well Plate 350 킠 on 1 at 150.0 uL/sec
+Dispensing 170.0 uL into D2 of Opentrons 24 Tube Rack with Generic 2 mL Screwcap on 5 at 300.0 uL/sec
+Aspirating 100.0 uL from D2 of Opentrons 24 Tube Rack with Generic 2 mL Screwcap on 5 at 150.0 uL/sec
+Dispensing 100.0 uL into D2 of Opentrons 24 Tube Rack with Generic 2 mL Screwcap on 5 at 300.0 uL/sec
+Aspirating 100.0 uL from D2 of Opentrons 24 Tube Rack with Generic 2 mL Screwcap on 5 at 150.0 uL/sec
+Dispensing 100.0 uL into D2 of Opentrons 24 Tube Rack with Generic 2 mL Screwcap on 5 at 300.0 uL/sec
+Blowing out at D2 of Opentrons 24 Tube Rack with Generic 2 mL Screwcap on 5
+Dropping tip into A1 of Opentrons Fixed Trash on 12
+Picking up tip from F9 of Tip One 96 DIY Tip Rack 300 킠 on 4
+Aspirating 170.0 uL from F9 of Starlab(PCR Plate On WS) 96 Well Plate 350 킠 on 1 at 150.0 uL/sec
+Dispensing 170.0 uL into D3 of Opentrons 24 Tube Rack with Generic 2 mL Screwcap on 5 at 300.0 uL/sec
+Aspirating 100.0 uL from D3 of Opentrons 24 Tube Rack with Generic 2 mL Screwcap on 5 at 150.0 uL/sec
+Dispensing 100.0 uL into D3 of Opentrons 24 Tube Rack with Generic 2 mL Screwcap on 5 at 300.0 uL/sec
+Aspirating 100.0 uL from D3 of Opentrons 24 Tube Rack with Generic 2 mL Screwcap on 5 at 150.0 uL/sec
+Dispensing 100.0 uL into D3 of Opentrons 24 Tube Rack with Generic 2 mL Screwcap on 5 at 300.0 uL/sec
+Blowing out at D3 of Opentrons 24 Tube Rack with Generic 2 mL Screwcap on 5
+Dropping tip into A1 of Opentrons Fixed Trash on 12
+Picking up tip from F10 of Tip One 96 DIY Tip Rack 300 킠 on 4
+Aspirating 170.0 uL from F10 of Starlab(PCR Plate On WS) 96 Well Plate 350 킠 on 1 at 150.0 uL/sec
+Dispensing 170.0 uL into D4 of Opentrons 24 Tube Rack with Generic 2 mL Screwcap on 5 at 300.0 uL/sec
+Aspirating 100.0 uL from D4 of Opentrons 24 Tube Rack with Generic 2 mL Screwcap on 5 at 150.0 uL/sec
+Dispensing 100.0 uL into D4 of Opentrons 24 Tube Rack with Generic 2 mL Screwcap on 5 at 300.0 uL/sec
+Aspirating 100.0 uL from D4 of Opentrons 24 Tube Rack with Generic 2 mL Screwcap on 5 at 150.0 uL/sec
+Dispensing 100.0 uL into D4 of Opentrons 24 Tube Rack with Generic 2 mL Screwcap on 5 at 300.0 uL/sec
+Blowing out at D4 of Opentrons 24 Tube Rack with Generic 2 mL Screwcap on 5
+Dropping tip into A1 of Opentrons Fixed Trash on 12
+Picking up tip from F11 of Tip One 96 DIY Tip Rack 300 킠 on 4
+Aspirating 170.0 uL from F11 of Starlab(PCR Plate On WS) 96 Well Plate 350 킠 on 1 at 150.0 uL/sec
+Dispensing 170.0 uL into D5 of Opentrons 24 Tube Rack with Generic 2 mL Screwcap on 5 at 300.0 uL/sec
+Aspirating 100.0 uL from D5 of Opentrons 24 Tube Rack with Generic 2 mL Screwcap on 5 at 150.0 uL/sec
+Dispensing 100.0 uL into D5 of Opentrons 24 Tube Rack with Generic 2 mL Screwcap on 5 at 300.0 uL/sec
+Aspirating 100.0 uL from D5 of Opentrons 24 Tube Rack with Generic 2 mL Screwcap on 5 at 150.0 uL/sec
+Dispensing 100.0 uL into D5 of Opentrons 24 Tube Rack with Generic 2 mL Screwcap on 5 at 300.0 uL/sec
+Blowing out at D5 of Opentrons 24 Tube Rack with Generic 2 mL Screwcap on 5
+Dropping tip into A1 of Opentrons Fixed Trash on 12
+Picking up tip from F12 of Tip One 96 DIY Tip Rack 300 킠 on 4
+Aspirating 170.0 uL from F12 of Starlab(PCR Plate On WS) 96 Well Plate 350 킠 on 1 at 150.0 uL/sec
+Dispensing 170.0 uL into D6 of Opentrons 24 Tube Rack with Generic 2 mL Screwcap on 5 at 300.0 uL/sec
+Aspirating 100.0 uL from D6 of Opentrons 24 Tube Rack with Generic 2 mL Screwcap on 5 at 150.0 uL/sec
+Dispensing 100.0 uL into D6 of Opentrons 24 Tube Rack with Generic 2 mL Screwcap on 5 at 300.0 uL/sec
+Aspirating 100.0 uL from D6 of Opentrons 24 Tube Rack with Generic 2 mL Screwcap on 5 at 150.0 uL/sec
+Dispensing 100.0 uL into D6 of Opentrons 24 Tube Rack with Generic 2 mL Screwcap on 5 at 300.0 uL/sec
+Blowing out at D6 of Opentrons 24 Tube Rack with Generic 2 mL Screwcap on 5
+Dropping tip into A1 of Opentrons Fixed Trash on 12
+Picking up tip from G1 of Tip One 96 DIY Tip Rack 300 킠 on 4
+Aspirating 170.0 uL from G1 of Starlab(PCR Plate On WS) 96 Well Plate 350 킠 on 1 at 150.0 uL/sec
+Dispensing 170.0 uL into A1 of Opentrons 24 Tube Rack with Generic 2 mL Screwcap on 6 at 300.0 uL/sec
+Aspirating 100.0 uL from A1 of Opentrons 24 Tube Rack with Generic 2 mL Screwcap on 6 at 150.0 uL/sec
+Dispensing 100.0 uL into A1 of Opentrons 24 Tube Rack with Generic 2 mL Screwcap on 6 at 300.0 uL/sec
+Aspirating 100.0 uL from A1 of Opentrons 24 Tube Rack with Generic 2 mL Screwcap on 6 at 150.0 uL/sec
+Dispensing 100.0 uL into A1 of Opentrons 24 Tube Rack with Generic 2 mL Screwcap on 6 at 300.0 uL/sec
+Blowing out at A1 of Opentrons 24 Tube Rack with Generic 2 mL Screwcap on 6
+Dropping tip into A1 of Opentrons Fixed Trash on 12
+Picking up tip from G2 of Tip One 96 DIY Tip Rack 300 킠 on 4
+Aspirating 170.0 uL from G2 of Starlab(PCR Plate On WS) 96 Well Plate 350 킠 on 1 at 150.0 uL/sec
+Dispensing 170.0 uL into A2 of Opentrons 24 Tube Rack with Generic 2 mL Screwcap on 6 at 300.0 uL/sec
+Aspirating 100.0 uL from A2 of Opentrons 24 Tube Rack with Generic 2 mL Screwcap on 6 at 150.0 uL/sec
+Dispensing 100.0 uL into A2 of Opentrons 24 Tube Rack with Generic 2 mL Screwcap on 6 at 300.0 uL/sec
+Aspirating 100.0 uL from A2 of Opentrons 24 Tube Rack with Generic 2 mL Screwcap on 6 at 150.0 uL/sec
+Dispensing 100.0 uL into A2 of Opentrons 24 Tube Rack with Generic 2 mL Screwcap on 6 at 300.0 uL/sec
+Blowing out at A2 of Opentrons 24 Tube Rack with Generic 2 mL Screwcap on 6
+Dropping tip into A1 of Opentrons Fixed Trash on 12
+Picking up tip from G3 of Tip One 96 DIY Tip Rack 300 킠 on 4
+Aspirating 170.0 uL from G3 of Starlab(PCR Plate On WS) 96 Well Plate 350 킠 on 1 at 150.0 uL/sec
+Dispensing 170.0 uL into A3 of Opentrons 24 Tube Rack with Generic 2 mL Screwcap on 6 at 300.0 uL/sec
+Aspirating 100.0 uL from A3 of Opentrons 24 Tube Rack with Generic 2 mL Screwcap on 6 at 150.0 uL/sec
+Dispensing 100.0 uL into A3 of Opentrons 24 Tube Rack with Generic 2 mL Screwcap on 6 at 300.0 uL/sec
+Aspirating 100.0 uL from A3 of Opentrons 24 Tube Rack with Generic 2 mL Screwcap on 6 at 150.0 uL/sec
+Dispensing 100.0 uL into A3 of Opentrons 24 Tube Rack with Generic 2 mL Screwcap on 6 at 300.0 uL/sec
+Blowing out at A3 of Opentrons 24 Tube Rack with Generic 2 mL Screwcap on 6
+Dropping tip into A1 of Opentrons Fixed Trash on 12
+Picking up tip from G4 of Tip One 96 DIY Tip Rack 300 킠 on 4
+Aspirating 170.0 uL from G4 of Starlab(PCR Plate On WS) 96 Well Plate 350 킠 on 1 at 150.0 uL/sec
+Dispensing 170.0 uL into A4 of Opentrons 24 Tube Rack with Generic 2 mL Screwcap on 6 at 300.0 uL/sec
+Aspirating 100.0 uL from A4 of Opentrons 24 Tube Rack with Generic 2 mL Screwcap on 6 at 150.0 uL/sec
+Dispensing 100.0 uL into A4 of Opentrons 24 Tube Rack with Generic 2 mL Screwcap on 6 at 300.0 uL/sec
+Aspirating 100.0 uL from A4 of Opentrons 24 Tube Rack with Generic 2 mL Screwcap on 6 at 150.0 uL/sec
+Dispensing 100.0 uL into A4 of Opentrons 24 Tube Rack with Generic 2 mL Screwcap on 6 at 300.0 uL/sec
+Blowing out at A4 of Opentrons 24 Tube Rack with Generic 2 mL Screwcap on 6
+Dropping tip into A1 of Opentrons Fixed Trash on 12
+Picking up tip from G5 of Tip One 96 DIY Tip Rack 300 킠 on 4
+Aspirating 170.0 uL from G5 of Starlab(PCR Plate On WS) 96 Well Plate 350 킠 on 1 at 150.0 uL/sec
+Dispensing 170.0 uL into A5 of Opentrons 24 Tube Rack with Generic 2 mL Screwcap on 6 at 300.0 uL/sec
+Aspirating 100.0 uL from A5 of Opentrons 24 Tube Rack with Generic 2 mL Screwcap on 6 at 150.0 uL/sec
+Dispensing 100.0 uL into A5 of Opentrons 24 Tube Rack with Generic 2 mL Screwcap on 6 at 300.0 uL/sec
+Aspirating 100.0 uL from A5 of Opentrons 24 Tube Rack with Generic 2 mL Screwcap on 6 at 150.0 uL/sec
+Dispensing 100.0 uL into A5 of Opentrons 24 Tube Rack with Generic 2 mL Screwcap on 6 at 300.0 uL/sec
+Blowing out at A5 of Opentrons 24 Tube Rack with Generic 2 mL Screwcap on 6
+Dropping tip into A1 of Opentrons Fixed Trash on 12
+Picking up tip from G6 of Tip One 96 DIY Tip Rack 300 킠 on 4
+Aspirating 170.0 uL from G6 of Starlab(PCR Plate On WS) 96 Well Plate 350 킠 on 1 at 150.0 uL/sec
+Dispensing 170.0 uL into A6 of Opentrons 24 Tube Rack with Generic 2 mL Screwcap on 6 at 300.0 uL/sec
+Aspirating 100.0 uL from A6 of Opentrons 24 Tube Rack with Generic 2 mL Screwcap on 6 at 150.0 uL/sec
+Dispensing 100.0 uL into A6 of Opentrons 24 Tube Rack with Generic 2 mL Screwcap on 6 at 300.0 uL/sec
+Aspirating 100.0 uL from A6 of Opentrons 24 Tube Rack with Generic 2 mL Screwcap on 6 at 150.0 uL/sec
+Dispensing 100.0 uL into A6 of Opentrons 24 Tube Rack with Generic 2 mL Screwcap on 6 at 300.0 uL/sec
+Blowing out at A6 of Opentrons 24 Tube Rack with Generic 2 mL Screwcap on 6
+Dropping tip into A1 of Opentrons Fixed Trash on 12
+Picking up tip from G7 of Tip One 96 DIY Tip Rack 300 킠 on 4
+Aspirating 170.0 uL from G7 of Starlab(PCR Plate On WS) 96 Well Plate 350 킠 on 1 at 150.0 uL/sec
+Dispensing 170.0 uL into B1 of Opentrons 24 Tube Rack with Generic 2 mL Screwcap on 6 at 300.0 uL/sec
+Aspirating 100.0 uL from B1 of Opentrons 24 Tube Rack with Generic 2 mL Screwcap on 6 at 150.0 uL/sec
+Dispensing 100.0 uL into B1 of Opentrons 24 Tube Rack with Generic 2 mL Screwcap on 6 at 300.0 uL/sec
+Aspirating 100.0 uL from B1 of Opentrons 24 Tube Rack with Generic 2 mL Screwcap on 6 at 150.0 uL/sec
+Dispensing 100.0 uL into B1 of Opentrons 24 Tube Rack with Generic 2 mL Screwcap on 6 at 300.0 uL/sec
+Blowing out at B1 of Opentrons 24 Tube Rack with Generic 2 mL Screwcap on 6
+Dropping tip into A1 of Opentrons Fixed Trash on 12
+Picking up tip from G8 of Tip One 96 DIY Tip Rack 300 킠 on 4
+Aspirating 170.0 uL from G8 of Starlab(PCR Plate On WS) 96 Well Plate 350 킠 on 1 at 150.0 uL/sec
+Dispensing 170.0 uL into B2 of Opentrons 24 Tube Rack with Generic 2 mL Screwcap on 6 at 300.0 uL/sec
+Aspirating 100.0 uL from B2 of Opentrons 24 Tube Rack with Generic 2 mL Screwcap on 6 at 150.0 uL/sec
+Dispensing 100.0 uL into B2 of Opentrons 24 Tube Rack with Generic 2 mL Screwcap on 6 at 300.0 uL/sec
+Aspirating 100.0 uL from B2 of Opentrons 24 Tube Rack with Generic 2 mL Screwcap on 6 at 150.0 uL/sec
+Dispensing 100.0 uL into B2 of Opentrons 24 Tube Rack with Generic 2 mL Screwcap on 6 at 300.0 uL/sec
+Blowing out at B2 of Opentrons 24 Tube Rack with Generic 2 mL Screwcap on 6
+Dropping tip into A1 of Opentrons Fixed Trash on 12
+Picking up tip from G9 of Tip One 96 DIY Tip Rack 300 킠 on 4
+Aspirating 170.0 uL from G9 of Starlab(PCR Plate On WS) 96 Well Plate 350 킠 on 1 at 150.0 uL/sec
+Dispensing 170.0 uL into B3 of Opentrons 24 Tube Rack with Generic 2 mL Screwcap on 6 at 300.0 uL/sec
+Aspirating 100.0 uL from B3 of Opentrons 24 Tube Rack with Generic 2 mL Screwcap on 6 at 150.0 uL/sec
+Dispensing 100.0 uL into B3 of Opentrons 24 Tube Rack with Generic 2 mL Screwcap on 6 at 300.0 uL/sec
+Aspirating 100.0 uL from B3 of Opentrons 24 Tube Rack with Generic 2 mL Screwcap on 6 at 150.0 uL/sec
+Dispensing 100.0 uL into B3 of Opentrons 24 Tube Rack with Generic 2 mL Screwcap on 6 at 300.0 uL/sec
+Blowing out at B3 of Opentrons 24 Tube Rack with Generic 2 mL Screwcap on 6
+Dropping tip into A1 of Opentrons Fixed Trash on 12
+Picking up tip from G10 of Tip One 96 DIY Tip Rack 300 킠 on 4
+Aspirating 170.0 uL from G10 of Starlab(PCR Plate On WS) 96 Well Plate 350 킠 on 1 at 150.0 uL/sec
+Dispensing 170.0 uL into B4 of Opentrons 24 Tube Rack with Generic 2 mL Screwcap on 6 at 300.0 uL/sec
+Aspirating 100.0 uL from B4 of Opentrons 24 Tube Rack with Generic 2 mL Screwcap on 6 at 150.0 uL/sec
+Dispensing 100.0 uL into B4 of Opentrons 24 Tube Rack with Generic 2 mL Screwcap on 6 at 300.0 uL/sec
+Aspirating 100.0 uL from B4 of Opentrons 24 Tube Rack with Generic 2 mL Screwcap on 6 at 150.0 uL/sec
+Dispensing 100.0 uL into B4 of Opentrons 24 Tube Rack with Generic 2 mL Screwcap on 6 at 300.0 uL/sec
+Blowing out at B4 of Opentrons 24 Tube Rack with Generic 2 mL Screwcap on 6
+Dropping tip into A1 of Opentrons Fixed Trash on 12
+Picking up tip from G11 of Tip One 96 DIY Tip Rack 300 킠 on 4
+Aspirating 170.0 uL from G11 of Starlab(PCR Plate On WS) 96 Well Plate 350 킠 on 1 at 150.0 uL/sec
+Dispensing 170.0 uL into B5 of Opentrons 24 Tube Rack with Generic 2 mL Screwcap on 6 at 300.0 uL/sec
+Aspirating 100.0 uL from B5 of Opentrons 24 Tube Rack with Generic 2 mL Screwcap on 6 at 150.0 uL/sec
+Dispensing 100.0 uL into B5 of Opentrons 24 Tube Rack with Generic 2 mL Screwcap on 6 at 300.0 uL/sec
+Aspirating 100.0 uL from B5 of Opentrons 24 Tube Rack with Generic 2 mL Screwcap on 6 at 150.0 uL/sec
+Dispensing 100.0 uL into B5 of Opentrons 24 Tube Rack with Generic 2 mL Screwcap on 6 at 300.0 uL/sec
+Blowing out at B5 of Opentrons 24 Tube Rack with Generic 2 mL Screwcap on 6
+Dropping tip into A1 of Opentrons Fixed Trash on 12
+Picking up tip from G12 of Tip One 96 DIY Tip Rack 300 킠 on 4
+Aspirating 170.0 uL from G12 of Starlab(PCR Plate On WS) 96 Well Plate 350 킠 on 1 at 150.0 uL/sec
+Dispensing 170.0 uL into B6 of Opentrons 24 Tube Rack with Generic 2 mL Screwcap on 6 at 300.0 uL/sec
+Aspirating 100.0 uL from B6 of Opentrons 24 Tube Rack with Generic 2 mL Screwcap on 6 at 150.0 uL/sec
+Dispensing 100.0 uL into B6 of Opentrons 24 Tube Rack with Generic 2 mL Screwcap on 6 at 300.0 uL/sec
+Aspirating 100.0 uL from B6 of Opentrons 24 Tube Rack with Generic 2 mL Screwcap on 6 at 150.0 uL/sec
+Dispensing 100.0 uL into B6 of Opentrons 24 Tube Rack with Generic 2 mL Screwcap on 6 at 300.0 uL/sec
+Blowing out at B6 of Opentrons 24 Tube Rack with Generic 2 mL Screwcap on 6
+Dropping tip into A1 of Opentrons Fixed Trash on 12
+Picking up tip from H1 of Tip One 96 DIY Tip Rack 300 킠 on 4
+Aspirating 170.0 uL from H1 of Starlab(PCR Plate On WS) 96 Well Plate 350 킠 on 1 at 150.0 uL/sec
+Dispensing 170.0 uL into C1 of Opentrons 24 Tube Rack with Generic 2 mL Screwcap on 6 at 300.0 uL/sec
+Aspirating 100.0 uL from C1 of Opentrons 24 Tube Rack with Generic 2 mL Screwcap on 6 at 150.0 uL/sec
+Dispensing 100.0 uL into C1 of Opentrons 24 Tube Rack with Generic 2 mL Screwcap on 6 at 300.0 uL/sec
+Aspirating 100.0 uL from C1 of Opentrons 24 Tube Rack with Generic 2 mL Screwcap on 6 at 150.0 uL/sec
+Dispensing 100.0 uL into C1 of Opentrons 24 Tube Rack with Generic 2 mL Screwcap on 6 at 300.0 uL/sec
+Blowing out at C1 of Opentrons 24 Tube Rack with Generic 2 mL Screwcap on 6
+Dropping tip into A1 of Opentrons Fixed Trash on 12
+Picking up tip from H2 of Tip One 96 DIY Tip Rack 300 킠 on 4
+Aspirating 170.0 uL from H2 of Starlab(PCR Plate On WS) 96 Well Plate 350 킠 on 1 at 150.0 uL/sec
+Dispensing 170.0 uL into C2 of Opentrons 24 Tube Rack with Generic 2 mL Screwcap on 6 at 300.0 uL/sec
+Aspirating 100.0 uL from C2 of Opentrons 24 Tube Rack with Generic 2 mL Screwcap on 6 at 150.0 uL/sec
+Dispensing 100.0 uL into C2 of Opentrons 24 Tube Rack with Generic 2 mL Screwcap on 6 at 300.0 uL/sec
+Aspirating 100.0 uL from C2 of Opentrons 24 Tube Rack with Generic 2 mL Screwcap on 6 at 150.0 uL/sec
+Dispensing 100.0 uL into C2 of Opentrons 24 Tube Rack with Generic 2 mL Screwcap on 6 at 300.0 uL/sec
+Blowing out at C2 of Opentrons 24 Tube Rack with Generic 2 mL Screwcap on 6
+Dropping tip into A1 of Opentrons Fixed Trash on 12
+Picking up tip from H3 of Tip One 96 DIY Tip Rack 300 킠 on 4
+Aspirating 170.0 uL from H3 of Starlab(PCR Plate On WS) 96 Well Plate 350 킠 on 1 at 150.0 uL/sec
+Dispensing 170.0 uL into C3 of Opentrons 24 Tube Rack with Generic 2 mL Screwcap on 6 at 300.0 uL/sec
+Aspirating 100.0 uL from C3 of Opentrons 24 Tube Rack with Generic 2 mL Screwcap on 6 at 150.0 uL/sec
+Dispensing 100.0 uL into C3 of Opentrons 24 Tube Rack with Generic 2 mL Screwcap on 6 at 300.0 uL/sec
+Aspirating 100.0 uL from C3 of Opentrons 24 Tube Rack with Generic 2 mL Screwcap on 6 at 150.0 uL/sec
+Dispensing 100.0 uL into C3 of Opentrons 24 Tube Rack with Generic 2 mL Screwcap on 6 at 300.0 uL/sec
+Blowing out at C3 of Opentrons 24 Tube Rack with Generic 2 mL Screwcap on 6
+Dropping tip into A1 of Opentrons Fixed Trash on 12
+Picking up tip from H4 of Tip One 96 DIY Tip Rack 300 킠 on 4
+Aspirating 170.0 uL from H4 of Starlab(PCR Plate On WS) 96 Well Plate 350 킠 on 1 at 150.0 uL/sec
+Dispensing 170.0 uL into C4 of Opentrons 24 Tube Rack with Generic 2 mL Screwcap on 6 at 300.0 uL/sec
+Aspirating 100.0 uL from C4 of Opentrons 24 Tube Rack with Generic 2 mL Screwcap on 6 at 150.0 uL/sec
+Dispensing 100.0 uL into C4 of Opentrons 24 Tube Rack with Generic 2 mL Screwcap on 6 at 300.0 uL/sec
+Aspirating 100.0 uL from C4 of Opentrons 24 Tube Rack with Generic 2 mL Screwcap on 6 at 150.0 uL/sec
+Dispensing 100.0 uL into C4 of Opentrons 24 Tube Rack with Generic 2 mL Screwcap on 6 at 300.0 uL/sec
+Blowing out at C4 of Opentrons 24 Tube Rack with Generic 2 mL Screwcap on 6
+Dropping tip into A1 of Opentrons Fixed Trash on 12
+Picking up tip from H5 of Tip One 96 DIY Tip Rack 300 킠 on 4
+Aspirating 170.0 uL from H5 of Starlab(PCR Plate On WS) 96 Well Plate 350 킠 on 1 at 150.0 uL/sec
+Dispensing 170.0 uL into C5 of Opentrons 24 Tube Rack with Generic 2 mL Screwcap on 6 at 300.0 uL/sec
+Aspirating 100.0 uL from C5 of Opentrons 24 Tube Rack with Generic 2 mL Screwcap on 6 at 150.0 uL/sec
+Dispensing 100.0 uL into C5 of Opentrons 24 Tube Rack with Generic 2 mL Screwcap on 6 at 300.0 uL/sec
+Aspirating 100.0 uL from C5 of Opentrons 24 Tube Rack with Generic 2 mL Screwcap on 6 at 150.0 uL/sec
+Dispensing 100.0 uL into C5 of Opentrons 24 Tube Rack with Generic 2 mL Screwcap on 6 at 300.0 uL/sec
+Blowing out at C5 of Opentrons 24 Tube Rack with Generic 2 mL Screwcap on 6
+Dropping tip into A1 of Opentrons Fixed Trash on 12
+Picking up tip from H6 of Tip One 96 DIY Tip Rack 300 킠 on 4
+Aspirating 170.0 uL from H6 of Starlab(PCR Plate On WS) 96 Well Plate 350 킠 on 1 at 150.0 uL/sec
+Dispensing 170.0 uL into C6 of Opentrons 24 Tube Rack with Generic 2 mL Screwcap on 6 at 300.0 uL/sec
+Aspirating 100.0 uL from C6 of Opentrons 24 Tube Rack with Generic 2 mL Screwcap on 6 at 150.0 uL/sec
+Dispensing 100.0 uL into C6 of Opentrons 24 Tube Rack with Generic 2 mL Screwcap on 6 at 300.0 uL/sec
+Aspirating 100.0 uL from C6 of Opentrons 24 Tube Rack with Generic 2 mL Screwcap on 6 at 150.0 uL/sec
+Dispensing 100.0 uL into C6 of Opentrons 24 Tube Rack with Generic 2 mL Screwcap on 6 at 300.0 uL/sec
+Blowing out at C6 of Opentrons 24 Tube Rack with Generic 2 mL Screwcap on 6
+Dropping tip into A1 of Opentrons Fixed Trash on 12
+Picking up tip from H7 of Tip One 96 DIY Tip Rack 300 킠 on 4
+Aspirating 170.0 uL from H7 of Starlab(PCR Plate On WS) 96 Well Plate 350 킠 on 1 at 150.0 uL/sec
+Dispensing 170.0 uL into D1 of Opentrons 24 Tube Rack with Generic 2 mL Screwcap on 6 at 300.0 uL/sec
+Aspirating 100.0 uL from D1 of Opentrons 24 Tube Rack with Generic 2 mL Screwcap on 6 at 150.0 uL/sec
+Dispensing 100.0 uL into D1 of Opentrons 24 Tube Rack with Generic 2 mL Screwcap on 6 at 300.0 uL/sec
+Aspirating 100.0 uL from D1 of Opentrons 24 Tube Rack with Generic 2 mL Screwcap on 6 at 150.0 uL/sec
+Dispensing 100.0 uL into D1 of Opentrons 24 Tube Rack with Generic 2 mL Screwcap on 6 at 300.0 uL/sec
+Blowing out at D1 of Opentrons 24 Tube Rack with Generic 2 mL Screwcap on 6
+Dropping tip into A1 of Opentrons Fixed Trash on 12
+Picking up tip from H8 of Tip One 96 DIY Tip Rack 300 킠 on 4
+Aspirating 170.0 uL from H8 of Starlab(PCR Plate On WS) 96 Well Plate 350 킠 on 1 at 150.0 uL/sec
+Dispensing 170.0 uL into D2 of Opentrons 24 Tube Rack with Generic 2 mL Screwcap on 6 at 300.0 uL/sec
+Aspirating 100.0 uL from D2 of Opentrons 24 Tube Rack with Generic 2 mL Screwcap on 6 at 150.0 uL/sec
+Dispensing 100.0 uL into D2 of Opentrons 24 Tube Rack with Generic 2 mL Screwcap on 6 at 300.0 uL/sec
+Aspirating 100.0 uL from D2 of Opentrons 24 Tube Rack with Generic 2 mL Screwcap on 6 at 150.0 uL/sec
+Dispensing 100.0 uL into D2 of Opentrons 24 Tube Rack with Generic 2 mL Screwcap on 6 at 300.0 uL/sec
+Blowing out at D2 of Opentrons 24 Tube Rack with Generic 2 mL Screwcap on 6
+Dropping tip into A1 of Opentrons Fixed Trash on 12
+Picking up tip from H9 of Tip One 96 DIY Tip Rack 300 킠 on 4
+Aspirating 170.0 uL from H9 of Starlab(PCR Plate On WS) 96 Well Plate 350 킠 on 1 at 150.0 uL/sec
+Dispensing 170.0 uL into D3 of Opentrons 24 Tube Rack with Generic 2 mL Screwcap on 6 at 300.0 uL/sec
+Aspirating 100.0 uL from D3 of Opentrons 24 Tube Rack with Generic 2 mL Screwcap on 6 at 150.0 uL/sec
+Dispensing 100.0 uL into D3 of Opentrons 24 Tube Rack with Generic 2 mL Screwcap on 6 at 300.0 uL/sec
+Aspirating 100.0 uL from D3 of Opentrons 24 Tube Rack with Generic 2 mL Screwcap on 6 at 150.0 uL/sec
+Dispensing 100.0 uL into D3 of Opentrons 24 Tube Rack with Generic 2 mL Screwcap on 6 at 300.0 uL/sec
+Blowing out at D3 of Opentrons 24 Tube Rack with Generic 2 mL Screwcap on 6
+Dropping tip into A1 of Opentrons Fixed Trash on 12

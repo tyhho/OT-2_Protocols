@@ -1,3 +1,4 @@
 *.db
-*.txt
 *.pdf
+*./other_instructions_io
+*./example_img

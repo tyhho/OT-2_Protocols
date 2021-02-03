@@ -1,0 +1,115 @@
+Transferring 2.0 from A2 of Opentrons 24 Tube Rack with Eppendorf 1.5 mL Safe-Lock Snapcap on 1 to A1 of Starlab(PCR Plate On WS) 96 Well Plate 350 킠 on 2
+	Picking up tip from A1 of GEB 96 Tip Rack 10 킠 on 3
+	Aspirating 2.0 uL from A2 of Opentrons 24 Tube Rack with Eppendorf 1.5 mL Safe-Lock Snapcap on 1 at 5.0 uL/sec
+	Dispensing 2.0 uL into A1 of Starlab(PCR Plate On WS) 96 Well Plate 350 킠 on 2 at 10.0 uL/sec
+	Dropping tip into A1 of Opentrons Fixed Trash on 12
+Transferring 1.0 from B1 of Opentrons 24 Tube Rack with Eppendorf 1.5 mL Safe-Lock Snapcap on 1 to A1 of Starlab(PCR Plate On WS) 96 Well Plate 350 킠 on 2
+	Picking up tip from B1 of GEB 96 Tip Rack 10 킠 on 3
+	Aspirating 1.0 uL from B1 of Opentrons 24 Tube Rack with Eppendorf 1.5 mL Safe-Lock Snapcap on 1 at 5.0 uL/sec
+	Dispensing 1.0 uL into A1 of Starlab(PCR Plate On WS) 96 Well Plate 350 킠 on 2 at 10.0 uL/sec
+	Dropping tip into A1 of Opentrons Fixed Trash on 12
+Transferring 1.0 from C2 of Opentrons 24 Tube Rack with Eppendorf 1.5 mL Safe-Lock Snapcap on 1 to A1 of Starlab(PCR Plate On WS) 96 Well Plate 350 킠 on 2
+	Picking up tip from C1 of GEB 96 Tip Rack 10 킠 on 3
+	Aspirating 1.0 uL from C2 of Opentrons 24 Tube Rack with Eppendorf 1.5 mL Safe-Lock Snapcap on 1 at 5.0 uL/sec
+	Dispensing 1.0 uL into A1 of Starlab(PCR Plate On WS) 96 Well Plate 350 킠 on 2 at 10.0 uL/sec
+	Dropping tip into A1 of Opentrons Fixed Trash on 12
+Transferring 3.0 from A3 of Opentrons 24 Tube Rack with Eppendorf 1.5 mL Safe-Lock Snapcap on 1 to A2 of Starlab(PCR Plate On WS) 96 Well Plate 350 킠 on 2
+	Picking up tip from D1 of GEB 96 Tip Rack 10 킠 on 3
+	Aspirating 3.0 uL from A3 of Opentrons 24 Tube Rack with Eppendorf 1.5 mL Safe-Lock Snapcap on 1 at 5.0 uL/sec
+	Dispensing 3.0 uL into A2 of Starlab(PCR Plate On WS) 96 Well Plate 350 킠 on 2 at 10.0 uL/sec
+	Dropping tip into A1 of Opentrons Fixed Trash on 12
+Transferring 1.0 from B1 of Opentrons 24 Tube Rack with Eppendorf 1.5 mL Safe-Lock Snapcap on 1 to A2 of Starlab(PCR Plate On WS) 96 Well Plate 350 킠 on 2
+	Picking up tip from E1 of GEB 96 Tip Rack 10 킠 on 3
+	Aspirating 1.0 uL from B1 of Opentrons 24 Tube Rack with Eppendorf 1.5 mL Safe-Lock Snapcap on 1 at 5.0 uL/sec
+	Dispensing 1.0 uL into A2 of Starlab(PCR Plate On WS) 96 Well Plate 350 킠 on 2 at 10.0 uL/sec
+	Dropping tip into A1 of Opentrons Fixed Trash on 12
+Transferring 1.0 from C2 of Opentrons 24 Tube Rack with Eppendorf 1.5 mL Safe-Lock Snapcap on 1 to A2 of Starlab(PCR Plate On WS) 96 Well Plate 350 킠 on 2
+	Picking up tip from F1 of GEB 96 Tip Rack 10 킠 on 3
+	Aspirating 1.0 uL from C2 of Opentrons 24 Tube Rack with Eppendorf 1.5 mL Safe-Lock Snapcap on 1 at 5.0 uL/sec
+	Dispensing 1.0 uL into A2 of Starlab(PCR Plate On WS) 96 Well Plate 350 킠 on 2 at 10.0 uL/sec
+	Dropping tip into A1 of Opentrons Fixed Trash on 12
+Transferring 1.0 from A1 of Opentrons 24 Tube Rack with Eppendorf 1.5 mL Safe-Lock Snapcap on 1 to A3 of Starlab(PCR Plate On WS) 96 Well Plate 350 킠 on 2
+	Picking up tip from G1 of GEB 96 Tip Rack 10 킠 on 3
+	Aspirating 1.0 uL from A1 of Opentrons 24 Tube Rack with Eppendorf 1.5 mL Safe-Lock Snapcap on 1 at 5.0 uL/sec
+	Dispensing 1.0 uL into A3 of Starlab(PCR Plate On WS) 96 Well Plate 350 킠 on 2 at 10.0 uL/sec
+	Dropping tip into A1 of Opentrons Fixed Trash on 12
+Transferring 1.5 from B2 of Opentrons 24 Tube Rack with Eppendorf 1.5 mL Safe-Lock Snapcap on 1 to A3 of Starlab(PCR Plate On WS) 96 Well Plate 350 킠 on 2
+	Picking up tip from H1 of GEB 96 Tip Rack 10 킠 on 3
+	Aspirating 1.5 uL from B2 of Opentrons 24 Tube Rack with Eppendorf 1.5 mL Safe-Lock Snapcap on 1 at 5.0 uL/sec
+	Dispensing 1.5 uL into A3 of Starlab(PCR Plate On WS) 96 Well Plate 350 킠 on 2 at 10.0 uL/sec
+	Dropping tip into A1 of Opentrons Fixed Trash on 12
+Transferring 1.0 from C2 of Opentrons 24 Tube Rack with Eppendorf 1.5 mL Safe-Lock Snapcap on 1 to A3 of Starlab(PCR Plate On WS) 96 Well Plate 350 킠 on 2
+	Picking up tip from A2 of GEB 96 Tip Rack 10 킠 on 3
+	Aspirating 1.0 uL from C2 of Opentrons 24 Tube Rack with Eppendorf 1.5 mL Safe-Lock Snapcap on 1 at 5.0 uL/sec
+	Dispensing 1.0 uL into A3 of Starlab(PCR Plate On WS) 96 Well Plate 350 킠 on 2 at 10.0 uL/sec
+	Dropping tip into A1 of Opentrons Fixed Trash on 12
+Transferring 2.0 from A2 of Opentrons 24 Tube Rack with Eppendorf 1.5 mL Safe-Lock Snapcap on 1 to A4 of Starlab(PCR Plate On WS) 96 Well Plate 350 킠 on 2
+	Picking up tip from B2 of GEB 96 Tip Rack 10 킠 on 3
+	Aspirating 2.0 uL from A2 of Opentrons 24 Tube Rack with Eppendorf 1.5 mL Safe-Lock Snapcap on 1 at 5.0 uL/sec
+	Dispensing 2.0 uL into A4 of Starlab(PCR Plate On WS) 96 Well Plate 350 킠 on 2 at 10.0 uL/sec
+	Dropping tip into A1 of Opentrons Fixed Trash on 12
+Transferring 1.5 from B2 of Opentrons 24 Tube Rack with Eppendorf 1.5 mL Safe-Lock Snapcap on 1 to A4 of Starlab(PCR Plate On WS) 96 Well Plate 350 킠 on 2
+	Picking up tip from C2 of GEB 96 Tip Rack 10 킠 on 3
+	Aspirating 1.5 uL from B2 of Opentrons 24 Tube Rack with Eppendorf 1.5 mL Safe-Lock Snapcap on 1 at 5.0 uL/sec
+	Dispensing 1.5 uL into A4 of Starlab(PCR Plate On WS) 96 Well Plate 350 킠 on 2 at 10.0 uL/sec
+	Dropping tip into A1 of Opentrons Fixed Trash on 12
+Transferring 1.0 from C2 of Opentrons 24 Tube Rack with Eppendorf 1.5 mL Safe-Lock Snapcap on 1 to A4 of Starlab(PCR Plate On WS) 96 Well Plate 350 킠 on 2
+	Picking up tip from D2 of GEB 96 Tip Rack 10 킠 on 3
+	Aspirating 1.0 uL from C2 of Opentrons 24 Tube Rack with Eppendorf 1.5 mL Safe-Lock Snapcap on 1 at 5.0 uL/sec
+	Dispensing 1.0 uL into A4 of Starlab(PCR Plate On WS) 96 Well Plate 350 킠 on 2 at 10.0 uL/sec
+	Dropping tip into A1 of Opentrons Fixed Trash on 12
+Transferring 3.0 from A3 of Opentrons 24 Tube Rack with Eppendorf 1.5 mL Safe-Lock Snapcap on 1 to A5 of Starlab(PCR Plate On WS) 96 Well Plate 350 킠 on 2
+	Picking up tip from E2 of GEB 96 Tip Rack 10 킠 on 3
+	Aspirating 3.0 uL from A3 of Opentrons 24 Tube Rack with Eppendorf 1.5 mL Safe-Lock Snapcap on 1 at 5.0 uL/sec
+	Dispensing 3.0 uL into A5 of Starlab(PCR Plate On WS) 96 Well Plate 350 킠 on 2 at 10.0 uL/sec
+	Dropping tip into A1 of Opentrons Fixed Trash on 12
+Transferring 1.0 from C2 of Opentrons 24 Tube Rack with Eppendorf 1.5 mL Safe-Lock Snapcap on 1 to A5 of Starlab(PCR Plate On WS) 96 Well Plate 350 킠 on 2
+	Picking up tip from F2 of GEB 96 Tip Rack 10 킠 on 3
+	Aspirating 1.0 uL from C2 of Opentrons 24 Tube Rack with Eppendorf 1.5 mL Safe-Lock Snapcap on 1 at 5.0 uL/sec
+	Dispensing 1.0 uL into A5 of Starlab(PCR Plate On WS) 96 Well Plate 350 킠 on 2 at 10.0 uL/sec
+	Dropping tip into A1 of Opentrons Fixed Trash on 12
+Transferring 1.0 from A1 of Opentrons 24 Tube Rack with Eppendorf 1.5 mL Safe-Lock Snapcap on 1 to A6 of Starlab(PCR Plate On WS) 96 Well Plate 350 킠 on 2
+	Picking up tip from G2 of GEB 96 Tip Rack 10 킠 on 3
+	Aspirating 1.0 uL from A1 of Opentrons 24 Tube Rack with Eppendorf 1.5 mL Safe-Lock Snapcap on 1 at 5.0 uL/sec
+	Dispensing 1.0 uL into A6 of Starlab(PCR Plate On WS) 96 Well Plate 350 킠 on 2 at 10.0 uL/sec
+	Dropping tip into A1 of Opentrons Fixed Trash on 12
+Transferring 2.0 from B3 of Opentrons 24 Tube Rack with Eppendorf 1.5 mL Safe-Lock Snapcap on 1 to A6 of Starlab(PCR Plate On WS) 96 Well Plate 350 킠 on 2
+	Picking up tip from H2 of GEB 96 Tip Rack 10 킠 on 3
+	Aspirating 2.0 uL from B3 of Opentrons 24 Tube Rack with Eppendorf 1.5 mL Safe-Lock Snapcap on 1 at 5.0 uL/sec
+	Dispensing 2.0 uL into A6 of Starlab(PCR Plate On WS) 96 Well Plate 350 킠 on 2 at 10.0 uL/sec
+	Dropping tip into A1 of Opentrons Fixed Trash on 12
+Transferring 1.0 from C2 of Opentrons 24 Tube Rack with Eppendorf 1.5 mL Safe-Lock Snapcap on 1 to A6 of Starlab(PCR Plate On WS) 96 Well Plate 350 킠 on 2
+	Picking up tip from A3 of GEB 96 Tip Rack 10 킠 on 3
+	Aspirating 1.0 uL from C2 of Opentrons 24 Tube Rack with Eppendorf 1.5 mL Safe-Lock Snapcap on 1 at 5.0 uL/sec
+	Dispensing 1.0 uL into A6 of Starlab(PCR Plate On WS) 96 Well Plate 350 킠 on 2 at 10.0 uL/sec
+	Dropping tip into A1 of Opentrons Fixed Trash on 12
+Transferring 2.0 from A2 of Opentrons 24 Tube Rack with Eppendorf 1.5 mL Safe-Lock Snapcap on 1 to A7 of Starlab(PCR Plate On WS) 96 Well Plate 350 킠 on 2
+	Picking up tip from B3 of GEB 96 Tip Rack 10 킠 on 3
+	Aspirating 2.0 uL from A2 of Opentrons 24 Tube Rack with Eppendorf 1.5 mL Safe-Lock Snapcap on 1 at 5.0 uL/sec
+	Dispensing 2.0 uL into A7 of Starlab(PCR Plate On WS) 96 Well Plate 350 킠 on 2 at 10.0 uL/sec
+	Dropping tip into A1 of Opentrons Fixed Trash on 12
+Transferring 2.0 from B3 of Opentrons 24 Tube Rack with Eppendorf 1.5 mL Safe-Lock Snapcap on 1 to A7 of Starlab(PCR Plate On WS) 96 Well Plate 350 킠 on 2
+	Picking up tip from C3 of GEB 96 Tip Rack 10 킠 on 3
+	Aspirating 2.0 uL from B3 of Opentrons 24 Tube Rack with Eppendorf 1.5 mL Safe-Lock Snapcap on 1 at 5.0 uL/sec
+	Dispensing 2.0 uL into A7 of Starlab(PCR Plate On WS) 96 Well Plate 350 킠 on 2 at 10.0 uL/sec
+	Dropping tip into A1 of Opentrons Fixed Trash on 12
+Transferring 1.0 from C2 of Opentrons 24 Tube Rack with Eppendorf 1.5 mL Safe-Lock Snapcap on 1 to A7 of Starlab(PCR Plate On WS) 96 Well Plate 350 킠 on 2
+	Picking up tip from D3 of GEB 96 Tip Rack 10 킠 on 3
+	Aspirating 1.0 uL from C2 of Opentrons 24 Tube Rack with Eppendorf 1.5 mL Safe-Lock Snapcap on 1 at 5.0 uL/sec
+	Dispensing 1.0 uL into A7 of Starlab(PCR Plate On WS) 96 Well Plate 350 킠 on 2 at 10.0 uL/sec
+	Dropping tip into A1 of Opentrons Fixed Trash on 12
+Transferring 3.0 from A3 of Opentrons 24 Tube Rack with Eppendorf 1.5 mL Safe-Lock Snapcap on 1 to A8 of Starlab(PCR Plate On WS) 96 Well Plate 350 킠 on 2
+	Picking up tip from E3 of GEB 96 Tip Rack 10 킠 on 3
+	Aspirating 3.0 uL from A3 of Opentrons 24 Tube Rack with Eppendorf 1.5 mL Safe-Lock Snapcap on 1 at 5.0 uL/sec
+	Dispensing 3.0 uL into A8 of Starlab(PCR Plate On WS) 96 Well Plate 350 킠 on 2 at 10.0 uL/sec
+	Dropping tip into A1 of Opentrons Fixed Trash on 12
+Transferring 2.0 from B3 of Opentrons 24 Tube Rack with Eppendorf 1.5 mL Safe-Lock Snapcap on 1 to A8 of Starlab(PCR Plate On WS) 96 Well Plate 350 킠 on 2
+	Picking up tip from F3 of GEB 96 Tip Rack 10 킠 on 3
+	Aspirating 2.0 uL from B3 of Opentrons 24 Tube Rack with Eppendorf 1.5 mL Safe-Lock Snapcap on 1 at 5.0 uL/sec
+	Dispensing 2.0 uL into A8 of Starlab(PCR Plate On WS) 96 Well Plate 350 킠 on 2 at 10.0 uL/sec
+	Dropping tip into A1 of Opentrons Fixed Trash on 12
+Transferring 1.0 from C2 of Opentrons 24 Tube Rack with Eppendorf 1.5 mL Safe-Lock Snapcap on 1 to A8 of Starlab(PCR Plate On WS) 96 Well Plate 350 킠 on 2
+	Picking up tip from G3 of GEB 96 Tip Rack 10 킠 on 3
+	Aspirating 1.0 uL from C2 of Opentrons 24 Tube Rack with Eppendorf 1.5 mL Safe-Lock Snapcap on 1 at 5.0 uL/sec
+	Dispensing 1.0 uL into A8 of Starlab(PCR Plate On WS) 96 Well Plate 350 킠 on 2 at 10.0 uL/sec
+	Dropping tip into A1 of Opentrons Fixed Trash on 12

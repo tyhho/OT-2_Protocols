@@ -1,0 +1,92 @@
+Picking up tip from A1 of Opentrons 96 Tip Rack 300 µL on 4
+Aspirating 251.0 uL from A1 of Opentrons 6 Tube Rack with Falcon 50 mL Conical on 1 at 150.0 uL/sec
+Dispensing 251.0 uL into A1 of Opentrons 24 Tube Rack with Generic 2 mL Screwcap on 2 at 150.0 uL/sec
+Blowing out at A1 of Opentrons 24 Tube Rack with Generic 2 mL Screwcap on 2
+Aspirating 204.0 uL from A1 of Opentrons 6 Tube Rack with Falcon 50 mL Conical on 1 at 150.0 uL/sec
+Dispensing 204.0 uL into A2 of Opentrons 24 Tube Rack with Generic 2 mL Screwcap on 2 at 150.0 uL/sec
+Blowing out at A2 of Opentrons 24 Tube Rack with Generic 2 mL Screwcap on 2
+Aspirating 233.0 uL from A1 of Opentrons 6 Tube Rack with Falcon 50 mL Conical on 1 at 150.0 uL/sec
+Dispensing 233.0 uL into A3 of Opentrons 24 Tube Rack with Generic 2 mL Screwcap on 2 at 150.0 uL/sec
+Blowing out at A3 of Opentrons 24 Tube Rack with Generic 2 mL Screwcap on 2
+Aspirating 218.0 uL from A1 of Opentrons 6 Tube Rack with Falcon 50 mL Conical on 1 at 150.0 uL/sec
+Dispensing 218.0 uL into A4 of Opentrons 24 Tube Rack with Generic 2 mL Screwcap on 2 at 150.0 uL/sec
+Blowing out at A4 of Opentrons 24 Tube Rack with Generic 2 mL Screwcap on 2
+Aspirating 239.0 uL from A1 of Opentrons 6 Tube Rack with Falcon 50 mL Conical on 1 at 150.0 uL/sec
+Dispensing 239.0 uL into A5 of Opentrons 24 Tube Rack with Generic 2 mL Screwcap on 2 at 150.0 uL/sec
+Blowing out at A5 of Opentrons 24 Tube Rack with Generic 2 mL Screwcap on 2
+Aspirating 154.5 uL from A1 of Opentrons 6 Tube Rack with Falcon 50 mL Conical on 1 at 150.0 uL/sec
+Dispensing 154.5 uL into A6 of Opentrons 24 Tube Rack with Generic 2 mL Screwcap on 2 at 150.0 uL/sec
+Blowing out at A6 of Opentrons 24 Tube Rack with Generic 2 mL Screwcap on 2
+Aspirating 154.5 uL from A1 of Opentrons 6 Tube Rack with Falcon 50 mL Conical on 1 at 150.0 uL/sec
+Dispensing 154.5 uL into A6 of Opentrons 24 Tube Rack with Generic 2 mL Screwcap on 2 at 150.0 uL/sec
+Blowing out at A6 of Opentrons 24 Tube Rack with Generic 2 mL Screwcap on 2
+Aspirating 227.0 uL from A1 of Opentrons 6 Tube Rack with Falcon 50 mL Conical on 1 at 150.0 uL/sec
+Dispensing 227.0 uL into B1 of Opentrons 24 Tube Rack with Generic 2 mL Screwcap on 2 at 150.0 uL/sec
+Blowing out at B1 of Opentrons 24 Tube Rack with Generic 2 mL Screwcap on 2
+Aspirating 234.0 uL from A1 of Opentrons 6 Tube Rack with Falcon 50 mL Conical on 1 at 150.0 uL/sec
+Dispensing 234.0 uL into B2 of Opentrons 24 Tube Rack with Generic 2 mL Screwcap on 2 at 150.0 uL/sec
+Blowing out at B2 of Opentrons 24 Tube Rack with Generic 2 mL Screwcap on 2
+Aspirating 258.0 uL from A1 of Opentrons 6 Tube Rack with Falcon 50 mL Conical on 1 at 150.0 uL/sec
+Dispensing 258.0 uL into B3 of Opentrons 24 Tube Rack with Generic 2 mL Screwcap on 2 at 150.0 uL/sec
+Blowing out at B3 of Opentrons 24 Tube Rack with Generic 2 mL Screwcap on 2
+Aspirating 234.0 uL from A1 of Opentrons 6 Tube Rack with Falcon 50 mL Conical on 1 at 150.0 uL/sec
+Dispensing 234.0 uL into B4 of Opentrons 24 Tube Rack with Generic 2 mL Screwcap on 2 at 150.0 uL/sec
+Blowing out at B4 of Opentrons 24 Tube Rack with Generic 2 mL Screwcap on 2
+Aspirating 276.0 uL from A1 of Opentrons 6 Tube Rack with Falcon 50 mL Conical on 1 at 150.0 uL/sec
+Dispensing 276.0 uL into B5 of Opentrons 24 Tube Rack with Generic 2 mL Screwcap on 2 at 150.0 uL/sec
+Blowing out at B5 of Opentrons 24 Tube Rack with Generic 2 mL Screwcap on 2
+Aspirating 249.0 uL from A1 of Opentrons 6 Tube Rack with Falcon 50 mL Conical on 1 at 150.0 uL/sec
+Dispensing 249.0 uL into B6 of Opentrons 24 Tube Rack with Generic 2 mL Screwcap on 2 at 150.0 uL/sec
+Blowing out at B6 of Opentrons 24 Tube Rack with Generic 2 mL Screwcap on 2
+Aspirating 205.0 uL from A1 of Opentrons 6 Tube Rack with Falcon 50 mL Conical on 1 at 150.0 uL/sec
+Dispensing 205.0 uL into C1 of Opentrons 24 Tube Rack with Generic 2 mL Screwcap on 2 at 150.0 uL/sec
+Blowing out at C1 of Opentrons 24 Tube Rack with Generic 2 mL Screwcap on 2
+Aspirating 290.0 uL from A1 of Opentrons 6 Tube Rack with Falcon 50 mL Conical on 1 at 150.0 uL/sec
+Dispensing 290.0 uL into C2 of Opentrons 24 Tube Rack with Generic 2 mL Screwcap on 2 at 150.0 uL/sec
+Blowing out at C2 of Opentrons 24 Tube Rack with Generic 2 mL Screwcap on 2
+Aspirating 179.0 uL from A1 of Opentrons 6 Tube Rack with Falcon 50 mL Conical on 1 at 150.0 uL/sec
+Dispensing 179.0 uL into C3 of Opentrons 24 Tube Rack with Generic 2 mL Screwcap on 2 at 150.0 uL/sec
+Blowing out at C3 of Opentrons 24 Tube Rack with Generic 2 mL Screwcap on 2
+Aspirating 172.0 uL from A1 of Opentrons 6 Tube Rack with Falcon 50 mL Conical on 1 at 150.0 uL/sec
+Dispensing 172.0 uL into C4 of Opentrons 24 Tube Rack with Generic 2 mL Screwcap on 2 at 150.0 uL/sec
+Blowing out at C4 of Opentrons 24 Tube Rack with Generic 2 mL Screwcap on 2
+Aspirating 238.0 uL from A1 of Opentrons 6 Tube Rack with Falcon 50 mL Conical on 1 at 150.0 uL/sec
+Dispensing 238.0 uL into C5 of Opentrons 24 Tube Rack with Generic 2 mL Screwcap on 2 at 150.0 uL/sec
+Blowing out at C5 of Opentrons 24 Tube Rack with Generic 2 mL Screwcap on 2
+Aspirating 199.0 uL from A1 of Opentrons 6 Tube Rack with Falcon 50 mL Conical on 1 at 150.0 uL/sec
+Dispensing 199.0 uL into C6 of Opentrons 24 Tube Rack with Generic 2 mL Screwcap on 2 at 150.0 uL/sec
+Blowing out at C6 of Opentrons 24 Tube Rack with Generic 2 mL Screwcap on 2
+Aspirating 210.0 uL from A1 of Opentrons 6 Tube Rack with Falcon 50 mL Conical on 1 at 150.0 uL/sec
+Dispensing 210.0 uL into D1 of Opentrons 24 Tube Rack with Generic 2 mL Screwcap on 2 at 150.0 uL/sec
+Blowing out at D1 of Opentrons 24 Tube Rack with Generic 2 mL Screwcap on 2
+Aspirating 249.0 uL from A1 of Opentrons 6 Tube Rack with Falcon 50 mL Conical on 1 at 150.0 uL/sec
+Dispensing 249.0 uL into D2 of Opentrons 24 Tube Rack with Generic 2 mL Screwcap on 2 at 150.0 uL/sec
+Blowing out at D2 of Opentrons 24 Tube Rack with Generic 2 mL Screwcap on 2
+Aspirating 201.0 uL from A1 of Opentrons 6 Tube Rack with Falcon 50 mL Conical on 1 at 150.0 uL/sec
+Dispensing 201.0 uL into D3 of Opentrons 24 Tube Rack with Generic 2 mL Screwcap on 2 at 150.0 uL/sec
+Blowing out at D3 of Opentrons 24 Tube Rack with Generic 2 mL Screwcap on 2
+Aspirating 294.0 uL from A1 of Opentrons 6 Tube Rack with Falcon 50 mL Conical on 1 at 150.0 uL/sec
+Dispensing 294.0 uL into D4 of Opentrons 24 Tube Rack with Generic 2 mL Screwcap on 2 at 150.0 uL/sec
+Blowing out at D4 of Opentrons 24 Tube Rack with Generic 2 mL Screwcap on 2
+Aspirating 212.0 uL from A1 of Opentrons 6 Tube Rack with Falcon 50 mL Conical on 1 at 150.0 uL/sec
+Dispensing 212.0 uL into D5 of Opentrons 24 Tube Rack with Generic 2 mL Screwcap on 2 at 150.0 uL/sec
+Blowing out at D5 of Opentrons 24 Tube Rack with Generic 2 mL Screwcap on 2
+Aspirating 235.0 uL from A1 of Opentrons 6 Tube Rack with Falcon 50 mL Conical on 1 at 150.0 uL/sec
+Dispensing 235.0 uL into D6 of Opentrons 24 Tube Rack with Generic 2 mL Screwcap on 2 at 150.0 uL/sec
+Blowing out at D6 of Opentrons 24 Tube Rack with Generic 2 mL Screwcap on 2
+Aspirating 239.0 uL from A1 of Opentrons 6 Tube Rack with Falcon 50 mL Conical on 1 at 150.0 uL/sec
+Dispensing 239.0 uL into A1 of Opentrons 24 Tube Rack with Generic 2 mL Screwcap on 3 at 150.0 uL/sec
+Blowing out at A1 of Opentrons 24 Tube Rack with Generic 2 mL Screwcap on 3
+Aspirating 243.0 uL from A1 of Opentrons 6 Tube Rack with Falcon 50 mL Conical on 1 at 150.0 uL/sec
+Dispensing 243.0 uL into A2 of Opentrons 24 Tube Rack with Generic 2 mL Screwcap on 3 at 150.0 uL/sec
+Blowing out at A2 of Opentrons 24 Tube Rack with Generic 2 mL Screwcap on 3
+Aspirating 256.0 uL from A1 of Opentrons 6 Tube Rack with Falcon 50 mL Conical on 1 at 150.0 uL/sec
+Dispensing 256.0 uL into A3 of Opentrons 24 Tube Rack with Generic 2 mL Screwcap on 3 at 150.0 uL/sec
+Blowing out at A3 of Opentrons 24 Tube Rack with Generic 2 mL Screwcap on 3
+Aspirating 274.0 uL from A1 of Opentrons 6 Tube Rack with Falcon 50 mL Conical on 1 at 150.0 uL/sec
+Dispensing 274.0 uL into A4 of Opentrons 24 Tube Rack with Generic 2 mL Screwcap on 3 at 150.0 uL/sec
+Blowing out at A4 of Opentrons 24 Tube Rack with Generic 2 mL Screwcap on 3
+Aspirating 261.0 uL from A1 of Opentrons 6 Tube Rack with Falcon 50 mL Conical on 1 at 150.0 uL/sec
+Dispensing 261.0 uL into A5 of Opentrons 24 Tube Rack with Generic 2 mL Screwcap on 3 at 150.0 uL/sec
+Blowing out at A5 of Opentrons 24 Tube Rack with Generic 2 mL Screwcap on 3
+Dropping tip into A1 of Opentrons Fixed Trash on 12
