@@ -2,3 +2,5 @@
 *.pdf
 *./other_instructions_io
 *./example_img
+*./ipynb*
+*.__pycache__
