@@ -1,6 +1,7 @@
 *.db
 *.pdf
-*./other_instructions_io
-*./example_img
+*./other_instructions_io/
+*./example_img/
 *./ipynb*
 *.__pycache__
+*example_img*
