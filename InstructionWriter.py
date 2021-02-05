@@ -499,3 +499,5 @@ def main(input_file):
                 
     final_line = final_line[:-2]
     return final_line
+
+print("If you are seeing this message, you might be calling the wrong script. The script for CLI is InstructionWriterCLI.py")
