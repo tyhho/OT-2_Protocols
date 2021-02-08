@@ -9,19 +9,15 @@ For most protocols you find here, the basic idea here is that, the information o
 * *what* = 20 tubes of primers, each tube receives a different volume water. (This changes every time)
 * *how* = Transfer the water using the P300 single channel pipette. When dispensing, position the bottom of the tip 5 mm below the rim of the tube so that the same tip can be reused. (This never changes)
 
-<<<<<<< HEAD
 Therefore, every time we do primer resuspension we can reuse the protocol `primer_resuspension.py`. We only need to designate the *paths* and *volumes*, and also the *deck layout* and if necessary, the *pipette setup*, but we do not change the *behavior* of the pipetting steps.
-=======
-Therefore, everything time we do primer resuspension we can reuse the protocol `primer_resuspension.py`. We only need to designate the *paths* and *volumes*, and also the *deck layout* and if necessary, the *pipette setup*, but we do not change the *behavior* of the pipetting steps.
->>>>>>> 2dfa9755a1d490460f65bb1aebf1e42d0b614059
 
 ### Working out transfer paths and volumes
 
 When it comes to **paths** and **volumes**, say in the context of primer resuspension again, we think in terms of *what goes in what*:
-  
+
 1. "Primer001 resuspended with 302 uL of water",
-2. "Primer002 resuspended with 259 ul of water", and etc. 
-  
+2. "Primer002 resuspended with 259 ul of water", and etc.
+
 But the API doesn't care about the actual identities of the samples. It only cares about *from where to where*:
 
 1. "Transfer 302 uL from Slot 1, A1 (water) to Slot 2, A1 (primer tube)",
@@ -75,9 +71,9 @@ inst_list = [
             '1':'opentrons_24_tuberack_eppendorf_1.5ml_safelock_snapcap',
             '2':'starlabpcrplateonws_96_wellplate_350ul'
             }
-    
+
     # Configure tip racks and pipette
-    
+
     r_pipette_name = 'p10_single'
     r_tiprack_slots = ['3']
     r_tiprack_name = 'geb_96_tiprack_10ul'
@@ -87,14 +83,14 @@ inst_list = [
 
 ```python
 for inst in inst_list:
-    
+
     # Decodes information from each instruction line
     vol, path = inst.split('$')
     vol = float(vol)
     source, dest = path.split('->')
     source_slot, source_well = source.split('_')
     dest_slot, dest_well = dest.split('_')      
-    
+
     # Execution of transfer
     r_pipette.transfer(vol,
                        labware_items[source_slot].wells_by_name()[source_well],
@@ -105,7 +101,7 @@ for inst in inst_list:
 
 Simulation: simulate the protocol and check whether the steps are correct.
 This function directly builds upon the Opentrons `simulate` module
-  
+
 11. Open an Anaconda terminal in this dowloaded folder
 12. Execute `>python SimulateCLI.py combinatorial_pipetting.py`
 13. Open the folder `protocol_log` and open the text file named `combinatorial_pipetting_log.txt` to see the simulated protocol  
@@ -118,7 +114,7 @@ The InstructionWriter takes an Excel file that adheres to certain formats, and d
 
 The purpose of the InstructionWriter is offload the mentally demanding tasks of working out transfer paths for humans. It is **not** an OT-2 protocol writer.
 
-The InstructionWriter also supports different layouts for destination formats. 
+The InstructionWriter also supports different layouts for destination formats.
 Below a number of hypothetical cases are illustrated:
 
 ### intuitive
@@ -147,7 +143,7 @@ A most customizable table for combinatorial pipetting. The following example ill
 <br><br>
 
 ### Further instructions on using the InstructionWriter
-                           
+
 - You can find templates for these layouts under `/instructions_io/_layout_templates.xlsx`
 - For a complete guide of how to set up the Excel file, see `Manual_on_InstructionWriter.pdf` (coming soon).
 - The InstructionWriter can be called in a custom script using
@@ -180,7 +176,7 @@ Protocols I performed using the InstructionWriter:
 
 ## Descriptions on Boilerplate Protocols
 Protocols deposited are briefly described below. Please refer to the docstrings for detail descriptions.
-                               
+
 | Protocol filename             | Requires InstructionWriter | Description                                                                                                                            |
 |-------------------------------|----------------------------|----------------------------------------------------------------------------------------------------------------------------------------|
 | combinatorial_pipetting.py    | Yes                        | Basic but versatile protocol that handles most complex pipetting needs                                                                 |
