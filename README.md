@@ -9,7 +9,11 @@ For most protocols you find here, the basic idea here is that, the information o
 * *what* = 20 tubes of primers, each tube receives a different volume water. (This changes every time)
 * *how* = Transfer the water using the P300 single channel pipette. When dispensing, position the bottom of the tip 5 mm below the rim of the tube so that the same tip can be reused. (This never changes)
 
+<<<<<<< HEAD
 Therefore, every time we do primer resuspension we can reuse the protocol `primer_resuspension.py`. We only need to designate the *paths* and *volumes*, and also the *deck layout* and if necessary, the *pipette setup*, but we do not change the *behavior* of the pipetting steps.
+=======
+Therefore, everything time we do primer resuspension we can reuse the protocol `primer_resuspension.py`. We only need to designate the *paths* and *volumes*, and also the *deck layout* and if necessary, the *pipette setup*, but we do not change the *behavior* of the pipetting steps.
+>>>>>>> 2dfa9755a1d490460f65bb1aebf1e42d0b614059
 
 ### Working out transfer paths and volumes
 
