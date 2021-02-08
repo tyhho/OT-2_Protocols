@@ -8,6 +8,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Unreleased
 - Further checks of Excel inputs in `InstructionWriter.py`
 
+## [0.1.2] - 2021-02-08
+### Fixed
+- `README.md`: Fixed filenames and rearranged information for better logic
+
 ## [0.1.1] - 2021-02-05
 ### Added
 - `InstructionWriter.py`: A print line to remind users (me) who might have called the wrong .py script for CLI use.

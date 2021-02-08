@@ -3,5 +3,7 @@
 *./other_instructions_io/
 *./example_img/
 *./ipynb*
+.ipynb_checkpoints
 *.__pycache__
 *example_img*
+*ipynb

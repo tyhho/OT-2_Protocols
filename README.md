@@ -1,6 +1,6 @@
 # OT-2 Protocols
 
-This repository contains customizable OT-2 protocols written in [OT-2 APIv2](https://docs.opentrons.com). These protocols are (hopefully) user-friendly to those who need more functionality than what the [Opentrons Protocol Designer](https://designer.opentrons.com/) can offer. They are also written with modularity in mind, and should serve as boilerplate scripts for more experienced OT-2 users who just need to tweak existing protocols for throughput process.
+This repository contains customizable OT-2 protocols written in [OT-2 APIv2](https://docs.opentrons.com). These protocols are (hopefully) user-friendly to those who need more customizations than what the [Opentrons Protocol Designer](https://designer.opentrons.com/) can offer. They are also written with modularity in mind, and should serve as boilerplate scripts for more experienced OT-2 users who just need to tweak existing protocols for throughput process.
 
 ## How these protocols work
 
@@ -9,11 +9,21 @@ For most protocols you find here, the basic idea here is that, the information o
 * *what* = 20 tubes of primers, each tube receives a different volume water. (This changes every time)
 * *how* = Transfer the water using the P300 single channel pipette. When dispensing, position the bottom of the tip 5 mm below the rim of the tube so that the same tip can be reused. (This never changes)
 
-Therefore, everything time we do primer resuspension we can reuse the protocol `PrimerResuspension.py`. We only need to designate the *paths* and *volumes*, and also the *deck layout* and if necessary, the *pipette setup*, but we do not change the *behavior* of the pipetting steps.
+Therefore, every time we do primer resuspension we can reuse the protocol `primer_resuspension.py`. We only need to designate the *paths* and *volumes*, and also the *deck layout* and if necessary, the *pipette setup*, but we do not change the *behavior* of the pipetting steps.
 
 ### Working out transfer paths and volumes
 
-When it comes to **paths** and **volumes**, we think in terms of "Primer001 resupended with 302 uL of water", "Primer002 resuspended with 259 ul of water", and etc. In the API we input "Transfer 302 uL from Slot 1, A1 (water) to Slot 2, A1 (primer tube)", "Transfer 259 uL from Slot 1, A1 to Slot 2, A2". We will handle that by the **InstructionWriter**. Instead of working out all the locations, we supply an **intuitive Excel spreadsheet** stating what samples are in what wells, and where the liquids should go as well as the volumes. The Instruction Writer than process these information and write out parasable instructions, like:  
+When it comes to **paths** and **volumes**, say in the context of primer resuspension again, we think in terms of *what goes in what*:
+  
+1. "Primer001 resuspended with 302 uL of water",
+2. "Primer002 resuspended with 259 ul of water", and etc. 
+  
+But the API doesn't care about the actual identities of the samples. It only cares about *from where to where*:
+
+1. "Transfer 302 uL from Slot 1, A1 (water) to Slot 2, A1 (primer tube)",
+2. "Transfer 259 uL from Slot 1, A1 to Slot 2, A2"
+
+The conversion from *what* to *where* is easy if you only have a few transfers, but it soon becomes mentally demanding as the number goes up. This is where the **InstructionWriter** comes into play. Instead of working out all the paths ourselves, we supply the InstructionWriter with an **intuitive Excel spreadsheet** stating what samples are in what wells, and where the liquids should go and the volumes. The InstructionWriter then process these information and write out parasable instructions, like:  
 
 ```python
 "302$1_A1->2_A1", # = move 302 uL from slot 1 well A1 to slot 2 well A1
@@ -21,8 +31,8 @@ When it comes to **paths** and **volumes**, we think in terms of "Primer001 resu
 # ... and the list goes on
 ```
 which you can copy and paste inside a list in the protocol file. The protocol will then execute these instructions with a tested and establisehd *behavior*.
-  
-This feature is indispensable when we need to deal with semi- or high-throughput work, e.g. combinatorial Golden Gate Assembly.
+
+This feature is indispensable when we need to deal with medium-throughput work, e.g. combinatorial Golden Gate Assembly. It can also be applied to high-throughput, though, at that point we probably have to change the paradigm and set up the experiment differently.
 
 ## Quick Example
 
@@ -72,11 +82,21 @@ inst_list = [
 10. Make sure the right pipette (right mount) is used in the execution section
 
 ```python
-        r_pipette.transfer(vol,
-                           labware_items[source_slot].wells_by_name()[source_well],
-                           labware_items[dest_slot].wells_by_name()[dest_well],
-                           new_tip='always'
-                           )
+for inst in inst_list:
+    
+    # Decodes information from each instruction line
+    vol, path = inst.split('$')
+    vol = float(vol)
+    source, dest = path.split('->')
+    source_slot, source_well = source.split('_')
+    dest_slot, dest_well = dest.split('_')      
+    
+    # Execution of transfer
+    r_pipette.transfer(vol,
+                       labware_items[source_slot].wells_by_name()[source_well],
+                       labware_items[dest_slot].wells_by_name()[dest_well],
+                       new_tip='always'
+                       )
 ```
 
 Simulation: simulate the protocol and check whether the steps are correct.
@@ -84,15 +104,15 @@ This function directly builds upon the Opentrons `simulate` module
   
 11. Open an Anaconda terminal in this dowloaded folder
 12. Execute `>python SimulateCLI.py combinatorial_pipetting.py`
-13. Open the folder `protocol_log` and open the text file named `combinatorial_pipetting_log.txt` to see the simulated protocol.
+13. Open the folder `protocol_log` and open the text file named `combinatorial_pipetting_log.txt` to see the simulated protocol  
 
 If your protocol employs any custom [labware definitions](https://support.opentrons.com/en/articles/3136504-creating-custom-labware-definitions), you need to put the custom labware definition files, in json formats, under the `./labware_def/` folder.
 
 ## The InstructionWriter and setting up the Excel files (short ver.)
 
-The InstructionWriter takes an Excel file that adheres to certain formats, and does the job of converting human instructions, e.g. "Transfer 5 uL of primer from tube primer001 to PCR tube", into machine-parsable, intermediate instructions, e.g. "Transfer 5 uL from A1 in slot 1 to E8 in slot 2". Users only need to specify the locations of source samples on one or more Excel spreadsheets, and what samples or liquids goes into destination wells in another Excel spreadsheets, and the InstructionWriter will perform the mapping. Then, these instructions can be directly copied and paste into a template protocol file, which will decode these intermediate instructions and feed them into the OT-2 APIv2 to execute the transfers.
+The InstructionWriter takes an Excel file that adheres to certain formats, and does the job of converting human instructions, e.g. "Transfer 5 uL of primer from tube primer001 to PCR tube", into machine-parsable, intermediate instructions with volume and path information, e.g. `5$1_A1->2_A1`. Users only need to specify the locations of source samples on one or more Excel spreadsheets, and what samples or liquids goes into destination wells in another Excel spreadsheets, and the InstructionWriter will perform the mapping. Then, these instructions can be directly copied and paste into a template protocol file, which will decode these intermediate instructions and feed them into the OT-2 APIv2 to execute the transfers.
 
-The purpose of the InstructionWriter is offload the mentally demanding tasks of working out transfer paths for humans. It is **not** a OT-2 protocol writer.
+The purpose of the InstructionWriter is offload the mentally demanding tasks of working out transfer paths for humans. It is **not** an OT-2 protocol writer.
 
 The InstructionWriter also supports different layouts for destination formats. 
 Below a number of hypothetical cases are illustrated:
@@ -123,15 +143,7 @@ A most customizable table for combinatorial pipetting. The following example ill
 <br><br>
 
 ### Further instructions on using the InstructionWriter
-- To extract information from the instructions, include the following code in your protocol script:
-    ```python
-    for inst in inst_list:
-        vol, path = inst.split('$')
-        vol = float(vol)
-        source, dest = path.split('->')
-        source_slot, source_well = source.split('_')
-        dest_slot, dest_well = dest.split('_')      
-    ```
+                           
 - You can find templates for these layouts under `/instructions_io/_layout_templates.xlsx`
 - For a complete guide of how to set up the Excel file, see `Manual_on_InstructionWriter.pdf` (coming soon).
 - The InstructionWriter can be called in a custom script using
@@ -173,6 +185,9 @@ Protocols deposited are briefly described below. Please refer to the docstrings 
 | plate_induction_2con.py       | No                         | Dilute overnight grown bacterial cultures from a 96-well plate into 2 different 96-well plates, one with inducer and the other without |
 | primer_rehydration.py         | Yes                        | Add water to lyophilized oligonucleotides                                                                                              |
 | primer_dilution.py            | Yes                        | Dilute 100 µM of resuspended oligonucleotides from screw-cap tubes to 10 µM in snap-cap microcentrifuge tubes                          |
-                               
+
+## Questions/Issues/Suggestions
+Please contact me through email since I do not actively or passively monitor my GitHub. Thank you.
+
 ## License
-MIT license
+Licensed under MIT license
