@@ -1,6 +1,6 @@
 import pandas as pd
 import numpy as np
-import sys    
+import sys, warnings
 
 def check_source_dest_and_layout_matching(slot_num, role, layout):
     '''Check that the layout of the slots matches with the source or destination
@@ -220,9 +220,14 @@ def write_instructions(input_file):
     
     
     for i in range(len(slot_setup)):
+                
+        for col in ['slot', 'role', 'layout']:
+            if not slot_setup.iloc[i][col]:
+                raise ValueError('Parameter "' + col + '" is missing on row' +
+                                 str(i+1) + "in slot_setup")
+                
         slot_num = int(slot_setup.iloc[i]['slot'])
         
-        # FIXME: check if all rows in slot_setup has slot, role and layout
                 
         if slot_num < 1 or slot_num > 11:
             raise ValueError('Slot number should be an integer between 1 to 11')
@@ -380,7 +385,13 @@ def write_instructions(input_file):
                 
                 elif layout == 'df_variable_sample_n_volume':
                     
-                    # FIXME: add warning if global volume is given in slot_setup
+                    
+                    if global_vol:
+                        warnings.warn('Global volume is given for slot '
+                                      + dest_slot_num
+                                      + ' but df_variable_sample_n_volume'
+                                      + ' will not use it'
+                                      )
                     
                     requested_sample_info = tuple(requested_samples.values())
                     

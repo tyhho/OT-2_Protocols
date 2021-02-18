@@ -5,8 +5,11 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-### Unreleased
-- Further checks of Excel inputs in `InstructionWriter.py`
+## [1.0.0] - 2021-02-18
+### Added
+- `InstructionWriter.py`: Input check that every row in the "slot_setup" spreadsheet has an input
+- `InstructionWriter.py`: Warning for global volume in "df_variable_sample_n_vol"
+- `Manual_for_InstructionWriter.pdf`
 
 ## [0.2.0] - 2021-02-18
 ### Added
