@@ -146,7 +146,7 @@ A most customizable table for combinatorial pipetting. The following example ill
 ### Further instructions on using the InstructionWriter
 
 - You can find templates for these layouts under `/instructions_io/_layout_templates.xlsx`
-- For a complete guide of how to set up the Excel file, see `Manual_on_InstructionWriter.pdf` (coming soon).
+- For a complete guide of how to set up the Excel file, see [`Manual_on_InstructionWriter.pdf`](./Manual_on_InstructionWriter.pdf).
 - The InstructionWriter can be called in a script using
 ```python
 import InstructionWriter
