@@ -1,9 +1,10 @@
 *.db
 *.pdf
-*./other_instructions_io/
-*./example_img/
-*./ipynb*
+other_instructions_io/
+*example_img/
+*.ipynb
 .ipynb_checkpoints
-*.__pycache__
+*__pycache__
 *example_img*
 *ipynb
+*write_instructions.py

@@ -8,6 +8,16 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Unreleased
 - Further checks of Excel inputs in `InstructionWriter.py`
 
+## [0.2.0] - 2021-02-18
+### Added
+- `InstructionWriter.py`: Added-48 well plate format to acceptable layouts of "intuitive"
+### Changed
+- `README.md`: Further corrected information
+- `InstructionWriter.py`: Modified script such that CLI can be run by calling the module directly
+- Renamed `SimulateCLI.py` to `SaveLog.py`
+### Removed
+- `InstructionWriterCLI.py`
+
 ## [0.1.2] - 2021-02-08
 ### Fixed
 - `README.md`: Fixed filenames and rearranged information for better logic

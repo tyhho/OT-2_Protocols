@@ -1,105 +1,6 @@
-"""
-This instruction writer takes an Excel file (.xlsx) that specifies what the
-source plates/racks look like and what the destination wells need to contain.
-For each sample/elements that needs to go into a destination well, the script
-searches where that sample/elements is among the source plates/racks, and then construct
-a machine-parsable line for that sample. All machine-parsable lines are then concataneted
-into a .txt file, in which the contents should be directly copy-pasted into the [] of a
-list "inst_list" in an accompanying OT-2 protocol script.
-
-Input:
-    See the example Excel file.
-    The Excel file must have a sheet named "slot_setup", which provides the starting
-    point for this script to locate where the source and destination slots are.
-    "_", "$", and "->" are forbidden characters in any of the inputs.
-    
-    The "slot_setup" is a table with the header:
-        |slot|role|layout|global_volume|
-    
-    role: Either "source" or "destination". No other input accepted.
-    
-    layout: str. Must be one of the following options:
-        intuitive (source and destination)
-            User-friendly. Good for source with single sample. BAD for destination with
-            multiple samples or elements to be consolidated.
-            If used for destination, "global_volume" in "slot_setup" sheet should be provided,
-            field value should be:
-               + sample1 + sample2 + sample3
-            Currently, different sample with different volumes not supported for destination.
-            The script will acceptable a certain range of grid sizes for "intuitive" layout
-        
-        dataframe(source only)
-            Typical dataframe layout with only two columns of "well" and "sample"
-        
-        df_variable_sample (destination only)
-            Most helpful when all destination wells must receive different samples but
-            of the same volume.
-            Table must follow the format below:
-                |well  |sample1Category_sample1Vol1|sample2Category_sample2Vol2|
-                |wellID|sample1                    |sample2                    |
-            Example:
-                |well|primer1_5|primer2_5|
-                |A1  |primer001|primer002|
-            The sampleCategory (in the e.g., primer1) is not important and can be anything,
-            but it must be separated from the volume by a "_".
-                
-        df_variable_volume (destination only)
-            Most helpful when all destination wells must receive same sets of samples but
-            variable volumes.    
-            Table must follow the format below:
-                |well  |sample1|sample2|
-                |wellID|vol1   |vol2   |
-            Example:
-                |well|primer001|primer002|
-                |A1  |5        |10       |
-        
-        df_variable_sample_n_volume (destination only)
-            Recommended solution when both the sample and the volume vary among destination wells.
-            Table must follow the format below:
-                |well  |sample1|vol1|sample2|vol2|sample3|vol3|  <-- note that the header is merely a placeholder
-                |wellID|sample1|vol1|sample2|vol2|sample3|vol3|  <-- actual sample name and volume to input
-            Example:
-                |well|sample1|vol1|sample2  |vol2|sample3  |vol3|sample4  |vol4|
-                |A1  |buffer |10  |primer001|5   |primer002|5   |dNTP     |1   |
-            The script reads the items as sample1->vol1->sample2->vol2, therefore, the
-            order of the columns MUST NOT be changed in the excel file.
-    
-    global_volume: int. Must be provided if role="destination" and format="intuitive"
-    
-    After setting up the "slot_setup" sheet. Users need to set up the Excel sheets
-    according to the layouts chosen in the slot_setup sheet.
-
-Note:
-    In all source or destination sheets, it is possible to insert a column with 
-    a header that starts with '#'.
-    The column will be treated as a comment column and will not be parsed.
-    
-    Example:
-        |well|#PCR product|sample1|vol1|sample2  |vol2|sample3  |vol3|sample4  |vol4|
-        |A1  |sample 1    |buffer |10  |primer001|5   |primer002|5   |dNTP     |1   |
-        
-        the column '#PCR product will be ignored during parsing'
-
-Output:
-    Each machine-parsable line (str) looks like the following:
-        vol$sourceSlot_sourceWell->destSlot_destWell
-    
-    "$" is the delimiter between the volume and the actual transfer movement
-    "_" is the delimiter between the slot and the well
-    "->" is the delimiter between the source and the destination.
-    
-    Sometimes, a global volume is specified by the user in the OT-2 protocol.
-    This can override the volume determined by the InstructionWriter
-    However, this would require users to customize the accompanying OT-2 protocol.
-
-Limitations: Currently, it is impossible to have the same plate / rack for being
-both the source and the destination. A lot of input checks are in place but might
-not capture all unexpected behavior.
-
-"""
-
 import pandas as pd
 import numpy as np
+import sys    
 
 def check_source_dest_and_layout_matching(slot_num, role, layout):
     '''Check that the layout of the slots matches with the source or destination
@@ -150,7 +51,8 @@ def check_intuitive_layout(slot_contents, slot_num):
     
     Acceptable number of rows and columns:
     96-well: 8 rows * 12 columns
-    24-well or 1.5 / 2 mL tube rack: 4 rows * 6 columns,
+    48-well: 6 rows * 8 columns
+    24-well or 1.5 / 2 mL tube rack: 4 rows * 6 columns
     15 mL tube rack: 3 rows * 5 columns
     15 & 50 mL tube rack: 3 rows * 4 columns
     6-well or 50 mL tube rack: 2 rows * 3 columns
@@ -162,6 +64,7 @@ def check_intuitive_layout(slot_contents, slot_num):
     
     acceptable_sizes = [
         (8, 12),
+        (6, 8),
         (4, 6),
         (3, 5),
         (3, 4),
@@ -277,7 +180,11 @@ def add_machine_line(existing_inst_line, dest_slot_num, dest_well, source_df,
     updated_inst_lines = existing_inst_line + new_inst_line
     return updated_inst_lines
 
-def main(input_file):
+def write_instructions(input_file):
+    
+    # if not input_file.lower().endswith('.xlsx'):
+    #     print('Input file or path should be one Excel file ending with .xlsx')
+    #     sys.exit(2)
     
     # Code for debugging
     
@@ -316,7 +223,7 @@ def main(input_file):
         slot_num = int(slot_setup.iloc[i]['slot'])
         
         # FIXME: check if all rows in slot_setup has slot, role and layout
-        
+                
         if slot_num < 1 or slot_num > 11:
             raise ValueError('Slot number should be an integer between 1 to 11')
         
@@ -376,7 +283,7 @@ def main(input_file):
     # Retrieve df containining destination slots and formats
     dest_info = slot_setup[slot_setup['role']=='destination']
         
-    final_line = ''
+    instructions = ''
         
     # Loop through every destination slot and decide case by case
     #  the pipetting instructions
@@ -405,7 +312,7 @@ def main(input_file):
                 
                 for sample_name in requested_samples:
                     sample_name = sample_name.strip()
-                    final_line = add_machine_line(final_line, dest_slot_num,
+                    instructions = add_machine_line(instructions, dest_slot_num,
                                                dest_well, source_df,
                                                sample_name, sample_vol)
                 
@@ -443,7 +350,7 @@ def main(input_file):
                         except IndexError:
                             sample_vol = try_global_vol_as_sample_vol(global_vol)
         
-                        final_line = add_machine_line(final_line, dest_slot_num,
+                        instructions = add_machine_line(instructions, dest_slot_num,
                                                    dest_well, source_df,
                                                    sample_name, sample_vol)
     
@@ -466,7 +373,7 @@ def main(input_file):
                         sample_name = sample_name.strip()
                         sample_vol = float(sample_vol)
                         
-                        final_line = add_machine_line(final_line, dest_slot_num,
+                        instructions = add_machine_line(instructions, dest_slot_num,
                                                    dest_well, source_df,
                                                    sample_name, sample_vol)
                 
@@ -493,11 +400,30 @@ def main(input_file):
                         sample_name = remaining_items.pop(0)
                         sample_vol = remaining_items.pop(0)
                         
-                        final_line = add_machine_line(final_line, dest_slot_num,
+                        instructions = add_machine_line(instructions, dest_slot_num,
                                                    dest_well, source_df,
                                                    sample_name, sample_vol)
                 
-    final_line = final_line[:-2]
-    return final_line
+    instructions = instructions[:-2]
+    
+    return instructions
 
-print("If you are seeing this message, you might be calling the wrong script. The script for CLI is InstructionWriterCLI.py")
+if __name__ == '__main__':
+    
+    args = sys.argv
+    
+    if len(args) != 2 or not args[1].lower().endswith('.xlsx'):
+        print('Input file or path should be one Excel file ending with .xlsx')
+        sys.exit(2)
+    
+    input_file = sys.argv[1]
+    instructions = write_instructions(input_file)
+    
+    output_file = input_file.split(".xlsx")[0] + "_instructions.txt"
+    
+    f = open(output_file, "w+")
+    f.write(instructions)
+    f.close()
+    
+    print("Output file successfully created: " + output_file)
+    

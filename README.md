@@ -15,18 +15,18 @@ Therefore, every time we do primer resuspension we can reuse the protocol `prime
 
 When it comes to **paths** and **volumes**, say in the context of primer resuspension again, we think in terms of *what goes in what*:
 
-1. "Primer001 resuspended with 302 uL of water",
-2. "Primer002 resuspended with 259 ul of water", and etc.
+1. "Primer001 resuspended with 302 µL of water",
+2. "Primer002 resuspended with 259 µL of water", and etc.
 
 But the API doesn't care about the actual identities of the samples. It only cares about *from where to where*:
 
-1. "Transfer 302 uL from Slot 1, A1 (water) to Slot 2, A1 (primer tube)",
-2. "Transfer 259 uL from Slot 1, A1 to Slot 2, A2"
+1. "Transfer 302 µL from Slot 1, A1 (water) to Slot 2, A1 (primer tube)",
+2. "Transfer 259 µL from Slot 1, A1 to Slot 2, A2"
 
 The conversion from *what* to *where* is easy if you only have a few transfers, but it soon becomes mentally demanding as the number goes up. This is where the **InstructionWriter** comes into play. Instead of working out all the paths ourselves, we supply the InstructionWriter with an **intuitive Excel spreadsheet** stating what samples are in what wells, and where the liquids should go and the volumes. The InstructionWriter then process these information and write out parasable instructions, like:  
 
 ```python
-"302$1_A1->2_A1", # = move 302 uL from slot 1 well A1 to slot 2 well A1
+"302$1_A1->2_A1", # = move 302 µL from slot 1 well A1 to slot 2 well A1
 "259$1_A1->2_A2"
 # ... and the list goes on
 ```
@@ -42,7 +42,7 @@ We will exmplify with a hypothetical scenario of setting up combinatorial Golden
 1. Clone / Download this repository onto your computer
 2. Check the contents of an Excel file under the folder `/instructions_io/` that is named `example_GGA.xlsx`
 3. Open an Anaconda terminal, navigate into the downloaded folder
-4. Execute `>python InstructionWriterCLI.py ./instructions_io/example_GGA.xlsx`
+4. Execute `>python -m InstructionWriter ./instructions_io/example_GGA.xlsx`
 5. A file now appears under `/instructions_io/` that is called `example_GGA_instructions.txt`
 6. Open this text file, copy all
 7. Use a text editor (Spyder / Notepad), open `combinatorial_pipetting.py`
@@ -99,18 +99,19 @@ for inst in inst_list:
                        )
 ```
 
-Simulation: simulate the protocol and check whether the steps are correct.
+SaveLog: simulate the protocol and check whether the steps are correct.
+Then save the log file for troubleshooting.
 This function directly builds upon the Opentrons `simulate` module
 
 11. Open an Anaconda terminal in this dowloaded folder
-12. Execute `>python SimulateCLI.py combinatorial_pipetting.py`
-13. Open the folder `protocol_log` and open the text file named `combinatorial_pipetting_log.txt` to see the simulated protocol  
+12. Execute `>python -m SaveLog combinatorial_pipetting.py`
+13. Open the folder `protocol_log` and open the text file named `combinatorial_pipetting_log.txt` to check the simulated protocol  
 
 If your protocol employs any custom [labware definitions](https://support.opentrons.com/en/articles/3136504-creating-custom-labware-definitions), you need to put the custom labware definition files, in json formats, under the `./labware_def/` folder.
 
 ## The InstructionWriter and setting up the Excel files (short ver.)
 
-The InstructionWriter takes an Excel file that adheres to certain formats, and does the job of converting human instructions, e.g. "Transfer 5 uL of primer from tube primer001 to PCR tube", into machine-parsable, intermediate instructions with volume and path information, e.g. `5$1_A1->2_A1`. Users only need to specify the locations of source samples on one or more Excel spreadsheets, and what samples or liquids goes into destination wells in another Excel spreadsheets, and the InstructionWriter will perform the mapping. Then, these instructions can be directly copied and paste into a template protocol file, which will decode these intermediate instructions and feed them into the OT-2 APIv2 to execute the transfers.
+The InstructionWriter takes an Excel file that adheres to certain formats, and does the job of converting human-readable instructions, e.g. "Transfer 5 µL of primer from tube primer001 to PCR tube", into machine-parsable, intermediate instructions with volume and path information, e.g. `5$1_A1->2_A1`. Users only need to specify the locations of source samples on one or more Excel spreadsheets, and what samples or liquids goes into destination wells in another Excel spreadsheets, and the InstructionWriter will perform the mapping. Then, these instructions can be directly copied and paste into a template protocol file, which will decode these intermediate instructions and feed them into the OT-2 APIv2 to execute the transfers.
 
 The purpose of the InstructionWriter is offload the mentally demanding tasks of working out transfer paths for humans. It is **not** an OT-2 protocol writer.
 
@@ -122,7 +123,7 @@ Example in patterning a plate in an human-trackable manner, and creating the cha
 <br>
 <img src="./img/drawing.png" alt="patterning" width="800">
 
-This is an example of defining transfers from an `intuitive` layout of Opentrons 4-in-1 50 mL tube rack to another `intuitive` layout of a 96-well plate, as such it was designated so under the `slot_setup` sheet. The destination sheet format supports receiving multiple liquids, i.e. samples "a" and "b" and "c", shown on slot 2 well A1. Each sample were prefixed with a `+` sign to tell the InstructionWriter to add each component to that well. For `intuitive` format, InstructionWriter does not support assigning different volumes to different transfers. Rather, a `global_volume` is given on the `slot_setup` sheet so every sample will receive 200 uL. That would of course means that slot 2 well A1 will receive 600 uL and will overflow. Volume handling is beyond the scope of the InstructionWriter.
+This is an example of defining transfers from an `intuitive` layout of Opentrons 4-in-1 50 mL tube rack to another `intuitive` layout of a 96-well plate, as such it was designated so under the `slot_setup` sheet. The destination sheet format supports receiving multiple liquids, i.e. samples "a" and "b" and "c", shown on slot 2 well A1. Each sample were prefixed with a `+` sign to tell the InstructionWriter to add each component to that well. For `intuitive` format, InstructionWriter does not support assigning different volumes to different transfers. Rather, a `global_volume` is given on the `slot_setup` sheet so every sample will receive 200 µL. That would of course means that slot 2 well A1 will receive 600 µL and will overflow. Volume handling is beyond the scope of the InstructionWriter.
 
 ### df_variable_volume
 Example in primer resuspension:  
@@ -131,7 +132,7 @@ Example in primer resuspension:
 <br><br>
 
 ### df_variable_sample
-Example in setting up multiple PCR reactions during cloning. Volumes of primers and templates are fixed at 5 uL and 1 uL, respectively, but the identity of primers and templates vary from one destination PCR tube to another:  
+Example in setting up multiple PCR reactions during cloning. Volumes of primers and templates are fixed at 5 µL and 1 µL, respectively, but the identity of primers and templates vary from one destination PCR tube to another:  
 <br>
 <img src="./img/PCR_setup.png" alt="PCR setup" width="900">
 <br><br>
@@ -146,10 +147,10 @@ A most customizable table for combinatorial pipetting. The following example ill
 
 - You can find templates for these layouts under `/instructions_io/_layout_templates.xlsx`
 - For a complete guide of how to set up the Excel file, see `Manual_on_InstructionWriter.pdf` (coming soon).
-- The InstructionWriter can be called in a custom script using
+- The InstructionWriter can be called in a script using
 ```python
 import InstructionWriter
-instructions = InstructionWriter.main("your_excel_file.xlsx")
+instructions = InstructionWriter.write_instructions("your_excel_file.xlsx")
 ```
 
 ### Applications
