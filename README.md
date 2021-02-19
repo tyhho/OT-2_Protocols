@@ -1,6 +1,6 @@
 # OT-2 Protocols
 
-This repository contains customizable OT-2 protocols written in [OT-2 APIv2](https://docs.opentrons.com). These protocols are (hopefully) user-friendly to those who need more customizations than what the [Opentrons Protocol Designer](https://designer.opentrons.com/) can offer. They are also written with modularity in mind, and should serve as boilerplate scripts for more experienced OT-2 users who just need to tweak existing protocols for throughput process.
+This repository contains customizable OT-2 protocols written in [OT-2 APIv2](https://docs.opentrons.com). These protocols are (hopefully) user-friendly to those who need more customizations than what the [Opentrons Protocol Designer](https://designer.opentrons.com/) can offer. They are also written with modularity in mind, and should serve as boilerplate scripts for more experienced OT-2 users who just need to tweak existing protocols for **medium** throughput process.
 
 ## How these protocols work
 
@@ -15,19 +15,19 @@ Therefore, every time we do primer resuspension we can reuse the protocol `prime
 
 When it comes to **paths** and **volumes**, say in the context of primer resuspension again, we think in terms of *what goes in what*:
 
-1. "Primer001 resuspended with 302 µL of water",
-2. "Primer002 resuspended with 259 µL of water", and etc.
+1. "oligo001 resuspended with 324 µL of water",
+2. "oligo002 resuspended with 275 µL of water", and etc.
 
 But the API doesn't care about the actual identities of the samples. It only cares about *from where to where*:
 
-1. "Transfer 302 µL from Slot 1, A1 (water) to Slot 2, A1 (primer tube)",
-2. "Transfer 259 µL from Slot 1, A1 to Slot 2, A2"
+1. "Transfer 324 µL from Slot 1, A1 (water) to Slot 2, A1 (primer tube)",
+2. "Transfer 275 µL from Slot 1, A1 to Slot 2, A2"
 
 The conversion from *what* to *where* is easy if you only have a few transfers, but it soon becomes mentally demanding as the number goes up. This is where the **InstructionWriter** comes into play. Instead of working out all the paths ourselves, we supply the InstructionWriter with an **intuitive Excel spreadsheet** stating what samples are in what wells, and where the liquids should go and the volumes. The InstructionWriter then process these information and write out parasable instructions, like:  
 
 ```python
-"302$1_A1->2_A1", # = move 302 µL from slot 1 well A1 to slot 2 well A1
-"259$1_A1->2_A2"
+"324$1_A1->2_A1", # = move 302 µL from slot 1 well A1 to slot 2 well A1
+"275$1_A1->2_A2"
 # ... and the list goes on
 ```
 which you can copy and paste inside a list in the protocol file. The protocol will then execute these instructions with a tested and establisehd *behavior*.
