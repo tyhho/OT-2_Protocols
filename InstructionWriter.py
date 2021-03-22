@@ -386,7 +386,7 @@ def write_instructions(input_file):
                 elif layout == 'df_variable_sample_n_volume':
                     
                     
-                    if global_vol:
+                    if global_vol and not (np.isnan(global_vol)):
                         warnings.warn('Global volume is given for slot '
                                       + dest_slot_num
                                       + ' but df_variable_sample_n_volume'

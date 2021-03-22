@@ -39,14 +39,15 @@ This feature is indispensable when we need to deal with medium-throughput work, 
 We will exmplify with a hypothetical scenario of setting up combinatorial Golden Gate Assemblies.
 
 1. Install Python or Anaconda (recommended) and `pip install opentrons`.
-1. Clone / Download this repository onto your computer
-2. Check the contents of an Excel file under the folder `/instructions_io/` that is named `example_GGA.xlsx`
-3. Open an Anaconda terminal, navigate into the downloaded folder
-4. Execute `>python -m InstructionWriter ./instructions_io/example_GGA.xlsx`
-5. A file now appears under `/instructions_io/` that is called `example_GGA_instructions.txt`
-6. Open this text file, copy all
-7. Use a text editor (Spyder / Notepad), open `combinatorial_pipetting.py`
-8. Paste the instructions under `inst_list = [` and before `]`
+2. Clone / Download this repository onto your computer
+3. Check the contents of an Excel file under the folder `/instructions_io/` that is named `example_GGA.xlsx`
+4. Close the Excel file (else `PermissionError` will raise)
+5. Open an Anaconda terminal, navigate into the downloaded folder
+6. Execute `>python -m InstructionWriter ./instructions_io/example_GGA.xlsx`
+7. A file now appears under `/instructions_io/` that is called `example_GGA_instructions.txt`
+8. Open this text file, copy all
+9. Use a text editor (Spyder / Notepad), open `combinatorial_pipetting.py`
+10. Paste the instructions under `inst_list = [` and before `]`
 
 It should now look like:
 
@@ -64,7 +65,7 @@ inst_list = [
 ]
 ```
 
-9. Configure the deck layout and the pipette to be used as follow
+11. Configure the deck layout and the pipette to be used as follow
 
 ```python
     slots_map = {
@@ -79,7 +80,7 @@ inst_list = [
     r_tiprack_name = 'geb_96_tiprack_10ul'
 ```
 
-10. Make sure the right pipette (right mount) is used in the execution section
+12. Make sure the right pipette (right mount) is used in the execution section
 
 ```python
 for inst in inst_list:
@@ -103,9 +104,9 @@ SaveLog: simulate the protocol and check whether the steps are correct.
 Then save the log file for troubleshooting.
 This function directly builds upon the Opentrons `simulate` module
 
-11. Open an Anaconda terminal in this dowloaded folder
-12. Execute `>python -m SaveLog combinatorial_pipetting.py`
-13. Open the folder `protocol_log` and open the text file named `combinatorial_pipetting_log.txt` to check the simulated protocol  
+13. Open an Anaconda terminal in this dowloaded folder
+14. Execute `>python -m SaveLog combinatorial_pipetting.py`
+15. Open the folder `protocol_log` and open the text file named `combinatorial_pipetting_log.txt` to check the simulated protocol  
 
 If your protocol employs any custom [labware definitions](https://support.opentrons.com/en/articles/3136504-creating-custom-labware-definitions), you need to put the custom labware definition files, in json formats, under the `./labware_def/` folder.
 
